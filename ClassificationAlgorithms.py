@@ -1,5 +1,7 @@
 from Constants import *
 from InputAndOutputService import *
+#from Statistics import *
+
 
 def CallXGBoost(X_train, y_train):
     print("using XGboost")
@@ -11,15 +13,18 @@ def CallXGBoost(X_train, y_train):
 def CallNeuralNetwork(X_train, y_train):
     print("using sklearn.neural_network MLPClassifier")
     from sklearn.neural_network import MLPClassifier
-    classifier = MLPClassifier(alpha=1e-05, hidden_layer_sizes=(100,100), random_state=1, solver='lbfgs')
+    classifier = MLPClassifier(alpha=1e-05, hidden_layer_sizes=(100,2), random_state=1, solver='lbfgs')
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallSVM(X_train, y_train):
     print("using SVM")
-    from sklearn.svm import SVC
-    #classifier = SVC(kernel = 'linear', random_state = 0)
-    classifier = SVC(kernel = 'poly')
+    #from sklearn.svm import NuSVC
+    from sklearn.svm import LinearSVC
+    #from sklearn.svm import SVC
+    #classifier = SVC(kernel = 'linear',degree = 5, random_state = 10)
+#    classifier = SVC(kernel = 'poly', degree = 3)
+    classifier = LinearSVC()
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -102,4 +107,60 @@ def HandleMissingData(DECIMAL_COLUMNS, X):
     where_are_NaNs = np.isnan(X)
     X[where_are_NaNs] = -1  #??
     print(X[:,:])
+
+#TODO: need to be in Statistics class
+def FeatureImportance(classifier):
+    print("feature importance:")
+    from matplotlib import pyplot
+    print(classifier.feature_importances_)
+    pyplot.bar(range(len(classifier.feature_importances_)), classifier.feature_importances_)
+    pyplot.show()
+
+
+def RocAndAucTest(dataset, DECIMAL_COLUMNS, file_name):
+    print(file_name)
+    X = dataset.iloc[:, :-1].values
+    y = dataset.iloc[:, -1].values
+
+    # Splitting the dataset into the Training set and Test set
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+
+    FeatureScaling(X_train, X_test, DECIMAL_COLUMNS)
+    RocAndAuc(X_train, X_test, y_train, y_test)
+
+def RocAndAuc(X_train, X_test, y_train, y_test):
+    from sklearn.metrics import roc_curve, roc_auc_score
+    from sklearn.model_selection import train_test_split
+    import matplotlib.pyplot as plt
+
+    classLogisticRegression = CallLogisticRegression(X_train, y_train)
+    classKNN = CallKNN(X_train, y_train)
+
+    y_scoreLogisticRegression = classLogisticRegression.predict_proba(X_test)[:,1]
+    y_scoreKNN = classKNN.predict_proba(X_test)[:,1]
+
+    false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(y_test, y_scoreLogisticRegression)
+    false_positive_rate2, true_positive_rate2, threshold2 = roc_curve(y_test, y_scoreKNN)
+
+    print('roc_auc_score for Logistic Regression: ', roc_auc_score(y_test, y_scoreLogisticRegression))
+    print('roc_auc_score for y_scoreKNN: ', roc_auc_score(y_test, y_scoreKNN))
+
+    plt.subplots(1, figsize=(10,10))
+    plt.title('Receiver Operating Characteristic - LogisticRegression')
+    plt.plot(false_positive_rate1, true_positive_rate1)
+    plt.plot([0, 1], ls="--")
+    plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
+    plt.ylabel('True Positive Rate')
+    plt.xlabel('False Positive Rate')
+    plt.show()
+
+    plt.subplots(1, figsize=(10,10))
+    plt.title('Receiver Operating Characteristic - KNN')
+    plt.plot(false_positive_rate2, true_positive_rate2)
+    plt.plot([0, 1], ls="--")
+    plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
+    plt.ylabel('True Positive Rate')
+    plt.xlabel('False Positive Rate')
+    plt.show()
 

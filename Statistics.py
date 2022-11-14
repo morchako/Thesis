@@ -2,6 +2,7 @@ from InputAndOutputService import *
 from ClassificationAlgorithms import *
 import statistics
 
+
 def StatisticsPerColumn(full_dataset, isCondition= False, theConditionColumn = None, conditionValue=None):
     if(isCondition):
        dataset = full_dataset[full_dataset['CoronaryHeartDisease'] == 1]
@@ -104,12 +105,6 @@ def GetIDC9Key(icd):
         key = "	Supplementary Classification of External Causes of Injury and Poisoning(E800–E999)"
     elif(icd.startswith('V')): #V01–V82
         key = "	Supplementary Classification of Factors influencing Health Status and Contact with Health Services (V01–V82)"
-
-
-
-
-
-
 
     return key
 

@@ -38,11 +38,12 @@ def GetDataset():
     return DECIMAL_COLUMNS, dataset, file_name, sheet_name, list_feature_names, predict_column, cond_col
 
 def GetAndPrintResult(y_test, y_pred):
-    from sklearn.metrics import confusion_matrix, accuracy_score
+    from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
     cm = confusion_matrix(y_test, y_pred)
     print(cm)
     accuracy = accuracy_score(y_test, y_pred)*100
     print("Accuracy: {:.2f} %".format(accuracy))
+    print(classification_report(y_test, y_pred))
     return accuracy
 
 def SplitTheDatasetTo2(full_dataset):
