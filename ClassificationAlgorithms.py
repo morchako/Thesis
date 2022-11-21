@@ -20,7 +20,7 @@ def CallNeuralNetwork(X_train, y_train):
 def CallSVM(X_train, y_train):
     print("using SVM")
     from sklearn.svm import SVC
-    classifier = SVC(kernel = 'linear',degree = 5, random_state = 10)
+    classifier = SVC(kernel = 'linear',degree = 5, random_state = 10, max_iter=10000)
 #    classifier = SVC(kernel = 'poly', degree = 3)
     classifier.fit(X_train, y_train)
     return classifier
@@ -28,14 +28,14 @@ def CallSVM(X_train, y_train):
 def CallLinearSVC(X_train, y_train):
     print("using LinearSVC")
     from sklearn.svm import LinearSVC
-    classifier = LinearSVC()
+    classifier = LinearSVC(max_iter= 10)
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallKNN(X_train, y_train):
     print("using KNN")
     from sklearn.neighbors import KNeighborsClassifier
-    classifier = KNeighborsClassifier()
+    classifier = KNeighborsClassifier(n_neighbors=5)
     classifier.fit(X_train, y_train)
     return classifier
 

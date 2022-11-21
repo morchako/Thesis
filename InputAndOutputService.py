@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 def GetDataset():
-    DECIMAL_COLUMNS = 30
-    file_name = "Processed Wisconsin Diagnostic Breast Cancer"
-    sheet_name = "Processed Wisconsin Diagnostic"
-    predict_column = 'diagnosis'
-    cond_col = "None"
+    # DECIMAL_COLUMNS = 30
+    # file_name = "Processed Wisconsin Diagnostic Breast Cancer"
+    # sheet_name = "Processed Wisconsin Diagnostic"
+    # predict_column = 'diagnosis'
+    # cond_col = "None"
 
     #DECIMAL_COLUMNS = 1686
     #file_name = "FM_dataset - Processed"
@@ -15,16 +15,18 @@ def GetDataset():
     #DECIMAL_COLUMNS = 1675
     #file_name = "FM_dataset – objective values and bacterias"
 
-    #DECIMAL_COLUMNS = 1620
-    #file_name = "FM_dataset - onlyMicro"
+    # DECIMAL_COLUMNS = 1620
+    # file_name = "FM_dataset - onlyMicro"
 
-    # sheet_name = "None"
-    # predict_column = 'diagnosis'
-    # cond_col = "None"
+    DECIMAL_COLUMNS = 62
+    file_name = 'FM_dataset - SumFamily'
 
-    #path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\';
-    #path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\MIT\\files\\mimic-iii-clinical-database-1.4\\';
-    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Breast Cancer\\';
+    sheet_name = "None"
+    predict_column = 'diagnosis'
+    cond_col = "None"
+
+    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\';
+    #path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Breast Cancer\\';
 
     print("File name is: '"+ file_name+"', Sheet name is: '"+sheet_name+"'")
     #dataset = pd.read_excel(path+file_name+'.xlsx',sheet_name=sheet_name, engine='openpyxl')
@@ -45,6 +47,25 @@ def GetAndPrintResult(y_test, y_pred):
     #print(classification_report(y_test, y_pred))
     return accuracy
 
+def CreateFamilyDataset():
+    file_name = "FM_dataset - family and pt"
+    print("File name is: '"+ file_name)
+    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\'
+    df = pd.read_csv(path+file_name+'.csv')
+    df.set_index('Family')
+    dict = {}
+    for index, row in df.iterrows():
+         family_index = row["Family"];
+         if family_index not in dict:
+             dict[family_index] = row;
+         else:
+             dict[family_index] = dict[family_index] + row
+             dict[family_index]["Family"] = family_index
+    print(dict)
+    df1 = pd.DataFrame(data=dict)
+    #df1 = pd.DataFrame(df, columns=df.columns, index=appearances.index)
+    df1.to_csv(path + 'FM_dataset - SumFamily.csv')
+    return df1
 
 def SplitTheDatasetTo2(full_dataset):
     dataset1 = full_dataset.sample(frac=0.5)
