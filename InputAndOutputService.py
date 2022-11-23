@@ -41,9 +41,6 @@ def GetAndPrintResult(y_test, y_pred):
     print(cm)
     accuracy = accuracy_score(y_test, y_pred)*100
     print("Accuracy: {:.2f} %".format(accuracy))
-    accuracy = accuracy_score(y_test, y_pred) * 100
-    print("Accuracy: {:.2f} %".format(accuracy))
-
     #print(classification_report(y_test, y_pred))
     return accuracy
 
