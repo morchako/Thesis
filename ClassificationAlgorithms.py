@@ -20,15 +20,16 @@ def CallNeuralNetwork(X_train, y_train):
 def CallSVM(X_train, y_train):
     print("using SVM")
     from sklearn.svm import SVC
-    classifier = SVC(kernel = 'linear',degree = 5, random_state = 10, max_iter=10000)
-#    classifier = SVC(kernel = 'poly', degree = 3)
+    #classifier = SVC(kernel = 'linear',degree = 5, random_state = 10, max_iter=10)
+    classifier = SVC(kernel = 'poly', degree = 3)
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallLinearSVC(X_train, y_train):
     print("using LinearSVC")
     from sklearn.svm import LinearSVC
-    classifier = LinearSVC(max_iter= 10)
+    #classifier = LinearSVC(max_iter=100000)
+    classifier = LinearSVC()
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -42,12 +43,12 @@ def CallKNN(X_train, y_train):
 def CallLogisticRegression(X_train, y_train):
     print("using Logistic Regression")
     from sklearn.linear_model import LogisticRegression
-    classifier = LogisticRegression(solver = 'liblinear', max_iter = 10)
+    classifier = LogisticRegression(solver = 'lbfgs')
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallLogisticRegressionCV(X_train, y_train):
-    print("using Logistic Regression")
+    print("using Logistic Regression CV")
     from sklearn.linear_model import LogisticRegressionCV
     classifier = LogisticRegressionCV()
     classifier.fit(X_train, y_train)
@@ -79,14 +80,22 @@ def CallExtraTrees(X_train, y_train):
 
 def FeatureScaling(X_train,X_test,DECIMAL_COLUMNS):
      #Feature Scaling - only the numeric values
-    from sklearn.preprocessing import StandardScaler
+    from sklearn.preprocessing import StandardScaler,MinMaxScaler
     sc = StandardScaler()
+    print("FeatureScaling - StandardScaler")
     X_train[:, 1:DECIMAL_COLUMNS] = sc.fit_transform(X_train[:, 1:DECIMAL_COLUMNS])
     X_test[:, 1:DECIMAL_COLUMNS] = sc.transform(X_test[:, 1:DECIMAL_COLUMNS])
+    mms = MinMaxScaler()
+    print("FeatureScaling - MinMaxScaler")
+    X_train[:, 1:DECIMAL_COLUMNS] = mms.fit_transform(X_train[:, 1:DECIMAL_COLUMNS])
+    X_test[:, 1:DECIMAL_COLUMNS] = mms.transform(X_test[:, 1:DECIMAL_COLUMNS])
 
 def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data):
     X = dataset.iloc[:, :-1].values
     y = dataset.iloc[:, -1].values
+
+    X = FeatureSelectionKBest(X,y,k=15)
+    #X = FeatureSelectionPCA(X)
 
     if (handle_missing_data):
         HandleMissingData(DECIMAL_COLUMNS, X)
@@ -110,8 +119,8 @@ def PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, she
     elif(algoritem_name == SVM):
         classifier = CallSVM(X_train, y_train)
     elif(algoritem_name == LOGISTIC_REGRESSION):
-        #classifier = CallLogisticRegression(X_train, y_train)
-        classifier = CallLogisticRegressionCV(X_train, y_train)
+        classifier = CallLogisticRegression(X_train, y_train)
+        #classifier = CallLogisticRegressionCV(X_train, y_train)
     elif(algoritem_name == NEURAL_NETWORK):
         classifier = CallNeuralNetwork(X_train, y_train)
     elif(algoritem_name == EXTRA_TREES):
@@ -138,46 +147,74 @@ def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name,
     X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS, True)
     resList = []
     classifier = CallXGBoost(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
+    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallCatBoost(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
-    classifier = CallSVM(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
-    classifier = CallLinearSVC(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
-    classifier = CallLogisticRegression(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
+    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallKNN(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
+    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallNeuralNetwork(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
+    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallExtraTrees(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
+    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallPerceptron(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test)
+    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
+    classifier = CallSVM(X_train, y_train)
+    GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
+    # classifier = CallLinearSVC(X_train, y_train)
+    # GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
+    # classifier = CallLogisticRegression(X_train, y_train)
+    # GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     max_res = max(resList)
     print("The best result for file name: " + file_name + " is: "+ str(max_res))
 
 
-def GetPredictionAndResult(X_test, classifier, resList, y_test):
-    y_pred = classifier.predict(X_test)
-    resList.append(GetAndPrintResult(y_test, y_pred))
+def GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train):
+    #lassifier = FeatureSelectionRFE(classifier, 35, X_train, y_train, X_test,y_test)
 
+    print("Pred train result")
+    y_pred_train = classifier.predict(X_train)
+    GetAndPrintResult(y_train, y_pred_train)
+    # Predicting the Test set results
+    print("Pred test result")
+    y_pred = classifier.predict(X_test)
+    res = GetAndPrintResult(y_test, y_pred)
+    resList.append(res)
+
+def FeatureSelectionRFE(classifier, k,X_train,y_train, X_test,y_test):
+    print(f"FeatureSelection - RFE, n_features_to_select={k}")
+    from sklearn.feature_selection import RFE
+    selector = RFE(classifier, n_features_to_select=k, step=1)
+    selector.fit_transform(X_train, y_train)
+    selector.transform(X_test)
+    return classifier
+def FeatureSelectionKBest(X,y,k):
+    from sklearn.feature_selection import SelectKBest
+    from sklearn.feature_selection import chi2
+    print(f"Feature Selection - SelectKBest(chi2, k={k})")
+    X_new = SelectKBest(chi2, k=k).fit_transform(X, y)
+    X_new.shape
+    return X_new
+
+def FeatureSelectionPCA(X):
+    print("FeatureSelection - PCA")
+    from sklearn.decomposition import PCA
+    pca = PCA(n_components=2, svd_solver='full')
+    X_new = pca.fit_transform(X)
+    return X_new
 
 def HandleMissingData(DECIMAL_COLUMNS, X):
        #Hendle missing data
     #change to avg value in the numeric columns (like age, height, weight...) 
     # i can change it to median
     from sklearn.impute import SimpleImputer
-    print(X)
+    print("HandleMissingData - strategy='mean'")
     imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
     #imputer = SimpleImputer(missing_values=np.nan, strategy='median')
     imputer.fit(X[:, 1:DECIMAL_COLUMNS])
     X[:, 1:DECIMAL_COLUMNS] = imputer.transform(X[:, 1:DECIMAL_COLUMNS])
+    # where_are_NaNs = np.isnan(X)
+    # X[where_are_NaNs] = -1  #??
 
-    where_are_NaNs = np.isnan(X)
-    X[where_are_NaNs] = -1  #??
-    print(X[:,:])
 
 #TODO: need to be in Statistics class
 def FeatureImportance(classifier):
