@@ -4,21 +4,21 @@ from InputAndOutputService import *
 
 
 def CallXGBoost(X_train, y_train):
-    print("using XGboost")
+    PrintAndWriteToLog("using XGboost")
     from xgboost import XGBClassifier
     classifier = XGBClassifier()
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallNeuralNetwork(X_train, y_train):
-    print("using sklearn.neural_network MLPClassifier")
+    PrintAndWriteToLog("using sklearn.neural_network MLPClassifier")
     from sklearn.neural_network import MLPClassifier
     classifier = MLPClassifier(alpha=1e-05, hidden_layer_sizes=(100,2), random_state=1, solver='lbfgs')
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallSVM(X_train, y_train):
-    print("using SVM")
+    PrintAndWriteToLog("using SVM")
     from sklearn.svm import SVC
     #classifier = SVC(kernel = 'linear',degree = 5, random_state = 10, max_iter=10)
     classifier = SVC(kernel = 'poly', degree = 3)
@@ -26,42 +26,42 @@ def CallSVM(X_train, y_train):
     return classifier
 
 def CallLinearSVC(X_train, y_train):
-    print("using LinearSVC")
+    PrintAndWriteToLog("using LinearSVC")
     from sklearn.svm import LinearSVC
-    #classifier = LinearSVC(max_iter=100000)
-    classifier = LinearSVC()
+    classifier = LinearSVC(max_iter=100000)
+    #classifier = LinearSVC()
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallKNN(X_train, y_train):
-    print("using KNN")
+    PrintAndWriteToLog("using KNN")
     from sklearn.neighbors import KNeighborsClassifier
     classifier = KNeighborsClassifier(n_neighbors=5)
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallLogisticRegression(X_train, y_train):
-    print("using Logistic Regression")
+    PrintAndWriteToLog("using Logistic Regression")
     from sklearn.linear_model import LogisticRegression
-    classifier = LogisticRegression(solver = 'lbfgs')
+    classifier = LogisticRegression(max_iter= 10000, solver = 'lbfgs')
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallLogisticRegressionCV(X_train, y_train):
-    print("using Logistic Regression CV")
+    PrintAndWriteToLog("using Logistic Regression CV")
     from sklearn.linear_model import LogisticRegressionCV
     classifier = LogisticRegressionCV()
     classifier.fit(X_train, y_train)
     return classifier
 def CallPerceptron(X_train, y_train):
-    print("using Perceptron")
+    PrintAndWriteToLog("using Perceptron")
     from sklearn.linear_model import Perceptron
     classifier = Perceptron(fit_intercept=False, max_iter=10, tol=None,shuffle = False)
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallCatBoost(X_train, y_train):
-    print("using CatBoost")
+    PrintAndWriteToLog("using CatBoost")
     from catboost import CatBoostClassifier
     classifier = CatBoostClassifier(iterations=2,
                            depth=10,
@@ -73,7 +73,7 @@ def CallCatBoost(X_train, y_train):
 
 def CallExtraTrees(X_train, y_train):
     from sklearn.ensemble import ExtraTreesClassifier
-    print("using ExtraTreesClassifier")
+    PrintAndWriteToLog("using ExtraTreesClassifier")
     classifier = ExtraTreesClassifier()
     classifier.fit(X_train, y_train)
     return classifier
@@ -82,23 +82,24 @@ def FeatureScaling(X_train,X_test,DECIMAL_COLUMNS):
      #Feature Scaling - only the numeric values
     from sklearn.preprocessing import StandardScaler,MinMaxScaler
     sc = StandardScaler()
-    print("FeatureScaling - StandardScaler")
+    PrintAndWriteToLog("FeatureScaling - StandardScaler",True)
     X_train[:, 1:DECIMAL_COLUMNS] = sc.fit_transform(X_train[:, 1:DECIMAL_COLUMNS])
     X_test[:, 1:DECIMAL_COLUMNS] = sc.transform(X_test[:, 1:DECIMAL_COLUMNS])
-    mms = MinMaxScaler()
-    print("FeatureScaling - MinMaxScaler")
-    X_train[:, 1:DECIMAL_COLUMNS] = mms.fit_transform(X_train[:, 1:DECIMAL_COLUMNS])
-    X_test[:, 1:DECIMAL_COLUMNS] = mms.transform(X_test[:, 1:DECIMAL_COLUMNS])
+    # mms = MinMaxScaler()
+    # PrintAndWriteToLog("FeatureScaling - MinMaxScaler",True)
+    # X_train[:, 1:DECIMAL_COLUMNS] = mms.fit_transform(X_train[:, 1:DECIMAL_COLUMNS])
+    # X_test[:, 1:DECIMAL_COLUMNS] = mms.transform(X_test[:, 1:DECIMAL_COLUMNS])
 
 def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data):
     X = dataset.iloc[:, :-1].values
     y = dataset.iloc[:, -1].values
-
-    X = FeatureSelectionKBest(X,y,k=15)
-    #X = FeatureSelectionPCA(X)
+    resDict['Notes'] = ""
 
     if (handle_missing_data):
         HandleMissingData(DECIMAL_COLUMNS, X)
+
+    #X = FeatureSelectionKBest(X, y, k=50)
+    X = FeatureSelectionPCA(X, 80)
 
     # Splitting the dataset into the Training set and Test set
     from sklearn.model_selection import train_test_split
@@ -108,7 +109,8 @@ def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data):
     return X_train, X_test, y_train, y_test
 def PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, sheet_name, list_feature_names,
                                        algoritem_name = XG_BOOST, handle_missing_data = False):
-    print("File name is: '" + file_name + "', Sheet name is: '" + sheet_name + "'")
+    PrintAndWriteToLog("File name is: '" + file_name + "', Sheet name is: '" + sheet_name + "'")
+    resDict['File Name'] = file_name
     X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data)
     if(algoritem_name == XG_BOOST):
         classifier = CallXGBoost(X_train, y_train)
@@ -132,56 +134,63 @@ def PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, she
     else:
         return 0
 
-    print("Pred train result")
+    PrintAndWriteToLog("Pred train result")
     y_pred_train = classifier.predict(X_train)
     GetAndPrintResult(y_train, y_pred_train)
     # Predicting the Test set results
-    print("Pred test result")
+    PrintAndWriteToLog("Pred test result")
     y_pred = classifier.predict(X_test)
     res = GetAndPrintResult(y_test, y_pred)
     #UsingShap(classifier, 'XG_Boost', X_test)
     return res
 
 def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name, sheet_name, list_feature_names):
-    print("File name is: '" + file_name + "', Sheet name is: '" + sheet_name + "'")
+    PrintAndWriteToLog("File name is: '" + file_name + "', Sheet name is: '" + sheet_name + "'")
+    resDict['File Name'] = file_name
+    resDict['Date and time'] = str(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
     X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS, True)
+    dataset = get_inner_hem(dataset)
+    PrintAndWriteToLog("Create inner hem matrix")
     resList = []
     classifier = CallXGBoost(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
+    resDict['XGBoost'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallCatBoost(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
+    resDict['CatBoost'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallKNN(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
+    resDict['KNN'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallNeuralNetwork(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
+    resDict['MLPClassifier'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallExtraTrees(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
+    resDict['ExtraTreesClassifier'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallPerceptron(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
+    resDict['Perceptron'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallSVM(X_train, y_train)
-    GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
+    resDict['SVM'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     # classifier = CallLinearSVC(X_train, y_train)
     # GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     # classifier = CallLogisticRegression(X_train, y_train)
     # GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     max_res = max(resList)
-    print("The best result for file name: " + file_name + " is: "+ str(max_res))
+    resDict['Best result'] = max_res
+    SaveResultToCSV(resDict)
+    PrintAndWriteToLog("The best result for file name: " + file_name + " is: "+ str(max_res))
 
 
 def GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train):
-    #lassifier = FeatureSelectionRFE(classifier, 35, X_train, y_train, X_test,y_test)
-
-    print("Pred train result")
+    #classifier = FeatureSelectionRFE(classifier, 35, X_train, y_train, X_test,y_test)
+    PrintAndWriteToLog("Pred train result")
     y_pred_train = classifier.predict(X_train)
     GetAndPrintResult(y_train, y_pred_train)
     # Predicting the Test set results
-    print("Pred test result")
+    PrintAndWriteToLog("Pred test result")
     y_pred = classifier.predict(X_test)
     res = GetAndPrintResult(y_test, y_pred)
     resList.append(res)
+    return res
+
 
 def FeatureSelectionRFE(classifier, k,X_train,y_train, X_test,y_test):
-    print(f"FeatureSelection - RFE, n_features_to_select={k}")
+    PrintAndWriteToLog(f"FeatureSelection - RFE, n_features_to_select={k}",True)
     from sklearn.feature_selection import RFE
     selector = RFE(classifier, n_features_to_select=k, step=1)
     selector.fit_transform(X_train, y_train)
@@ -190,37 +199,38 @@ def FeatureSelectionRFE(classifier, k,X_train,y_train, X_test,y_test):
 def FeatureSelectionKBest(X,y,k):
     from sklearn.feature_selection import SelectKBest
     from sklearn.feature_selection import chi2
-    print(f"Feature Selection - SelectKBest(chi2, k={k})")
+    PrintAndWriteToLog(f"Feature Selection - SelectKBest(chi2, k={k})",True)
     X_new = SelectKBest(chi2, k=k).fit_transform(X, y)
     X_new.shape
     return X_new
 
-def FeatureSelectionPCA(X):
-    print("FeatureSelection - PCA")
+def FeatureSelectionPCA(X,n):
+    PrintAndWriteToLog(f"FeatureSelection - PCA, n_components = {n}",True)
     from sklearn.decomposition import PCA
-    pca = PCA(n_components=2, svd_solver='full')
+    pca = PCA(n_components=n, svd_solver='full')
+    #print(pca.explained_variance_ratio_)
     X_new = pca.fit_transform(X)
     return X_new
 
 def HandleMissingData(DECIMAL_COLUMNS, X):
        #Hendle missing data
-    #change to avg value in the numeric columns (like age, height, weight...) 
+    #change to avg value in the numeric columns (like age, height, weight...)
     # i can change it to median
     from sklearn.impute import SimpleImputer
-    print("HandleMissingData - strategy='mean'")
+    PrintAndWriteToLog("HandleMissingData - strategy='mean'",True)
     imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
     #imputer = SimpleImputer(missing_values=np.nan, strategy='median')
     imputer.fit(X[:, 1:DECIMAL_COLUMNS])
     X[:, 1:DECIMAL_COLUMNS] = imputer.transform(X[:, 1:DECIMAL_COLUMNS])
-    # where_are_NaNs = np.isnan(X)
+    #where_are_NaNs = np.isnan(X)
     # X[where_are_NaNs] = -1  #??
 
 
 #TODO: need to be in Statistics class
 def FeatureImportance(classifier):
-    print("feature importance:")
+    PrintAndWriteToLog("feature importance:")
     from matplotlib import pyplot
-    print(classifier.feature_importances_)
+    PrintAndWriteToLog(classifier.feature_importances_)
     pyplot.bar(range(len(classifier.feature_importances_)), classifier.feature_importances_)
     pyplot.show()
 
@@ -243,7 +253,7 @@ def UsingShap(classifier, classifier_name, X_test):
     shap.initjs()
     # Force plot
     prediction = classifier.predict(X_test[start_index:end_index])[0]
-    print(f"The {classifier_name} predicted: {prediction}")
+    PrintAndWriteToLog(f"The {classifier_name} predicted: {prediction}")
     shap.force_plot(explainer.expected_value[1],
                     shap_values[1],
                     X_test[start_index:end_index],

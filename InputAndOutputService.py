@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from datetime import datetime
+
+resDict = {}
 
 def GetDataset():
     # DECIMAL_COLUMNS = 30
@@ -18,8 +21,23 @@ def GetDataset():
     # DECIMAL_COLUMNS = 1620
     # file_name = "FM_dataset - onlyMicro"
 
-    DECIMAL_COLUMNS = 62
-    file_name = 'FM_dataset - SumFamily'
+    #DECIMAL_COLUMNS = 62
+    #file_name = 'FM_dataset - SumFamily'
+
+    DECIMAL_COLUMNS = 152
+    file_name = 'FM_dataset - Sum Family and count'
+
+    # DECIMAL_COLUMNS = 308
+    # file_name = 'FM_dataset - Sum Genus and count'
+
+    # DECIMAL_COLUMNS = 317
+    # file_name = 'FM_dataset - SumSpecies and diet'
+
+    # DECIMAL_COLUMNS = 604
+    # file_name = 'FM_dataset - Sum Species and count'
+
+    # DECIMAL_COLUMNS = 288
+    # file_name = 'FM_dataset - SumSpecies'
 
     sheet_name = "None"
     predict_column = 'diagnosis'
@@ -38,21 +56,93 @@ def GetDataset():
 def GetAndPrintResult(y_test, y_pred):
     from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
     cm = confusion_matrix(y_test, y_pred)
-    print(cm)
+    PrintAndWriteToLog(str(cm))
     accuracy = accuracy_score(y_test, y_pred)*100
-    print("Accuracy: {:.2f} %".format(accuracy))
+    PrintAndWriteToLog("Accuracy: {:.2f} %".format(accuracy))
     #print(classification_report(y_test, y_pred))
     return accuracy
 
+def PrintAndWriteToLog(logMsg,AddToTable = False):
+    print(logMsg)
+    with open('ThesisWorkLog.txt', 'a') as f:
+        f.writelines(str(datetime.now())+"  "+ logMsg+'\n')
+        f.close()
+    if(AddToTable):
+        resDict['Notes'] = resDict['Notes'] + logMsg +'\n'
+
+def SaveResultToCSV(resDict):
+    from csv import DictWriter
+    field_names = ['Date and time','File Name','Notes','XGBoost','CatBoost',
+                   'SVM','KNN','MLPClassifier','ExtraTreesClassifier',
+                   'Perceptron','Best result']
+    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\'
+    with open(path+'Thesis Documentation.csv', 'a') as f_object:
+        dictwriter_object = DictWriter(f_object, fieldnames=field_names)
+        dictwriter_object.writerow(resDict)
+        f_object.close()
+
+def get_inner_hem(df):
+  inner_hem = []
+  for i in range(1, df.shape[0] - 1):
+    for j in range(1, df.shape[1] - 1):
+      inner_hem.append([df.iloc[i, j], df.iloc[i, j-1], df.iloc[i, j+1], df.iloc[i-1, j], df.iloc[i+1, j]])
+  return pd.DataFrame(inner_hem, columns=['center', 'left', 'right', 'top', 'bottom'])
+
+
+def CreateSumAndCountFeatures():
+    # df = pd.DataFrame([[0, 0, 3], [4, 0, 6], [7, 0, 0], [0, 1, 2], [1, 1, 1], [0, 1, 0]], columns=['C1', 'C2', 'C3'],
+    #                   index=['A', 'A', 'B', 'B', 'B', 'C'])
+    file_name = "FM_dataset - Species and pt"
+    print("File name is: '" + file_name)
+    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\'
+    df = pd.read_csv(path + file_name + '.csv')
+    df = df.set_index('Species')
+    df_sum = df.copy()
+    df_sum.index = pd.Series([x + '-sum' for x in df.index])
+    df_sum
+    for k in df_sum.columns:
+        df_sum[k] = df_sum[k].where(df_sum[k] == 0, 1)
+    df = pd.concat([df, df_sum])
+    appearances = df.index.value_counts()
+    res = []
+    for k in appearances.index:
+        if appearances[k] > 1:
+            res.append(df.loc[k].values.sum(axis=0))
+        else:
+            res.append(df.loc[k])
+    A = np.array(res)
+    df = pd.DataFrame(A, columns=df.columns, index=appearances.index)
+    df = df.transpose()
+    print(df)
+    df.to_csv(path + 'FM_dataset - Sum Species and count.csv')
 def CreateFamilyDataset():
-    file_name = "FM_dataset - family and pt"
+    #file_name = "FM_dataset - family and pt"
+    file_name = "FM_dataset - Family and pt"
     print("File name is: '"+ file_name)
     path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\'
     df = pd.read_csv(path+file_name+'.csv')
     df.set_index('Family')
     dict = {}
+    # for k in df.columns:
+    #     df[k + '-FC'] = df[k].where(df[k] == 0, 1)
+    #
+    df2 = df
+    for index, row in df.iterrows():
+        family_index = row["Family"];
+        sum_index = f"{family_index}_sum"
+        df2[sum_index] = df[index].where(df[index] == 0, 1)
+
     for index, row in df.iterrows():
          family_index = row["Family"];
+         #sum_index = f"{family_index}_sum"
+         if family_index not in dict:
+             dict[family_index] = row;
+         else:
+             dict[family_index] = dict[family_index] + row
+             dict[family_index]["Family"] = family_index
+    for index, row in df2.iterrows():
+         family_index = row["Family"];
+         #sum_index = f"{family_index}_sum"
          if family_index not in dict:
              dict[family_index] = row;
          else:
@@ -61,7 +151,7 @@ def CreateFamilyDataset():
     print(dict)
     df1 = pd.DataFrame(data=dict)
     #df1 = pd.DataFrame(df, columns=df.columns, index=appearances.index)
-    df1.to_csv(path + 'FM_dataset - SumFamily.csv')
+    df1.to_csv(path + 'FM_dataset - Sum Family and count try1.csv')
     return df1
 
 def SplitTheDatasetTo2(full_dataset):

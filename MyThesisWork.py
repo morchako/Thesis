@@ -8,6 +8,7 @@ from Statistics import *
 
 
 def main():
+    #CreateSumAndCountFeatures()
     #CreateFamilyDataset()
     #GetInnerJoinDatasets()
     DECIMAL_COLUMNS, dataset, file_name, sheet_name, list_feature_names, pred_col, cond_col = GetDataset()
