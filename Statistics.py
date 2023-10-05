@@ -2,6 +2,21 @@ from InputAndOutputService import *
 from ClassificationAlgorithms import *
 import statistics
 
+def get_inner_multiplication_matrix(dataset):
+    dataset.drop(columns=dataset.columns[-1], axis=1, inplace=True)
+    # where_are_NaNs = np.isnan(dataset)
+    # dataset[where_are_NaNs] = 0
+    # data = {'a':[1,20,3], 'b': [44,10,2], 'c':[10,1,1]}
+    # dataset = pd.DataFrame(data)
+    dataset = normalize(dataset)
+    inner_hem = inner_multiplication(dataset)
+    print_matrix(inner_hem)
+    # print(inner_hem)
+    from matplotlib import pyplot as plt
+    plt.imshow(inner_hem, interpolation='nearest')
+    plt.title(file_name + " Inner Multiplication")
+    plt.show()
+    return inner_hem
 
 def StatisticsPerColumn(full_dataset, isCondition= False, theConditionColumn = None, conditionValue=None):
     if(isCondition):

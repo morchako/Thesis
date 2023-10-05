@@ -7,25 +7,53 @@ resDict = {}
 
 def GetDataset():
     # DECIMAL_COLUMNS = 30
-    # file_name = "Processed Wisconsin Diagnostic Breast Cancer"
+    #file_name = "Processed Wisconsin Diagnostic Breast Cancer"
     # sheet_name = "Processed Wisconsin Diagnostic"
     # predict_column = 'diagnosis'
     # cond_col = "None"
 
-    #DECIMAL_COLUMNS = 1686
-    #file_name = "FM_dataset - Processed"
+    # DECIMAL_COLUMNS = 1686
+    # file_name = "FM_dataset - Processed all features -125 samples "
 
-    #DECIMAL_COLUMNS = 1675
-    #file_name = "FM_dataset – objective values and bacterias"
+    DECIMAL_COLUMNS = 1620
+    file_name = "FM_dataset - Processed 125 samples"
+
+    # DECIMAL_COLUMNS = 1624
+    # file_name = "FM_dataset - Processed 125 samples - depression"
+
+    # DECIMAL_COLUMNS = 1
+    # file_name = "only pain"
+
+    # DECIMAL_COLUMNS = 1620
+    # file_name = "FM_dataset - Processed only micro 125 samples - pain"
+
+    # DECIMAL_COLUMNS = 1620
+    # file_name = "only microbiom - predict depression"
+
+    # DECIMAL_COLUMNS = 1623
+    # file_name = "FM_dataset - Processed 125 samples - predict pain"
+
+    # DECIMAL_COLUMNS = 4
+    # file_name = "depression unfresh cognetive - predict pain"
+
+    # DECIMAL_COLUMNS = 8
+    # file_name = "only questionnaire"
+
+    # DECIMAL_COLUMNS = 1675
+    # file_name = "FM_dataset – objective values and bacterias"
 
     # DECIMAL_COLUMNS = 1620
     # file_name = "FM_dataset - onlyMicro"
+    # #file_name = "all_pt_onlymicro"
 
-    #DECIMAL_COLUMNS = 62
-    #file_name = 'FM_dataset - SumFamily'
+    # DECIMAL_COLUMNS = 62
+    # file_name = 'FM_dataset - SumFamily'
 
-    DECIMAL_COLUMNS = 152
-    file_name = 'FM_dataset - Sum Family and count'
+    # DECIMAL_COLUMNS = 124
+    # file_name = 'FM_dataset - Sum Family and count'
+    #
+    # DECIMAL_COLUMNS = 124
+    # file_name = 'FM_dataset - Sum Family and count - 125 samples'
 
     # DECIMAL_COLUMNS = 308
     # file_name = 'FM_dataset - Sum Genus and count'
@@ -34,21 +62,33 @@ def GetDataset():
     # file_name = 'FM_dataset - SumSpecies and diet'
 
     # DECIMAL_COLUMNS = 604
-    # file_name = 'FM_dataset - Sum Species and count'
+    # file_name = 'FM_dataset - Sum Species and count - 125 samples'
 
     # DECIMAL_COLUMNS = 288
-    # file_name = 'FM_dataset - SumSpecies'
+    # file_name = 'FM_dataset - SumSpecies 125 samples'
 
-    sheet_name = "None"
+    # DECIMAL_COLUMNS = 154
+    # file_name = 'FM_dataset - SumGenus - 125 samples'
+
+    # DECIMAL_COLUMNS = 28
+    # file_name = 'FM_dataset - no bacterias no pain'
+
+    # DECIMAL_COLUMNS = 1686
+    # file_name = 'FM_Dataset_minimal process'
+
+    # DECIMAL_COLUMNS = 1620
+    # file_name = 'FM_dataset_all_microbiom'
+
+    sheet_name = "Sheet1"
     predict_column = 'diagnosis'
     cond_col = "None"
 
-    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\';
+    path = 'C:\\Users\\Mor\\OneDrive\\Desktop\\Thesis\\DS for training\\Fibro\\';
     #path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Breast Cancer\\';
 
     print("File name is: '"+ file_name+"', Sheet name is: '"+sheet_name+"'")
-    #dataset = pd.read_excel(path+file_name+'.xlsx',sheet_name=sheet_name, engine='openpyxl')
-    dataset = pd.read_csv(path+file_name+'.csv')
+    dataset = pd.read_excel(path+file_name+'.xlsx',sheet_name=sheet_name, engine='openpyxl')
+    # dataset = pd.read_csv(path+file_name+'.csv')
     list_feature_names = dataset.columns.values 
 
     return DECIMAL_COLUMNS, dataset, file_name, sheet_name, list_feature_names, predict_column, cond_col
@@ -70,35 +110,33 @@ def PrintAndWriteToLog(logMsg,AddToTable = False):
     if(AddToTable):
         resDict['Notes'] = resDict['Notes'] + logMsg +'\n'
 
+def print_matrix(matrix):
+    df = pd.DataFrame(matrix)
+    print(df.to_string(index=False, header=False))
+
 def SaveResultToCSV(resDict):
     from csv import DictWriter
     field_names = ['Date and time','File Name','Notes','XGBoost','CatBoost',
                    'SVM','KNN','MLPClassifier','ExtraTreesClassifier',
-                   'Perceptron','Best result']
-    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\'
+                   'Perceptron','LogisticRegression','Best result']
+    path = 'C:\\Users\\Mor\\OneDrive\\\Desktop\\Thesis\\DS for training\\Fibro\\'
     with open(path+'Thesis Documentation.csv', 'a') as f_object:
         dictwriter_object = DictWriter(f_object, fieldnames=field_names)
         dictwriter_object.writerow(resDict)
         f_object.close()
 
-def get_inner_hem(df):
-  inner_hem = []
-  for i in range(1, df.shape[0] - 1):
-    for j in range(1, df.shape[1] - 1):
-      inner_hem.append([df.iloc[i, j], df.iloc[i, j-1], df.iloc[i, j+1], df.iloc[i-1, j], df.iloc[i+1, j]])
-  return pd.DataFrame(inner_hem, columns=['center', 'left', 'right', 'top', 'bottom'])
 
 
 def CreateSumAndCountFeatures():
     # df = pd.DataFrame([[0, 0, 3], [4, 0, 6], [7, 0, 0], [0, 1, 2], [1, 1, 1], [0, 1, 0]], columns=['C1', 'C2', 'C3'],
     #                   index=['A', 'A', 'B', 'B', 'B', 'C'])
-    file_name = "FM_dataset - Species and pt"
+    file_name = "FM_dataset - Family and pt 125 samples"
     print("File name is: '" + file_name)
-    path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\'
+    path = 'C:\\Users\\Mor\\OneDrive\\Desktop\\Thesis\\DS for training\\Fibro\\'
     df = pd.read_csv(path + file_name + '.csv')
-    df = df.set_index('Species')
+    df = df.set_index('Family')
     df_sum = df.copy()
-    df_sum.index = pd.Series([x + '-sum' for x in df.index])
+    df_sum.index = pd.Series([x + '-count' for x in df.index])
     df_sum
     for k in df_sum.columns:
         df_sum[k] = df_sum[k].where(df_sum[k] == 0, 1)
@@ -114,7 +152,7 @@ def CreateSumAndCountFeatures():
     df = pd.DataFrame(A, columns=df.columns, index=appearances.index)
     df = df.transpose()
     print(df)
-    df.to_csv(path + 'FM_dataset - Sum Species and count.csv')
+    df.to_csv(path + 'FM_dataset - Sum Family and count - All.csv')
 def CreateFamilyDataset():
     #file_name = "FM_dataset - family and pt"
     file_name = "FM_dataset - Family and pt"
@@ -151,7 +189,7 @@ def CreateFamilyDataset():
     print(dict)
     df1 = pd.DataFrame(data=dict)
     #df1 = pd.DataFrame(df, columns=df.columns, index=appearances.index)
-    df1.to_csv(path + 'FM_dataset - Sum Family and count try1.csv')
+    df1.to_csv(path + 'FM_dataset - Sum Family and count - all.csv')
     return df1
 
 def SplitTheDatasetTo2(full_dataset):
@@ -216,6 +254,58 @@ def GetAllLabeventPerICD9(icd9):
         if(row['SUBJECT_ID'] in subjectsList):
             ItemidSet.add(row['ITEMID'])
     return ItemidSet
-     
 
 
+def plotDataset(data):
+
+    import matplotlib.pyplot as plt
+
+    # Sample a subset of the data for plotting (adjust the sample size as needed)
+    sampled_data = data.sample(n=125)  # Change 1000 to your desired sample size
+
+    # Extract x and y columns from the sampled data
+    x_data = sampled_data['depression']  # Replace 'x_column_name' with the actual column name
+    y_data = sampled_data['diagnosis']  # Replace 'y_column_name' with the actual column name
+
+    # Create a scatter plot
+    plt.scatter(x_data, y_data, label='diagnosis', color='blue', marker='o')
+
+    # Customize the plot (optional)
+    plt.xlabel('X-axis Label')
+    plt.ylabel('Y-axis Label')
+    plt.title('Scatter Plot Example')
+    plt.grid(True)
+    plt.legend()
+
+    # Display the plot
+    plt.show()
+
+def create_new_dataframe_by_avg_diffrence(df):
+    # Sample DataFrame (replace this with your own DataFrame)
+    # data = {
+    #     'Label': ['A', 'A', 'B', 'B', 'A'],
+    #     'Value1': [10, 20, 30, 40, 50],
+    #     'Value2': [5, 15, 25, 35, 45]
+    # }
+
+    # df = pd.DataFrame(data)
+    # #
+    # Step 1: Group by 'Label'
+    grouped = df.groupby('diagnosis')
+
+    # Step 2: Calculate the average difference for each numeric column
+    def calculate_avg_diff(group):
+        return group.diff().mean()
+
+    avg_diff_by_label = grouped.apply(calculate_avg_diff)
+    print(avg_diff_by_label)
+    # Step 3: Check if the average difference is greater than 10
+    condition = avg_diff_by_label > 10
+
+    # Step 4: Copy columns that meet the condition to a new DataFrame
+    columns_to_copy = df.columns[df.columns.isin(condition.index)]
+
+    new_df = df[columns_to_copy]
+
+    # Display the new DataFrame
+    print(new_df)

@@ -20,8 +20,8 @@ def CallNeuralNetwork(X_train, y_train):
 def CallSVM(X_train, y_train):
     PrintAndWriteToLog("using SVM")
     from sklearn.svm import SVC
-    #classifier = SVC(kernel = 'linear',degree = 5, random_state = 10, max_iter=10)
-    classifier = SVC(kernel = 'poly', degree = 3)
+    #classifier = SVC(kernel = 'linear',degree = 5, random_state = 42, max_iter=10000,probability=True)
+    classifier = SVC(kernel = 'poly', degree = 3,probability=True)
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -44,6 +44,7 @@ def CallLogisticRegression(X_train, y_train):
     PrintAndWriteToLog("using Logistic Regression")
     from sklearn.linear_model import LogisticRegression
     classifier = LogisticRegression(max_iter= 10000, solver = 'lbfgs')
+    #classifier = LogisticRegression(max_iter= 10000,penalty='l1', solver='liblinear', C=1.0) #LASSO
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -93,19 +94,25 @@ def FeatureScaling(X_train,X_test,DECIMAL_COLUMNS):
 def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data):
     X = dataset.iloc[:, :-1].values
     y = dataset.iloc[:, -1].values
+
+    # y[y<=5] = 0
+    # y[y>0] = 1
     resDict['Notes'] = ""
 
     if (handle_missing_data):
         HandleMissingData(DECIMAL_COLUMNS, X)
 
-    #X = FeatureSelectionKBest(X, y, k=50)
-    X = FeatureSelectionPCA(X, 80)
-
     # Splitting the dataset into the Training set and Test set
     from sklearn.model_selection import train_test_split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
 
-    FeatureScaling(X_train, X_test, DECIMAL_COLUMNS)
+    # X_train, X_test = FeatureSelectionKBest(X_train, y_train,X_test, k=72)
+    #X_train, X_test = FeatureSelectionPCA(X_train, X_test, 60)
+
+    #X_test_best = X_test[:, best_features]
+    #FeatureScaling(X_train, X_test, DECIMAL_COLUMNS)
+    #X_train, X_test = LASSO(X_train, X_test, y_train, y_test)
+
     return X_train, X_test, y_train, y_test
 def PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, sheet_name, list_feature_names,
                                        algoritem_name = XG_BOOST, handle_missing_data = False):
@@ -142,6 +149,7 @@ def PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, she
     y_pred = classifier.predict(X_test)
     res = GetAndPrintResult(y_test, y_pred)
     #UsingShap(classifier, 'XG_Boost', X_test)
+    RocAndAuc(X_train, X_test, y_train, y_test)
     return res
 
 def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name, sheet_name, list_feature_names):
@@ -149,8 +157,7 @@ def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name,
     resDict['File Name'] = file_name
     resDict['Date and time'] = str(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
     X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS, True)
-    dataset = get_inner_hem(dataset)
-    PrintAndWriteToLog("Create inner hem matrix")
+
     resList = []
     classifier = CallXGBoost(X_train, y_train)
     resDict['XGBoost'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
@@ -168,26 +175,46 @@ def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name,
     resDict['SVM'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     # classifier = CallLinearSVC(X_train, y_train)
     # GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
-    # classifier = CallLogisticRegression(X_train, y_train)
-    # GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
+    classifier = CallLogisticRegression(X_train, y_train)
+    resDict['LogisticRegression'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     max_res = max(resList)
     resDict['Best result'] = max_res
     SaveResultToCSV(resDict)
     PrintAndWriteToLog("The best result for file name: " + file_name + " is: "+ str(max_res))
+    RocAndAuc(X_train, X_test, y_train, y_test)
 
-
-def GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train):
+def GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train, KFoldCrossVal = True):
     #classifier = FeatureSelectionRFE(classifier, 35, X_train, y_train, X_test,y_test)
-    PrintAndWriteToLog("Pred train result")
-    y_pred_train = classifier.predict(X_train)
-    GetAndPrintResult(y_train, y_pred_train)
-    # Predicting the Test set results
+    # if (KFoldCrossVal):
+    #     train_best_accuracy, test_accuracy = GetTheBestScoreUsingKFoldCrossValidation(classifier, X_train, y_train,
+    #                                                                                  X_test, y_test)
+    #   res = test_accuracy
+    #else:
+        # PrintAndWriteToLog("Pred train result")
+        # y_pred_train = classifier.predict(X_train)
+        # GetAndPrintResult(y_train, y_pred_train)
+        # Predicting the Test set results
     PrintAndWriteToLog("Pred test result")
     y_pred = classifier.predict(X_test)
     res = GetAndPrintResult(y_test, y_pred)
     resList.append(res)
     return res
 
+
+def GetTheBestScoreUsingKFoldCrossValidation(classifier, X_train, y_train, X_test, y_test):
+    best_features, train_best_accuracy = feature_selection_with_cross_validation(X_train, y_train, classifier, num_folds=10,
+                                                                           random_state=42)
+    PrintAndWriteToLog("GetTheBestScoreUsingKFoldCrossValidation")
+    # Select the best features on the training data
+    X_train_best = X_train[:, best_features]
+    classifier.fit(X_train_best, y_train)
+    # Evaluate the classifier on the test data
+    X_test_best = X_test[:, best_features]
+    test_accuracy = classifier.score(X_test_best, y_test)
+    print("Best feature subset:", best_features)
+    print("Training accuracy with best features:", train_best_accuracy)
+    print("Test accuracy with best features:", test_accuracy)
+    return train_best_accuracy, test_accuracy
 
 def FeatureSelectionRFE(classifier, k,X_train,y_train, X_test,y_test):
     PrintAndWriteToLog(f"FeatureSelection - RFE, n_features_to_select={k}",True)
@@ -196,21 +223,27 @@ def FeatureSelectionRFE(classifier, k,X_train,y_train, X_test,y_test):
     selector.fit_transform(X_train, y_train)
     selector.transform(X_test)
     return classifier
-def FeatureSelectionKBest(X,y,k):
+def FeatureSelectionKBest(X_train,y_train,X_test, k):
     from sklearn.feature_selection import SelectKBest
     from sklearn.feature_selection import chi2
     PrintAndWriteToLog(f"Feature Selection - SelectKBest(chi2, k={k})",True)
-    X_new = SelectKBest(chi2, k=k).fit_transform(X, y)
-    X_new.shape
-    return X_new
+    kbest = SelectKBest(chi2, k=k)
+    # X_train_new = X_train_new.fit(X_train)
+    X_train_new = kbest.fit_transform(X_train,y_train)
+    X_test_new = kbest.transform(X_test)
+    X_train_new.shape
+    X_test_new.shape
+    return X_train_new, X_test_new
 
-def FeatureSelectionPCA(X,n):
+
+def FeatureSelectionPCA(X_train,X_test,n):
     PrintAndWriteToLog(f"FeatureSelection - PCA, n_components = {n}",True)
     from sklearn.decomposition import PCA
     pca = PCA(n_components=n, svd_solver='full')
     #print(pca.explained_variance_ratio_)
-    X_new = pca.fit_transform(X)
-    return X_new
+    X_train_new = pca.fit_transform(X_train)
+    X_test_new = pca.transform(X_test)
+    return X_train_new, X_test_new
 
 def HandleMissingData(DECIMAL_COLUMNS, X):
        #Hendle missing data
@@ -281,23 +314,27 @@ def RocAndAucTest(dataset, DECIMAL_COLUMNS, file_name):
 
 def RocAndAuc(X_train, X_test, y_train, y_test):
     from sklearn.metrics import roc_curve, roc_auc_score
-    from sklearn.model_selection import train_test_split
     import matplotlib.pyplot as plt
 
-    classLogisticRegression = CallLogisticRegression(X_train, y_train)
+    #classLogisticRegression = CallLogisticRegression(X_train, y_train)
     classKNN = CallKNN(X_train, y_train)
+    classSVM = CallSVM(X_train, y_train)
 
-    y_scoreLogisticRegression = classLogisticRegression.predict_proba(X_test)[:,1]
+    #y_scoreLogisticRegression = classLogisticRegression.predict_proba(X_test)[:,1]
     y_scoreKNN = classKNN.predict_proba(X_test)[:,1]
+    y_scoreSVM = classSVM.predict_proba(X_test)[:, 1]
 
-    false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(y_test, y_scoreLogisticRegression)
-    false_positive_rate2, true_positive_rate2, threshold2 = roc_curve(y_test, y_scoreKNN)
+    #false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(y_test, y_scoreLogisticRegression)
+    false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(y_test, y_scoreKNN)
+    false_positive_rate2, true_positive_rate2, threshold2 = roc_curve(y_test, y_scoreSVM)
 
-    print('roc_auc_score for Logistic Regression: ', roc_auc_score(y_test, y_scoreLogisticRegression))
+    #print('roc_auc_score for Logistic Regression: ', roc_auc_score(y_test, y_scoreLogisticRegression))
     print('roc_auc_score for y_scoreKNN: ', roc_auc_score(y_test, y_scoreKNN))
+    print('roc_auc_score for y_scoreSVM: ', roc_auc_score(y_test, y_scoreSVM))
 
     plt.subplots(1, figsize=(10,10))
-    plt.title('Receiver Operating Characteristic - LogisticRegression')
+    #plt.title('Receiver Operating Characteristic - LogisticRegression')
+    plt.title('Receiver Operating Characteristic - KNN')
     plt.plot(false_positive_rate1, true_positive_rate1)
     plt.plot([0, 1], ls="--")
     plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
@@ -306,7 +343,7 @@ def RocAndAuc(X_train, X_test, y_train, y_test):
     plt.show()
 
     plt.subplots(1, figsize=(10,10))
-    plt.title('Receiver Operating Characteristic - KNN')
+    plt.title('Receiver Operating Characteristic - SVM')
     plt.plot(false_positive_rate2, true_positive_rate2)
     plt.plot([0, 1], ls="--")
     plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
@@ -314,3 +351,122 @@ def RocAndAuc(X_train, X_test, y_train, y_test):
     plt.xlabel('False Positive Rate')
     plt.show()
 
+
+
+import csv
+from typing import Dict, List
+from sklearn.linear_model import LinearRegression
+
+def call_predict_by_feature(dataset,feature_names,output_file):
+    X = dataset.iloc[:, :-1].values
+    y = dataset.iloc[:, -1].values
+
+    results = predict_by_feature(X, y, feature_names)
+
+    # write predicted values to CSV file
+    write_results_to_csv(results, output_file)
+
+def write_results_to_csv(results: Dict[str, List[float]], output_file: str):
+    with open(output_file, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+
+        # write header row
+        writer.writerow(['Feature', 'Predicted Values'])
+
+        # write predicted values for each feature
+        for feature_name, predictions in results.items():
+            writer.writerow([feature_name, predictions])
+
+from typing import Dict, List
+from sklearn.linear_model import LinearRegression
+
+def predict_by_feature(X, y, feature_names: List[str]) -> Dict[str, List[float]]:
+    # assuming X is your feature matrix and y is your target variable
+    n_features = X.shape[1]
+    results = {}
+
+    for i in range(n_features):
+        # select ith feature
+        X_i = X[:, i].reshape(-1, 1)
+
+        # fit a linear regression model
+        model = LinearRegression()
+        model.fit(X_i, y)
+
+        # predict y using the ith feature
+        y_pred = model.predict(X_i)
+
+        # add predicted values to dictionary
+        feature_name = feature_names[i]
+        results[feature_name] = y_pred.tolist()
+
+    return results
+
+def LASSO(X_train, X_test, y_train, y_test):
+    PrintAndWriteToLog("using LASSO")
+    from sklearn.linear_model import LassoCV
+    from sklearn.feature_selection import SelectFromModel
+
+    # Create a Lasso model with cross-validated alpha selection
+    lasso = LassoCV(max_iter=10000, alphas=[0.001, 0.01, 0.1, 1.0, 10.0], cv=5)
+
+    # Fit the Lasso model to your data for feature selection
+    lasso.fit(X_train, y_train)  # X_train is your training data, y_train is the target labels
+
+    # Use SelectFromModel to select features based on Lasso coefficients
+    sfm = SelectFromModel(lasso, prefit=True)
+
+    # Transform your data to keep only the selected features
+    X_train_selected = sfm.transform(X_train)
+    X_test_selected = sfm.transform(X_test)  # If you have a test set
+
+    return X_train_selected,X_test_selected
+
+
+def feature_selection_with_cross_validation(X, y, classifier, num_folds=10, random_state=42):
+    """
+    Perform feature selection using k-fold cross-validation and return the best feature subset and its accuracy.
+
+    Parameters:
+    - X: Features (feature matrix).
+    - y: Target labels.
+    - classifier: The classifier used for evaluation (default: Support Vector Classifier with linear kernel).
+    - num_folds: Number of folds for cross-validation (default: 10).
+    - random_state: Random seed for reproducibility (default: 42).
+
+    Returns:
+    - best_features: The best feature subset.
+    - best_accuracy: The accuracy of the best feature subset.
+    """
+    from sklearn.model_selection import cross_val_score, KFold
+    from itertools import combinations
+
+    k_fold = KFold(n_splits=num_folds, shuffle=True, random_state=random_state)
+
+    feature_accuracies = []
+
+    for num_features in range(1, X.shape[1] + 1):
+        feature_combinations = list(combinations(range(X.shape[1]), num_features))
+
+        subset_accuracies = []
+
+        for features in feature_combinations:
+            X_subset = X[:, features]
+            accuracy_scores = cross_val_score(classifier, X_subset, y, cv=k_fold, scoring='accuracy')
+            mean_accuracy = np.mean(accuracy_scores)
+            subset_accuracies.append((features, mean_accuracy))
+
+        best_subset = max(subset_accuracies, key=lambda x: x[1])
+        feature_accuracies.append(best_subset)
+
+    best_features, best_accuracy = max(feature_accuracies, key=lambda x: x[1])
+    return best_features, best_accuracy
+
+#
+# # Usage example:
+# # Replace X and y with your own data
+# X = ...  # Your feature matrix
+# y = ...  # Your target labels
+# best_features, best_accuracy = feature_selection_with_cross_validation(X, y)
+# print("Best feature subset:", best_features)
+# print("Best accuracy:", best_accuracy)
