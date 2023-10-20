@@ -51,7 +51,7 @@ def GetDataset():
 
     # DECIMAL_COLUMNS = 124
     # file_name = 'FM_dataset - Sum Family and count'
-    #
+
     # DECIMAL_COLUMNS = 124
     # file_name = 'FM_dataset - Sum Family and count - 125 samples'
 
@@ -63,7 +63,7 @@ def GetDataset():
 
     # DECIMAL_COLUMNS = 604
     # file_name = 'FM_dataset - Sum Species and count - 125 samples'
-
+    #
     # DECIMAL_COLUMNS = 288
     # file_name = 'FM_dataset - SumSpecies 125 samples'
 
@@ -88,7 +88,7 @@ def GetDataset():
 
     print("File name is: '"+ file_name+"', Sheet name is: '"+sheet_name+"'")
     dataset = pd.read_excel(path+file_name+'.xlsx',sheet_name=sheet_name, engine='openpyxl')
-    # dataset = pd.read_csv(path+file_name+'.csv')
+    #dataset = pd.read_csv(path+file_name+'.csv')
     list_feature_names = dataset.columns.values 
 
     return DECIMAL_COLUMNS, dataset, file_name, sheet_name, list_feature_names, predict_column, cond_col
@@ -309,3 +309,21 @@ def create_new_dataframe_by_avg_diffrence(df):
 
     # Display the new DataFrame
     print(new_df)
+
+def print_k_best_features(k_best,k,feature_names):
+    # Get the scores of each feature
+    feature_scores = k_best.scores_
+
+    # Sort the feature indices based on their scores in descending order
+    sorted_feature_indices = np.argsort(-feature_scores)
+
+    # Get the indices of the top k features
+    top_k_feature_indices = sorted_feature_indices[:k]
+
+    # Extract the names or descriptions of the top features
+    top_k_feature_names = [feature_names[i] for i in top_k_feature_indices]
+
+    # Print or use the list of top features
+    print("Top {} features:".format(k))
+    for feature_name in top_k_feature_names:
+        print(feature_name)

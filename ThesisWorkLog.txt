@@ -28219,3 +28219,3433 @@
 2023-10-05 21:44:25.930419  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
 2023-10-05 21:44:25.930419  using KNN
 2023-10-05 21:44:25.931522  using SVM
+2023-10-08 14:57:02.400091  File name is: 'FM_dataset - Sum Family and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 14:57:02.796173  HandleMissingData - strategy='mean'
+2023-10-08 14:57:02.852065  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 14:57:02.882608  using XGboost
+2023-10-08 14:57:03.435995  Pred test result
+2023-10-08 14:57:03.490816  [[0 4]
+ [4 5]]
+2023-10-08 14:57:03.490816  Accuracy: 38.46 %
+2023-10-08 14:57:03.491815  using CatBoost
+2023-10-08 14:57:07.242186  Pred test result
+2023-10-08 14:57:07.250873  [[2 2]
+ [3 6]]
+2023-10-08 14:57:07.251871  Accuracy: 61.54 %
+2023-10-08 14:57:07.252867  using KNN
+2023-10-08 14:57:07.253866  Pred test result
+2023-10-08 14:57:07.259573  [[1 3]
+ [3 6]]
+2023-10-08 14:57:07.260569  Accuracy: 53.85 %
+2023-10-08 14:57:07.261841  using sklearn.neural_network MLPClassifier
+2023-10-08 14:57:07.354927  Pred test result
+2023-10-08 14:57:07.360434  [[0 4]
+ [0 9]]
+2023-10-08 14:57:07.362786  Accuracy: 69.23 %
+2023-10-08 14:57:08.300283  using ExtraTreesClassifier
+2023-10-08 14:57:08.566577  Pred test result
+2023-10-08 14:57:08.651097  [[0 4]
+ [2 7]]
+2023-10-08 14:57:08.653573  Accuracy: 53.85 %
+2023-10-08 14:57:08.653573  using Perceptron
+2023-10-08 14:57:08.663967  Pred test result
+2023-10-08 14:57:08.666959  [[4 0]
+ [7 2]]
+2023-10-08 14:57:08.667957  Accuracy: 46.15 %
+2023-10-08 14:57:08.668954  using SVM
+2023-10-08 14:57:08.685346  Pred test result
+2023-10-08 14:57:08.689351  [[1 3]
+ [0 9]]
+2023-10-08 14:57:08.691533  Accuracy: 76.92 %
+2023-10-08 14:57:08.691533  using Logistic Regression
+2023-10-08 14:57:10.767387  Pred test result
+2023-10-08 14:57:10.769550  [[1 3]
+ [3 6]]
+2023-10-08 14:57:10.770668  Accuracy: 53.85 %
+2023-10-08 14:57:10.771715  The best result for file name: FM_dataset - Sum Family and count - 125 samples is: 76.92307692307693
+2023-10-08 14:57:10.772718  using KNN
+2023-10-08 14:57:10.773713  using SVM
+2023-10-08 14:59:27.151168  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 14:59:27.196093  HandleMissingData - strategy='mean'
+2023-10-08 14:59:27.211220  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 14:59:27.214224  using XGboost
+2023-10-08 14:59:27.309863  Pred test result
+2023-10-08 14:59:27.314149  [[3 1]
+ [1 8]]
+2023-10-08 14:59:27.315146  Accuracy: 84.62 %
+2023-10-08 14:59:27.315146  using CatBoost
+2023-10-08 14:59:28.663718  Pred test result
+2023-10-08 14:59:28.669833  [[3 1]
+ [4 5]]
+2023-10-08 14:59:28.672039  Accuracy: 61.54 %
+2023-10-08 14:59:28.672039  using KNN
+2023-10-08 14:59:28.674209  Pred test result
+2023-10-08 14:59:28.679541  [[1 3]
+ [4 5]]
+2023-10-08 14:59:28.681661  Accuracy: 46.15 %
+2023-10-08 14:59:28.681661  using sklearn.neural_network MLPClassifier
+2023-10-08 14:59:28.765187  Pred test result
+2023-10-08 14:59:28.767975  [[0 4]
+ [0 9]]
+2023-10-08 14:59:28.769025  Accuracy: 69.23 %
+2023-10-08 14:59:28.870199  using ExtraTreesClassifier
+2023-10-08 14:59:29.052015  Pred test result
+2023-10-08 14:59:29.072089  [[0 4]
+ [3 6]]
+2023-10-08 14:59:29.073354  Accuracy: 46.15 %
+2023-10-08 14:59:29.073866  using Perceptron
+2023-10-08 14:59:29.075764  Pred test result
+2023-10-08 14:59:29.077799  [[3 1]
+ [3 6]]
+2023-10-08 14:59:29.078310  Accuracy: 69.23 %
+2023-10-08 14:59:29.079409  using SVM
+2023-10-08 14:59:29.088795  Pred test result
+2023-10-08 14:59:29.090371  [[2 2]
+ [1 8]]
+2023-10-08 14:59:29.091418  Accuracy: 76.92 %
+2023-10-08 14:59:29.092498  using Logistic Regression
+2023-10-08 14:59:29.487555  Pred test result
+2023-10-08 14:59:29.488058  [[1 3]
+ [6 3]]
+2023-10-08 14:59:29.489113  Accuracy: 30.77 %
+2023-10-08 14:59:29.489618  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 84.61538461538461
+2023-10-08 14:59:29.489618  using KNN
+2023-10-08 14:59:29.490661  using SVM
+2023-10-08 15:01:27.834902  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:01:27.880610  HandleMissingData - strategy='mean'
+2023-10-08 15:01:27.901554  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 15:01:27.908562  using XGboost
+2023-10-08 15:01:28.078412  Pred test result
+2023-10-08 15:01:28.083786  [[3 1]
+ [1 8]]
+2023-10-08 15:01:28.083786  Accuracy: 84.62 %
+2023-10-08 15:01:28.085215  using CatBoost
+2023-10-08 15:01:29.292186  Pred test result
+2023-10-08 15:01:29.294431  [[3 1]
+ [4 5]]
+2023-10-08 15:01:29.295754  Accuracy: 61.54 %
+2023-10-08 15:01:29.295754  using KNN
+2023-10-08 15:01:29.296800  Pred test result
+2023-10-08 15:01:29.300284  [[1 3]
+ [4 5]]
+2023-10-08 15:01:29.301287  Accuracy: 46.15 %
+2023-10-08 15:01:29.301287  using sklearn.neural_network MLPClassifier
+2023-10-08 15:01:29.339487  Pred test result
+2023-10-08 15:01:29.340773  [[0 4]
+ [0 9]]
+2023-10-08 15:01:29.340773  Accuracy: 69.23 %
+2023-10-08 15:01:29.379650  using ExtraTreesClassifier
+2023-10-08 15:01:29.550936  Pred test result
+2023-10-08 15:01:29.566807  [[0 4]
+ [3 6]]
+2023-10-08 15:01:29.567315  Accuracy: 46.15 %
+2023-10-08 15:01:29.568524  using Perceptron
+2023-10-08 15:01:29.571500  Pred test result
+2023-10-08 15:01:29.573781  [[3 1]
+ [3 6]]
+2023-10-08 15:01:29.575610  Accuracy: 69.23 %
+2023-10-08 15:01:29.575610  using SVM
+2023-10-08 15:01:29.588800  Pred test result
+2023-10-08 15:01:29.591893  [[2 2]
+ [1 8]]
+2023-10-08 15:01:29.592914  Accuracy: 76.92 %
+2023-10-08 15:01:29.594420  using Logistic Regression
+2023-10-08 15:01:30.193736  Pred test result
+2023-10-08 15:01:30.195816  [[1 3]
+ [6 3]]
+2023-10-08 15:01:30.197222  Accuracy: 30.77 %
+2023-10-08 15:01:30.198501  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 84.61538461538461
+2023-10-08 15:01:30.198501  using KNN
+2023-10-08 15:01:30.200675  using SVM
+2023-10-08 15:07:44.561009  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:07:44.654773  HandleMissingData - strategy='mean'
+2023-10-08 15:07:44.689366  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-08 15:07:44.696028  using XGboost
+2023-10-08 15:07:44.893643  Pred test result
+2023-10-08 15:07:44.903626  [[2 2]
+ [2 7]]
+2023-10-08 15:07:44.905618  Accuracy: 69.23 %
+2023-10-08 15:07:44.905618  using CatBoost
+2023-10-08 15:07:46.680435  Pred test result
+2023-10-08 15:07:46.685781  [[2 2]
+ [6 3]]
+2023-10-08 15:07:46.687808  Accuracy: 38.46 %
+2023-10-08 15:07:46.687808  using KNN
+2023-10-08 15:07:46.689832  Pred test result
+2023-10-08 15:07:46.695882  [[1 3]
+ [4 5]]
+2023-10-08 15:07:46.696890  Accuracy: 46.15 %
+2023-10-08 15:07:46.697904  using sklearn.neural_network MLPClassifier
+2023-10-08 15:07:46.779365  Pred test result
+2023-10-08 15:07:46.783577  [[0 4]
+ [0 9]]
+2023-10-08 15:07:46.785612  Accuracy: 69.23 %
+2023-10-08 15:07:46.920300  using ExtraTreesClassifier
+2023-10-08 15:07:47.087325  Pred test result
+2023-10-08 15:07:47.099802  [[2 2]
+ [3 6]]
+2023-10-08 15:07:47.100848  Accuracy: 61.54 %
+2023-10-08 15:07:47.101352  using Perceptron
+2023-10-08 15:07:47.103002  Pred test result
+2023-10-08 15:07:47.103002  [[2 2]
+ [3 6]]
+2023-10-08 15:07:47.104279  Accuracy: 61.54 %
+2023-10-08 15:07:47.104279  using SVM
+2023-10-08 15:07:47.110085  Pred test result
+2023-10-08 15:07:47.111085  [[2 2]
+ [1 8]]
+2023-10-08 15:07:47.111085  Accuracy: 76.92 %
+2023-10-08 15:07:47.112556  using Logistic Regression
+2023-10-08 15:07:48.899302  Pred test result
+2023-10-08 15:07:48.901665  [[2 2]
+ [5 4]]
+2023-10-08 15:07:48.902695  Accuracy: 46.15 %
+2023-10-08 15:07:48.904694  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 76.92307692307693
+2023-10-08 15:07:48.906684  using KNN
+2023-10-08 15:07:48.907688  using SVM
+2023-10-08 15:08:26.122443  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:08:26.174678  HandleMissingData - strategy='mean'
+2023-10-08 15:08:26.196705  Feature Selection - SelectKBest(chi2, k=100)
+2023-10-08 15:08:26.202097  using XGboost
+2023-10-08 15:08:26.323329  Pred test result
+2023-10-08 15:08:26.328316  [[1 3]
+ [3 6]]
+2023-10-08 15:08:26.328316  Accuracy: 53.85 %
+2023-10-08 15:08:26.329313  using CatBoost
+2023-10-08 15:08:27.467116  Pred test result
+2023-10-08 15:08:27.477673  [[1 3]
+ [3 6]]
+2023-10-08 15:08:27.480107  Accuracy: 53.85 %
+2023-10-08 15:08:27.481137  using KNN
+2023-10-08 15:08:27.483561  Pred test result
+2023-10-08 15:08:27.489688  [[1 3]
+ [3 6]]
+2023-10-08 15:08:27.491731  Accuracy: 53.85 %
+2023-10-08 15:08:27.492764  using sklearn.neural_network MLPClassifier
+2023-10-08 15:08:28.151982  Pred test result
+2023-10-08 15:08:28.155753  [[1 3]
+ [2 7]]
+2023-10-08 15:08:28.156718  Accuracy: 61.54 %
+2023-10-08 15:08:28.247055  using ExtraTreesClassifier
+2023-10-08 15:08:28.457451  Pred test result
+2023-10-08 15:08:28.477820  [[2 2]
+ [3 6]]
+2023-10-08 15:08:28.478817  Accuracy: 61.54 %
+2023-10-08 15:08:28.478817  using Perceptron
+2023-10-08 15:08:28.482718  Pred test result
+2023-10-08 15:08:28.484721  [[2 2]
+ [5 4]]
+2023-10-08 15:08:28.485718  Accuracy: 46.15 %
+2023-10-08 15:08:28.486716  using SVM
+2023-10-08 15:08:28.494808  Pred test result
+2023-10-08 15:08:28.496831  [[2 2]
+ [1 8]]
+2023-10-08 15:08:28.496831  Accuracy: 76.92 %
+2023-10-08 15:08:28.497847  using Logistic Regression
+2023-10-08 15:08:28.748139  Pred test result
+2023-10-08 15:08:28.750166  [[0 4]
+ [5 4]]
+2023-10-08 15:08:28.751163  Accuracy: 30.77 %
+2023-10-08 15:08:28.752346  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 76.92307692307693
+2023-10-08 15:08:28.752346  using KNN
+2023-10-08 15:08:28.753344  using SVM
+2023-10-08 15:08:47.775440  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:08:47.832583  HandleMissingData - strategy='mean'
+2023-10-08 15:08:47.856137  Feature Selection - SelectKBest(chi2, k=100)
+2023-10-08 15:08:47.861131  using XGboost
+2023-10-08 15:08:48.036105  Pred test result
+2023-10-08 15:08:48.045656  [[ 3  3]
+ [ 6 13]]
+2023-10-08 15:08:48.046654  Accuracy: 64.00 %
+2023-10-08 15:08:48.047758  using CatBoost
+2023-10-08 15:08:49.469339  Pred test result
+2023-10-08 15:08:49.473560  [[ 5  1]
+ [ 7 12]]
+2023-10-08 15:08:49.474574  Accuracy: 68.00 %
+2023-10-08 15:08:49.475582  using KNN
+2023-10-08 15:08:49.476617  Pred test result
+2023-10-08 15:08:49.481882  [[ 4  2]
+ [ 9 10]]
+2023-10-08 15:08:49.482892  Accuracy: 56.00 %
+2023-10-08 15:08:49.482892  using sklearn.neural_network MLPClassifier
+2023-10-08 15:08:50.410426  Pred test result
+2023-10-08 15:08:50.411424  [[ 0  6]
+ [ 6 13]]
+2023-10-08 15:08:50.412421  Accuracy: 52.00 %
+2023-10-08 15:08:50.451234  using ExtraTreesClassifier
+2023-10-08 15:08:50.572898  Pred test result
+2023-10-08 15:08:50.586861  [[ 2  4]
+ [ 5 14]]
+2023-10-08 15:08:50.586861  Accuracy: 64.00 %
+2023-10-08 15:08:50.587859  using Perceptron
+2023-10-08 15:08:50.588856  Pred test result
+2023-10-08 15:08:50.589853  [[ 5  1]
+ [10  9]]
+2023-10-08 15:08:50.590850  Accuracy: 56.00 %
+2023-10-08 15:08:50.590850  using SVM
+2023-10-08 15:08:50.595836  Pred test result
+2023-10-08 15:08:50.597829  [[ 2  4]
+ [ 1 18]]
+2023-10-08 15:08:50.598829  Accuracy: 80.00 %
+2023-10-08 15:08:50.598829  using Logistic Regression
+2023-10-08 15:08:50.817717  Pred test result
+2023-10-08 15:08:50.818718  [[ 3  3]
+ [ 7 12]]
+2023-10-08 15:08:50.819715  Accuracy: 60.00 %
+2023-10-08 15:08:50.819715  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 80.0
+2023-10-08 15:08:50.820712  using KNN
+2023-10-08 15:08:50.820712  using SVM
+2023-10-08 15:09:12.063391  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:09:12.112585  HandleMissingData - strategy='mean'
+2023-10-08 15:09:12.133220  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 15:09:12.138410  using XGboost
+2023-10-08 15:09:12.252866  Pred test result
+2023-10-08 15:09:12.256855  [[ 3  3]
+ [ 6 13]]
+2023-10-08 15:09:12.257853  Accuracy: 64.00 %
+2023-10-08 15:09:12.258850  using CatBoost
+2023-10-08 15:09:13.304805  Pred test result
+2023-10-08 15:09:13.311221  [[ 3  3]
+ [ 8 11]]
+2023-10-08 15:09:13.313239  Accuracy: 56.00 %
+2023-10-08 15:09:13.314236  using KNN
+2023-10-08 15:09:13.315233  Pred test result
+2023-10-08 15:09:13.323018  [[ 3  3]
+ [ 9 10]]
+2023-10-08 15:09:13.324068  Accuracy: 52.00 %
+2023-10-08 15:09:13.324068  using sklearn.neural_network MLPClassifier
+2023-10-08 15:09:13.618513  Pred test result
+2023-10-08 15:09:13.621506  [[ 0  6]
+ [ 0 19]]
+2023-10-08 15:09:13.622503  Accuracy: 76.00 %
+2023-10-08 15:09:13.695582  using ExtraTreesClassifier
+2023-10-08 15:09:13.888293  Pred test result
+2023-10-08 15:09:13.918347  [[ 3  3]
+ [ 6 13]]
+2023-10-08 15:09:13.920342  Accuracy: 64.00 %
+2023-10-08 15:09:13.920342  using Perceptron
+2023-10-08 15:09:13.924331  Pred test result
+2023-10-08 15:09:13.927394  [[ 3  3]
+ [ 9 10]]
+2023-10-08 15:09:13.928392  Accuracy: 52.00 %
+2023-10-08 15:09:13.928392  using SVM
+2023-10-08 15:09:13.938136  Pred test result
+2023-10-08 15:09:13.940013  [[ 2  4]
+ [ 1 18]]
+2023-10-08 15:09:13.941136  Accuracy: 80.00 %
+2023-10-08 15:09:13.941136  using Logistic Regression
+2023-10-08 15:09:14.102557  Pred test result
+2023-10-08 15:09:14.104687  [[ 1  5]
+ [10  9]]
+2023-10-08 15:09:14.105733  Accuracy: 40.00 %
+2023-10-08 15:09:14.106872  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 80.0
+2023-10-08 15:09:14.106872  using KNN
+2023-10-08 15:09:14.107942  using SVM
+2023-10-08 15:09:52.978384  File name is: 'FM_dataset - SumGenus - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:09:53.038517  HandleMissingData - strategy='mean'
+2023-10-08 15:09:53.061633  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 15:09:53.066395  using XGboost
+2023-10-08 15:09:53.191734  Pred test result
+2023-10-08 15:09:53.196721  [[ 2  4]
+ [ 7 12]]
+2023-10-08 15:09:53.197719  Accuracy: 56.00 %
+2023-10-08 15:09:53.197719  using CatBoost
+2023-10-08 15:09:54.391466  Pred test result
+2023-10-08 15:09:54.396461  [[ 2  4]
+ [11  8]]
+2023-10-08 15:09:54.397484  Accuracy: 40.00 %
+2023-10-08 15:09:54.397484  using KNN
+2023-10-08 15:09:54.399494  Pred test result
+2023-10-08 15:09:54.403924  [[ 4  2]
+ [ 6 13]]
+2023-10-08 15:09:54.404932  Accuracy: 68.00 %
+2023-10-08 15:09:54.404932  using sklearn.neural_network MLPClassifier
+2023-10-08 15:09:54.505823  Pred test result
+2023-10-08 15:09:54.507845  [[ 0  6]
+ [ 0 19]]
+2023-10-08 15:09:54.507845  Accuracy: 76.00 %
+2023-10-08 15:09:54.549705  using ExtraTreesClassifier
+2023-10-08 15:09:54.688693  Pred test result
+2023-10-08 15:09:54.702645  [[ 3  3]
+ [ 6 13]]
+2023-10-08 15:09:54.702645  Accuracy: 64.00 %
+2023-10-08 15:09:54.703640  using Perceptron
+2023-10-08 15:09:54.704638  Pred test result
+2023-10-08 15:09:54.705637  [[ 6  0]
+ [14  5]]
+2023-10-08 15:09:54.706632  Accuracy: 44.00 %
+2023-10-08 15:09:54.706632  using SVM
+2023-10-08 15:09:54.711641  Pred test result
+2023-10-08 15:09:54.712616  [[ 1  5]
+ [ 0 19]]
+2023-10-08 15:09:54.713616  Accuracy: 80.00 %
+2023-10-08 15:09:54.713616  using Logistic Regression
+2023-10-08 15:09:55.161130  Pred test result
+2023-10-08 15:09:55.162141  [[ 2  4]
+ [ 7 12]]
+2023-10-08 15:09:55.163121  Accuracy: 56.00 %
+2023-10-08 15:09:55.164117  The best result for file name: FM_dataset - SumGenus - 125 samples is: 80.0
+2023-10-08 15:09:55.165199  using KNN
+2023-10-08 15:09:55.165199  using SVM
+2023-10-08 15:10:15.130936  File name is: 'FM_dataset - SumGenus - 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:10:15.177535  HandleMissingData - strategy='mean'
+2023-10-08 15:10:15.201470  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 15:10:15.205459  using XGboost
+2023-10-08 15:10:15.393855  Pred test result
+2023-10-08 15:10:15.399837  [[1 3]
+ [4 5]]
+2023-10-08 15:10:15.400874  Accuracy: 46.15 %
+2023-10-08 15:10:15.402102  using CatBoost
+2023-10-08 15:10:16.559717  Pred test result
+2023-10-08 15:10:16.566698  [[1 3]
+ [5 4]]
+2023-10-08 15:10:16.568691  Accuracy: 38.46 %
+2023-10-08 15:10:16.568691  using KNN
+2023-10-08 15:10:16.570686  Pred test result
+2023-10-08 15:10:16.573678  [[2 2]
+ [5 4]]
+2023-10-08 15:10:16.574676  Accuracy: 46.15 %
+2023-10-08 15:10:16.575805  using sklearn.neural_network MLPClassifier
+2023-10-08 15:10:16.623403  Pred test result
+2023-10-08 15:10:16.626518  [[0 4]
+ [0 9]]
+2023-10-08 15:10:16.627514  Accuracy: 69.23 %
+2023-10-08 15:10:16.671359  using ExtraTreesClassifier
+2023-10-08 15:10:16.921035  Pred test result
+2023-10-08 15:10:16.934586  [[0 4]
+ [2 7]]
+2023-10-08 15:10:16.935600  Accuracy: 53.85 %
+2023-10-08 15:10:16.935600  using Perceptron
+2023-10-08 15:10:16.937776  Pred test result
+2023-10-08 15:10:16.938825  [[3 1]
+ [7 2]]
+2023-10-08 15:10:16.938825  Accuracy: 38.46 %
+2023-10-08 15:10:16.938825  using SVM
+2023-10-08 15:10:16.945214  Pred test result
+2023-10-08 15:10:16.946218  [[1 3]
+ [0 9]]
+2023-10-08 15:10:16.946218  Accuracy: 76.92 %
+2023-10-08 15:10:16.947215  using Logistic Regression
+2023-10-08 15:10:17.607791  Pred test result
+2023-10-08 15:10:17.608860  [[1 3]
+ [4 5]]
+2023-10-08 15:10:17.608860  Accuracy: 46.15 %
+2023-10-08 15:10:17.609874  The best result for file name: FM_dataset - SumGenus - 125 samples is: 76.92307692307693
+2023-10-08 15:10:17.610871  using KNN
+2023-10-08 15:10:17.610871  using SVM
+2023-10-08 15:10:36.144278  File name is: 'FM_dataset - SumSpecies 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 15:10:36.205600  HandleMissingData - strategy='mean'
+2023-10-08 15:10:36.229440  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 15:10:36.235056  using XGboost
+2023-10-08 15:10:36.373661  Pred test result
+2023-10-08 15:10:36.377650  [[3 1]
+ [1 8]]
+2023-10-08 15:10:36.378648  Accuracy: 84.62 %
+2023-10-08 15:10:36.378648  using CatBoost
+2023-10-08 15:10:37.577877  Pred test result
+2023-10-08 15:10:37.583821  [[3 1]
+ [2 7]]
+2023-10-08 15:10:37.584912  Accuracy: 76.92 %
+2023-10-08 15:10:37.585911  using KNN
+2023-10-08 15:10:37.588382  Pred test result
+2023-10-08 15:10:37.593413  [[1 3]
+ [4 5]]
+2023-10-08 15:10:37.595552  Accuracy: 46.15 %
+2023-10-08 15:10:37.595552  using sklearn.neural_network MLPClassifier
+2023-10-08 15:10:37.677221  Pred test result
+2023-10-08 15:10:37.680591  [[0 4]
+ [0 9]]
+2023-10-08 15:10:37.682835  Accuracy: 69.23 %
+2023-10-08 15:10:37.785808  using ExtraTreesClassifier
+2023-10-08 15:10:38.082381  Pred test result
+2023-10-08 15:10:38.104005  [[2 2]
+ [3 6]]
+2023-10-08 15:10:38.104990  Accuracy: 61.54 %
+2023-10-08 15:10:38.104990  using Perceptron
+2023-10-08 15:10:38.107985  Pred test result
+2023-10-08 15:10:38.109847  [[3 1]
+ [3 6]]
+2023-10-08 15:10:38.110359  Accuracy: 69.23 %
+2023-10-08 15:10:38.111449  using SVM
+2023-10-08 15:10:38.121105  Pred test result
+2023-10-08 15:10:38.123131  [[2 2]
+ [1 8]]
+2023-10-08 15:10:38.123338  Accuracy: 76.92 %
+2023-10-08 15:10:38.124360  using Logistic Regression
+2023-10-08 15:10:38.541650  Pred test result
+2023-10-08 15:10:38.542161  [[1 3]
+ [6 3]]
+2023-10-08 15:10:38.543334  Accuracy: 30.77 %
+2023-10-08 15:10:38.544453  The best result for file name: FM_dataset - SumSpecies 125 samples is: 84.61538461538461
+2023-10-08 15:10:38.544453  using KNN
+2023-10-08 15:10:38.544960  using SVM
+2023-10-08 21:35:58.750309  File name is: 'FM_dataset - SumSpecies 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 21:35:58.881555  HandleMissingData - strategy='mean'
+2023-10-08 21:35:58.897510  FeatureSelection - PCA, n_components = 60
+2023-10-08 21:35:58.971509  using XGboost
+2023-10-08 21:35:59.147997  Pred test result
+2023-10-08 21:35:59.156619  [[1 3]
+ [3 6]]
+2023-10-08 21:35:59.157620  Accuracy: 53.85 %
+2023-10-08 21:35:59.158617  using CatBoost
+2023-10-08 21:36:00.943286  Pred test result
+2023-10-08 21:36:00.949494  [[2 2]
+ [7 2]]
+2023-10-08 21:36:00.949494  Accuracy: 30.77 %
+2023-10-08 21:36:00.950497  using KNN
+2023-10-08 21:36:00.950497  Pred test result
+2023-10-08 21:36:01.066000  [[1 3]
+ [3 6]]
+2023-10-08 21:36:01.066000  Accuracy: 53.85 %
+2023-10-08 21:36:01.067005  using sklearn.neural_network MLPClassifier
+2023-10-08 21:36:01.124347  Pred test result
+2023-10-08 21:36:01.126032  [[0 4]
+ [1 8]]
+2023-10-08 21:36:01.127038  Accuracy: 61.54 %
+2023-10-08 21:36:01.225778  using ExtraTreesClassifier
+2023-10-08 21:36:01.393313  Pred test result
+2023-10-08 21:36:01.410886  [[1 3]
+ [3 6]]
+2023-10-08 21:36:01.412086  Accuracy: 53.85 %
+2023-10-08 21:36:01.412086  using Perceptron
+2023-10-08 21:36:01.417589  Pred test result
+2023-10-08 21:36:01.419759  [[2 2]
+ [4 5]]
+2023-10-08 21:36:01.420819  Accuracy: 53.85 %
+2023-10-08 21:36:01.421847  using SVM
+2023-10-08 21:36:01.431316  Pred test result
+2023-10-08 21:36:01.432859  [[1 3]
+ [1 8]]
+2023-10-08 21:36:01.432859  Accuracy: 69.23 %
+2023-10-08 21:36:01.433863  using Logistic Regression
+2023-10-08 21:36:01.629799  Pred test result
+2023-10-08 21:36:01.631799  [[2 2]
+ [6 3]]
+2023-10-08 21:36:01.632796  Accuracy: 38.46 %
+2023-10-08 21:36:01.634625  The best result for file name: FM_dataset - SumSpecies 125 samples is: 69.23076923076923
+2023-10-08 21:36:01.635628  using KNN
+2023-10-08 21:36:01.637624  using SVM
+2023-10-08 21:36:31.309612  File name is: 'FM_dataset - SumSpecies 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 21:36:31.396543  HandleMissingData - strategy='mean'
+2023-10-08 21:36:31.403523  FeatureSelection - PCA, n_components = 100
+2023-10-08 21:36:31.448575  using XGboost
+2023-10-08 21:36:31.604970  Pred test result
+2023-10-08 21:36:31.612007  [[1 3]
+ [3 6]]
+2023-10-08 21:36:31.613617  Accuracy: 53.85 %
+2023-10-08 21:36:31.614659  using CatBoost
+2023-10-08 21:36:33.609992  Pred test result
+2023-10-08 21:36:33.617109  [[2 2]
+ [8 1]]
+2023-10-08 21:36:33.619104  Accuracy: 23.08 %
+2023-10-08 21:36:33.619104  using KNN
+2023-10-08 21:36:33.621097  Pred test result
+2023-10-08 21:36:33.735848  [[1 3]
+ [3 6]]
+2023-10-08 21:36:33.735848  Accuracy: 53.85 %
+2023-10-08 21:36:33.736851  using sklearn.neural_network MLPClassifier
+2023-10-08 21:36:33.980623  Pred test result
+2023-10-08 21:36:33.982277  [[3 1]
+ [7 2]]
+2023-10-08 21:36:33.983310  Accuracy: 38.46 %
+2023-10-08 21:36:34.145335  using ExtraTreesClassifier
+2023-10-08 21:36:34.323198  Pred test result
+2023-10-08 21:36:34.346186  [[1 3]
+ [3 6]]
+2023-10-08 21:36:34.347183  Accuracy: 53.85 %
+2023-10-08 21:36:34.347183  using Perceptron
+2023-10-08 21:36:34.349800  Pred test result
+2023-10-08 21:36:34.351800  [[2 2]
+ [4 5]]
+2023-10-08 21:36:34.353151  Accuracy: 53.85 %
+2023-10-08 21:36:34.353230  using SVM
+2023-10-08 21:36:34.362290  Pred test result
+2023-10-08 21:36:34.364311  [[1 3]
+ [1 8]]
+2023-10-08 21:36:34.365370  Accuracy: 69.23 %
+2023-10-08 21:36:34.365892  using Logistic Regression
+2023-10-08 21:36:34.599088  Pred test result
+2023-10-08 21:36:34.600089  [[1 3]
+ [5 4]]
+2023-10-08 21:36:34.601086  Accuracy: 38.46 %
+2023-10-08 21:36:34.601086  The best result for file name: FM_dataset - SumSpecies 125 samples is: 69.23076923076923
+2023-10-08 21:36:34.602147  using KNN
+2023-10-08 21:36:34.602147  using SVM
+2023-10-08 21:39:00.681099  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 21:39:00.734528  HandleMissingData - strategy='mean'
+2023-10-08 21:39:00.746281  FeatureSelection - PCA, n_components = 100
+2023-10-08 21:39:00.813145  using XGboost
+2023-10-08 21:39:00.963399  Pred test result
+2023-10-08 21:39:00.971438  [[1 3]
+ [3 6]]
+2023-10-08 21:39:00.971438  Accuracy: 53.85 %
+2023-10-08 21:39:00.972933  using CatBoost
+2023-10-08 21:39:02.244928  Pred test result
+2023-10-08 21:39:02.252233  [[2 2]
+ [8 1]]
+2023-10-08 21:39:02.253283  Accuracy: 23.08 %
+2023-10-08 21:39:02.254300  using KNN
+2023-10-08 21:39:02.256487  Pred test result
+2023-10-08 21:39:02.443159  [[1 3]
+ [1 8]]
+2023-10-08 21:39:02.444196  Accuracy: 69.23 %
+2023-10-08 21:39:02.445197  using sklearn.neural_network MLPClassifier
+2023-10-08 21:39:03.384821  Pred test result
+2023-10-08 21:39:03.386376  [[2 2]
+ [4 5]]
+2023-10-08 21:39:03.386376  Accuracy: 53.85 %
+2023-10-08 21:39:03.437206  using ExtraTreesClassifier
+2023-10-08 21:39:03.595092  Pred test result
+2023-10-08 21:39:03.608544  [[1 3]
+ [0 9]]
+2023-10-08 21:39:03.609545  Accuracy: 76.92 %
+2023-10-08 21:39:03.610540  using Perceptron
+2023-10-08 21:39:03.611946  Pred test result
+2023-10-08 21:39:03.613280  [[2 2]
+ [4 5]]
+2023-10-08 21:39:03.613818  Accuracy: 53.85 %
+2023-10-08 21:39:03.613818  using SVM
+2023-10-08 21:39:03.620807  Pred test result
+2023-10-08 21:39:03.621831  [[2 2]
+ [0 9]]
+2023-10-08 21:39:03.622802  Accuracy: 84.62 %
+2023-10-08 21:39:03.622802  using Logistic Regression
+2023-10-08 21:39:03.727169  Pred test result
+2023-10-08 21:39:03.728174  [[2 2]
+ [6 3]]
+2023-10-08 21:39:03.729164  Accuracy: 38.46 %
+2023-10-08 21:39:03.729164  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-08 21:39:03.730163  using KNN
+2023-10-08 21:39:03.731168  using SVM
+2023-10-08 21:41:41.867425  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 21:41:41.902092  HandleMissingData - strategy='mean'
+2023-10-08 21:41:41.995259  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 21:41:42.017215  using XGboost
+2023-10-08 21:41:42.175290  Pred test result
+2023-10-08 21:41:42.179280  [[2 2]
+ [4 5]]
+2023-10-08 21:41:42.180277  Accuracy: 53.85 %
+2023-10-08 21:41:42.180277  using CatBoost
+2023-10-08 21:41:43.186701  Pred test result
+2023-10-08 21:41:43.192132  [[1 3]
+ [2 7]]
+2023-10-08 21:41:43.194185  Accuracy: 61.54 %
+2023-10-08 21:41:43.194185  using KNN
+2023-10-08 21:41:43.196384  Pred test result
+2023-10-08 21:41:43.202789  [[2 2]
+ [1 8]]
+2023-10-08 21:41:43.204783  Accuracy: 76.92 %
+2023-10-08 21:41:43.204783  using sklearn.neural_network MLPClassifier
+2023-10-08 21:41:44.187393  Pred test result
+2023-10-08 21:41:44.189982  [[2 2]
+ [2 7]]
+2023-10-08 21:41:44.191995  Accuracy: 69.23 %
+2023-10-08 21:41:44.264180  using ExtraTreesClassifier
+2023-10-08 21:41:44.500964  Pred test result
+2023-10-08 21:41:44.525649  [[1 3]
+ [3 6]]
+2023-10-08 21:41:44.526646  Accuracy: 53.85 %
+2023-10-08 21:41:44.526646  using Perceptron
+2023-10-08 21:41:44.529331  Pred test result
+2023-10-08 21:41:44.531326  [[3 1]
+ [7 2]]
+2023-10-08 21:41:44.532787  Accuracy: 38.46 %
+2023-10-08 21:41:44.533292  using SVM
+2023-10-08 21:41:44.541032  Pred test result
+2023-10-08 21:41:44.542033  [[2 2]
+ [0 9]]
+2023-10-08 21:41:44.543029  Accuracy: 84.62 %
+2023-10-08 21:41:44.543029  using Logistic Regression
+2023-10-08 21:41:44.983461  Pred test result
+2023-10-08 21:41:44.985467  [[1 3]
+ [2 7]]
+2023-10-08 21:41:44.986529  Accuracy: 61.54 %
+2023-10-08 21:41:44.987043  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-08 21:41:44.988080  using KNN
+2023-10-08 21:41:44.989285  using SVM
+2023-10-08 21:42:46.340616  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 21:42:46.375822  HandleMissingData - strategy='mean'
+2023-10-08 21:42:46.397034  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 21:42:46.403999  FeatureScaling - StandardScaler
+2023-10-08 21:42:46.453060  using XGboost
+2023-10-08 21:42:46.609204  Pred test result
+2023-10-08 21:42:46.613414  [[1 3]
+ [3 6]]
+2023-10-08 21:42:46.614415  Accuracy: 53.85 %
+2023-10-08 21:42:46.614415  using CatBoost
+2023-10-08 21:42:47.556145  Pred test result
+2023-10-08 21:42:47.563447  [[0 4]
+ [1 8]]
+2023-10-08 21:42:47.564435  Accuracy: 61.54 %
+2023-10-08 21:42:47.565613  using KNN
+2023-10-08 21:42:47.567641  Pred test result
+2023-10-08 21:42:47.573605  [[1 3]
+ [3 6]]
+2023-10-08 21:42:47.575587  Accuracy: 53.85 %
+2023-10-08 21:42:47.576583  using sklearn.neural_network MLPClassifier
+2023-10-08 21:42:48.567402  Pred test result
+2023-10-08 21:42:48.572682  [[1 3]
+ [1 8]]
+2023-10-08 21:42:48.574692  Accuracy: 69.23 %
+2023-10-08 21:42:48.670727  using ExtraTreesClassifier
+2023-10-08 21:42:48.966295  Pred test result
+2023-10-08 21:42:48.989234  [[2 2]
+ [2 7]]
+2023-10-08 21:42:48.990231  Accuracy: 69.23 %
+2023-10-08 21:42:48.991228  using Perceptron
+2023-10-08 21:42:48.994220  Pred test result
+2023-10-08 21:42:48.995218  [[2 2]
+ [4 5]]
+2023-10-08 21:42:48.996215  Accuracy: 53.85 %
+2023-10-08 21:42:48.997212  using SVM
+2023-10-08 21:42:49.026140  Pred test result
+2023-10-08 21:42:49.028135  [[0 4]
+ [1 8]]
+2023-10-08 21:42:49.029133  Accuracy: 61.54 %
+2023-10-08 21:42:49.030130  using Logistic Regression
+2023-10-08 21:42:49.092381  Pred test result
+2023-10-08 21:42:49.094351  [[1 3]
+ [1 8]]
+2023-10-08 21:42:49.095346  Accuracy: 69.23 %
+2023-10-08 21:42:49.096362  The best result for file name: FM_dataset - Processed 125 samples is: 69.23076923076923
+2023-10-08 21:42:49.097331  using KNN
+2023-10-08 21:42:49.098328  using SVM
+2023-10-08 21:49:50.435914  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 21:49:50.508487  HandleMissingData - strategy='mean'
+2023-10-08 21:49:50.552623  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 21:49:50.565733  using KNN
+2023-10-08 21:49:50.568124  Pred train result
+2023-10-08 21:49:50.584717  [[21 23]
+ [11 57]]
+2023-10-08 21:49:50.585714  Accuracy: 69.64 %
+2023-10-08 21:49:50.586710  Pred test result
+2023-10-08 21:49:50.591697  [[2 2]
+ [1 8]]
+2023-10-08 21:49:50.593685  Accuracy: 76.92 %
+2023-10-08 21:49:50.594683  using KNN
+2023-10-08 21:49:50.595682  using SVM
+2023-10-08 22:07:47.353641  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 22:07:47.415104  HandleMissingData - strategy='mean'
+2023-10-08 22:07:47.451476  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 22:07:47.475719  using KNN
+2023-10-08 22:07:47.477713  Pred train result
+2023-10-08 22:07:47.493543  [[21 23]
+ [11 57]]
+2023-10-08 22:07:47.494533  Accuracy: 69.64 %
+2023-10-08 22:07:47.495539  Pred test result
+2023-10-08 22:36:21.176146  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-08 22:37:08.170301  HandleMissingData - strategy='mean'
+2023-10-08 22:37:18.025891  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-08 22:37:29.276818  using KNN
+2023-10-17 21:13:35.686141  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-17 21:13:35.982257  HandleMissingData - strategy='mean'
+2023-10-17 21:13:36.030819  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:13:36.056330  using XGboost
+2023-10-17 21:13:36.491828  Pred test result
+2023-10-17 21:13:36.499126  [[2 2]
+ [4 5]]
+2023-10-17 21:13:36.501212  Accuracy: 53.85 %
+2023-10-17 21:13:36.501212  using CatBoost
+2023-10-17 21:13:39.808695  Pred test result
+2023-10-17 21:13:39.816683  [[1 3]
+ [2 7]]
+2023-10-17 21:13:39.818192  Accuracy: 61.54 %
+2023-10-17 21:13:39.818192  using KNN
+2023-10-17 21:13:39.820273  Pred test result
+2023-10-17 21:13:39.830258  [[2 2]
+ [1 8]]
+2023-10-17 21:13:39.832253  Accuracy: 76.92 %
+2023-10-17 21:13:39.832253  using sklearn.neural_network MLPClassifier
+2023-10-17 21:13:41.121650  Pred test result
+2023-10-17 21:13:41.125639  [[2 2]
+ [2 7]]
+2023-10-17 21:13:41.129199  Accuracy: 69.23 %
+2023-10-17 21:13:41.922788  using ExtraTreesClassifier
+2023-10-17 21:13:42.176316  Pred test result
+2023-10-17 21:13:42.198285  [[1 3]
+ [3 6]]
+2023-10-17 21:13:42.199291  Accuracy: 53.85 %
+2023-10-17 21:13:42.200460  using Perceptron
+2023-10-17 21:13:42.208012  Pred test result
+2023-10-17 21:13:42.211073  [[3 1]
+ [7 2]]
+2023-10-17 21:13:42.213056  Accuracy: 38.46 %
+2023-10-17 21:13:42.213056  using SVM
+2023-10-17 21:13:42.226877  Pred test result
+2023-10-17 21:13:42.229381  [[2 2]
+ [0 9]]
+2023-10-17 21:13:42.230378  Accuracy: 84.62 %
+2023-10-17 21:13:42.230378  using Logistic Regression
+2023-10-17 21:13:43.275082  Pred test result
+2023-10-17 21:13:43.278581  [[1 3]
+ [2 7]]
+2023-10-17 21:13:43.280597  Accuracy: 61.54 %
+2023-10-17 21:13:43.282852  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-17 21:13:43.283866  using KNN
+2023-10-17 21:13:43.286903  using SVM
+2023-10-17 21:14:27.596071  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-17 21:14:27.730135  HandleMissingData - strategy='mean'
+2023-10-17 21:14:27.774351  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:14:27.784982  using XGboost
+2023-10-17 21:14:27.984009  Pred test result
+2023-10-17 21:14:27.990345  [[2 2]
+ [4 5]]
+2023-10-17 21:14:27.990345  Accuracy: 53.85 %
+2023-10-17 21:14:27.991346  using CatBoost
+2023-10-17 21:14:29.693598  Pred test result
+2023-10-17 21:14:29.701132  [[1 3]
+ [2 7]]
+2023-10-17 21:14:29.702130  Accuracy: 61.54 %
+2023-10-17 21:14:29.703530  using KNN
+2023-10-17 21:14:29.705789  Pred test result
+2023-10-17 21:14:29.710448  [[2 2]
+ [1 8]]
+2023-10-17 21:14:29.711483  Accuracy: 76.92 %
+2023-10-17 21:14:29.711483  using sklearn.neural_network MLPClassifier
+2023-10-17 21:14:30.634737  Pred test result
+2023-10-17 21:14:30.637935  [[2 2]
+ [2 7]]
+2023-10-17 21:14:30.638984  Accuracy: 69.23 %
+2023-10-17 21:14:30.796158  using ExtraTreesClassifier
+2023-10-17 21:14:31.100945  Pred test result
+2023-10-17 21:14:31.121166  [[1 3]
+ [2 7]]
+2023-10-17 21:14:31.122198  Accuracy: 61.54 %
+2023-10-17 21:14:31.122198  using Perceptron
+2023-10-17 21:14:31.124281  Pred test result
+2023-10-17 21:14:31.126358  [[3 1]
+ [7 2]]
+2023-10-17 21:14:31.126358  Accuracy: 38.46 %
+2023-10-17 21:14:31.126358  using SVM
+2023-10-17 21:14:31.141250  Pred test result
+2023-10-17 21:14:31.144340  [[1 3]
+ [1 8]]
+2023-10-17 21:14:31.144340  Accuracy: 69.23 %
+2023-10-17 21:14:31.145618  using Logistic Regression
+2023-10-17 21:14:31.984184  Pred test result
+2023-10-17 21:14:31.986179  [[1 3]
+ [2 7]]
+2023-10-17 21:14:31.987205  Accuracy: 61.54 %
+2023-10-17 21:14:31.988714  The best result for file name: FM_dataset - Processed 125 samples is: 76.92307692307693
+2023-10-17 21:14:31.989826  using KNN
+2023-10-17 21:14:31.990845  using SVM
+2023-10-17 21:16:56.678691  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-17 21:16:56.741609  HandleMissingData - strategy='mean'
+2023-10-17 21:16:56.779804  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:16:56.790117  using XGboost
+2023-10-17 21:16:56.983759  Pred test result
+2023-10-17 21:16:56.989286  [[2 2]
+ [4 5]]
+2023-10-17 21:16:56.990286  Accuracy: 53.85 %
+2023-10-17 21:16:56.990286  using CatBoost
+2023-10-17 21:16:58.225638  Pred test result
+2023-10-17 21:16:58.230588  [[1 3]
+ [2 7]]
+2023-10-17 21:16:58.231660  Accuracy: 61.54 %
+2023-10-17 21:16:58.232750  using KNN
+2023-10-17 21:16:58.234269  Pred test result
+2023-10-17 21:16:58.239349  [[2 2]
+ [1 8]]
+2023-10-17 21:16:58.240345  Accuracy: 76.92 %
+2023-10-17 21:16:58.241349  using sklearn.neural_network MLPClassifier
+2023-10-17 21:16:59.046642  Pred test result
+2023-10-17 21:16:59.048414  [[2 2]
+ [2 7]]
+2023-10-17 21:16:59.050414  Accuracy: 69.23 %
+2023-10-17 21:16:59.113447  using ExtraTreesClassifier
+2023-10-17 21:16:59.378350  Pred test result
+2023-10-17 21:16:59.398240  [[1 3]
+ [1 8]]
+2023-10-17 21:16:59.399170  Accuracy: 69.23 %
+2023-10-17 21:16:59.399170  using Perceptron
+2023-10-17 21:16:59.401461  Pred test result
+2023-10-17 21:16:59.403818  [[3 1]
+ [7 2]]
+2023-10-17 21:16:59.404826  Accuracy: 38.46 %
+2023-10-17 21:16:59.404826  using SVM
+2023-10-17 21:16:59.416751  Pred test result
+2023-10-17 21:16:59.420772  [[0 4]
+ [0 9]]
+2023-10-17 21:16:59.421799  Accuracy: 69.23 %
+2023-10-17 21:16:59.421799  using Logistic Regression
+2023-10-17 21:17:00.329939  Pred test result
+2023-10-17 21:17:00.331341  [[1 3]
+ [2 7]]
+2023-10-17 21:17:00.332373  Accuracy: 61.54 %
+2023-10-17 21:17:00.333373  The best result for file name: FM_dataset - Processed 125 samples is: 76.92307692307693
+2023-10-17 21:17:00.334515  using KNN
+2023-10-17 21:17:00.335604  using SVM
+2023-10-17 21:17:28.285508  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-17 21:17:28.345118  HandleMissingData - strategy='mean'
+2023-10-17 21:17:28.372923  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:17:28.384413  using XGboost
+2023-10-17 21:17:28.545547  Pred test result
+2023-10-17 21:17:28.550726  [[2 2]
+ [4 5]]
+2023-10-17 21:17:28.551726  Accuracy: 53.85 %
+2023-10-17 21:17:28.551726  using CatBoost
+2023-10-17 21:17:29.806472  Pred test result
+2023-10-17 21:17:29.811003  [[1 3]
+ [2 7]]
+2023-10-17 21:17:29.811003  Accuracy: 61.54 %
+2023-10-17 21:17:29.812000  using KNN
+2023-10-17 21:17:29.812998  Pred test result
+2023-10-17 21:17:29.816956  [[2 2]
+ [1 8]]
+2023-10-17 21:17:29.817462  Accuracy: 76.92 %
+2023-10-17 21:17:29.817968  using sklearn.neural_network MLPClassifier
+2023-10-17 21:17:30.628943  Pred test result
+2023-10-17 21:17:30.631925  [[2 2]
+ [2 7]]
+2023-10-17 21:17:30.631925  Accuracy: 69.23 %
+2023-10-17 21:17:30.694666  using ExtraTreesClassifier
+2023-10-17 21:17:30.955441  Pred test result
+2023-10-17 21:17:30.980145  [[1 3]
+ [2 7]]
+2023-10-17 21:17:30.982150  Accuracy: 61.54 %
+2023-10-17 21:17:30.982150  using Perceptron
+2023-10-17 21:17:30.985771  Pred test result
+2023-10-17 21:17:30.986773  [[3 1]
+ [7 2]]
+2023-10-17 21:17:30.988285  Accuracy: 38.46 %
+2023-10-17 21:17:30.989318  using SVM
+2023-10-17 21:17:31.000918  Pred test result
+2023-10-17 21:17:31.003976  [[3 1]
+ [1 8]]
+2023-10-17 21:17:31.004978  Accuracy: 84.62 %
+2023-10-17 21:17:31.005976  using Logistic Regression
+2023-10-17 21:17:31.861357  Pred test result
+2023-10-17 21:17:31.864445  [[1 3]
+ [2 7]]
+2023-10-17 21:17:31.866440  Accuracy: 61.54 %
+2023-10-17 21:17:31.867951  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-17 21:17:31.868014  using KNN
+2023-10-17 21:17:31.870059  using SVM
+2023-10-17 21:18:06.854509  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-17 21:18:06.916614  HandleMissingData - strategy='mean'
+2023-10-17 21:18:06.955600  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:18:06.968145  using XGboost
+2023-10-17 21:18:07.160811  Pred test result
+2023-10-17 21:18:07.171745  [[2 2]
+ [4 5]]
+2023-10-17 21:18:07.172743  Accuracy: 53.85 %
+2023-10-17 21:18:07.172743  using CatBoost
+2023-10-17 21:18:08.535280  Pred test result
+2023-10-17 21:18:08.541837  [[1 3]
+ [2 7]]
+2023-10-17 21:18:08.544047  Accuracy: 61.54 %
+2023-10-17 21:18:08.544047  using KNN
+2023-10-17 21:18:08.546548  Pred test result
+2023-10-17 21:18:08.554274  [[2 2]
+ [1 8]]
+2023-10-17 21:18:08.556734  Accuracy: 76.92 %
+2023-10-17 21:18:08.558245  using sklearn.neural_network MLPClassifier
+2023-10-17 21:18:09.398954  Pred test result
+2023-10-17 21:18:09.400875  [[2 2]
+ [2 7]]
+2023-10-17 21:18:09.400875  Accuracy: 69.23 %
+2023-10-17 21:18:09.462304  using ExtraTreesClassifier
+2023-10-17 21:18:09.848012  Pred test result
+2023-10-17 21:18:09.906753  [[1 3]
+ [2 7]]
+2023-10-17 21:18:09.909314  Accuracy: 61.54 %
+2023-10-17 21:18:09.910312  using Perceptron
+2023-10-17 21:18:09.915648  Pred test result
+2023-10-17 21:18:09.919769  [[3 1]
+ [7 2]]
+2023-10-17 21:18:09.924553  Accuracy: 38.46 %
+2023-10-17 21:18:09.926160  using SVM
+2023-10-17 21:18:09.944450  Pred test result
+2023-10-17 21:18:09.945974  [[3 1]
+ [3 6]]
+2023-10-17 21:18:09.947962  Accuracy: 69.23 %
+2023-10-17 21:18:09.947962  using Logistic Regression
+2023-10-17 21:18:10.720442  Pred test result
+2023-10-17 21:18:10.722025  [[1 3]
+ [2 7]]
+2023-10-17 21:18:10.723462  Accuracy: 61.54 %
+2023-10-17 21:18:10.725510  The best result for file name: FM_dataset - Processed 125 samples is: 76.92307692307693
+2023-10-17 21:18:10.726508  using KNN
+2023-10-17 21:18:10.728021  using SVM
+2023-10-17 21:19:49.259093  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-17 21:19:49.328381  HandleMissingData - strategy='mean'
+2023-10-17 21:19:49.360278  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:19:49.373381  using XGboost
+2023-10-17 21:19:49.538047  Pred test result
+2023-10-17 21:19:49.543065  [[2 2]
+ [4 5]]
+2023-10-17 21:19:49.544055  Accuracy: 53.85 %
+2023-10-17 21:19:49.545053  using CatBoost
+2023-10-17 21:19:51.566754  Pred test result
+2023-10-17 21:19:51.572751  [[1 3]
+ [2 7]]
+2023-10-17 21:19:51.574831  Accuracy: 61.54 %
+2023-10-17 21:19:51.576089  using KNN
+2023-10-17 21:19:51.577901  Pred test result
+2023-10-17 21:19:51.583607  [[2 2]
+ [1 8]]
+2023-10-17 21:19:51.584604  Accuracy: 76.92 %
+2023-10-17 21:19:51.585601  using sklearn.neural_network MLPClassifier
+2023-10-17 21:19:52.391133  Pred test result
+2023-10-17 21:19:52.392131  [[2 2]
+ [2 7]]
+2023-10-17 21:19:52.393128  Accuracy: 69.23 %
+2023-10-17 21:19:52.460966  using ExtraTreesClassifier
+2023-10-17 21:19:52.816611  Pred test result
+2023-10-17 21:19:52.852774  [[1 3]
+ [1 8]]
+2023-10-17 21:19:52.855236  Accuracy: 69.23 %
+2023-10-17 21:19:52.855236  using Perceptron
+2023-10-17 21:19:52.858371  Pred test result
+2023-10-17 21:19:52.860558  [[3 1]
+ [7 2]]
+2023-10-17 21:19:52.861556  Accuracy: 38.46 %
+2023-10-17 21:19:52.862555  using SVM
+2023-10-17 21:19:52.879354  Pred test result
+2023-10-17 21:19:52.882010  [[3 1]
+ [3 6]]
+2023-10-17 21:19:52.883036  Accuracy: 69.23 %
+2023-10-17 21:19:52.883545  using Logistic Regression
+2023-10-17 21:19:53.734332  Pred test result
+2023-10-17 21:19:53.736796  [[1 3]
+ [2 7]]
+2023-10-17 21:19:53.738306  Accuracy: 61.54 %
+2023-10-17 21:19:53.739612  The best result for file name: FM_dataset - Processed 125 samples is: 76.92307692307693
+2023-10-17 21:19:53.739612  using KNN
+2023-10-17 21:19:53.740619  using SVM
+2023-10-17 21:48:03.331723  File name is: 'only pain', Sheet name is: 'Sheet1'
+2023-10-17 21:48:03.419200  HandleMissingData - strategy='mean'
+2023-10-17 21:48:54.145118  File name is: 'only pain', Sheet name is: 'Sheet1'
+2023-10-17 21:48:54.235447  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:49:52.013142  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-17 21:49:52.076023  HandleMissingData - strategy='mean'
+2023-10-17 21:49:52.160948  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-17 21:49:52.189212  using XGboost
+2023-10-17 21:49:52.485002  Pred test result
+2023-10-17 21:49:52.541880  [[2 2]
+ [4 5]]
+2023-10-17 21:49:52.543060  Accuracy: 53.85 %
+2023-10-17 21:49:52.543060  using CatBoost
+2023-10-17 21:49:54.666046  Pred test result
+2023-10-17 21:49:54.673346  [[1 3]
+ [2 7]]
+2023-10-17 21:49:54.674348  Accuracy: 61.54 %
+2023-10-17 21:49:54.675345  using KNN
+2023-10-17 21:49:54.676367  Pred test result
+2023-10-17 21:49:54.683613  [[2 2]
+ [1 8]]
+2023-10-17 21:49:54.684766  Accuracy: 76.92 %
+2023-10-17 21:49:54.684766  using sklearn.neural_network MLPClassifier
+2023-10-17 21:49:55.599850  Pred test result
+2023-10-17 21:49:55.602134  [[2 2]
+ [2 7]]
+2023-10-17 21:49:55.603219  Accuracy: 69.23 %
+2023-10-17 21:49:55.748806  using ExtraTreesClassifier
+2023-10-17 21:49:55.999777  Pred test result
+2023-10-17 21:49:56.026567  [[1 3]
+ [2 7]]
+2023-10-17 21:49:56.028579  Accuracy: 61.54 %
+2023-10-17 21:49:56.029094  using Perceptron
+2023-10-17 21:49:56.036083  Pred test result
+2023-10-17 21:49:56.038599  [[3 1]
+ [7 2]]
+2023-10-17 21:49:56.040681  Accuracy: 38.46 %
+2023-10-17 21:49:56.041691  using SVM
+2023-10-17 21:49:56.058571  Pred test result
+2023-10-17 21:49:56.061676  [[3 1]
+ [3 6]]
+2023-10-17 21:49:56.063313  Accuracy: 69.23 %
+2023-10-17 21:49:56.063313  using Logistic Regression
+2023-10-17 21:49:57.015532  Pred test result
+2023-10-17 21:49:57.017527  [[1 3]
+ [2 7]]
+2023-10-17 21:49:57.018524  Accuracy: 61.54 %
+2023-10-17 21:49:57.020509  The best result for file name: FM_dataset - Processed 125 samples is: 76.92307692307693
+2023-10-17 21:49:57.021776  using KNN
+2023-10-17 21:49:57.022856  using SVM
+2023-10-18 10:27:10.986604  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:27:11.149226  HandleMissingData - strategy='mean'
+2023-10-18 10:27:11.174563  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:27:11.194429  using XGboost
+2023-10-18 10:27:11.431530  Pred test result
+2023-10-18 10:27:11.437514  [[2 2]
+ [4 5]]
+2023-10-18 10:27:11.438562  Accuracy: 53.85 %
+2023-10-18 10:28:56.575698  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:28:56.635027  HandleMissingData - strategy='mean'
+2023-10-18 10:28:56.655399  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:28:56.672922  using XGboost
+2023-10-18 10:28:56.819402  Pred test result
+2023-10-18 10:28:56.823920  [[2 2]
+ [4 5]]
+2023-10-18 10:28:56.825100  Accuracy: 53.85 %
+2023-10-18 10:28:56.826130  using CatBoost
+2023-10-18 10:28:58.598805  Pred test result
+2023-10-18 10:28:58.602793  [[1 3]
+ [2 7]]
+2023-10-18 10:28:58.603790  Accuracy: 61.54 %
+2023-10-18 10:28:58.604788  using KNN
+2023-10-18 10:28:58.605790  Pred test result
+2023-10-18 10:28:58.614045  [[2 2]
+ [1 8]]
+2023-10-18 10:28:58.614101  Accuracy: 76.92 %
+2023-10-18 10:28:58.615438  using sklearn.neural_network MLPClassifier
+2023-10-18 10:28:59.071226  Pred test result
+2023-10-18 10:28:59.072306  [[2 2]
+ [2 7]]
+2023-10-18 10:28:59.073577  Accuracy: 69.23 %
+2023-10-18 10:28:59.470335  using ExtraTreesClassifier
+2023-10-18 10:28:59.565289  Pred test result
+2023-10-18 10:28:59.576390  [[1 3]
+ [2 7]]
+2023-10-18 10:28:59.576390  Accuracy: 61.54 %
+2023-10-18 10:28:59.577416  using Perceptron
+2023-10-18 10:28:59.586289  Pred test result
+2023-10-18 10:28:59.587291  [[3 1]
+ [7 2]]
+2023-10-18 10:28:59.588288  Accuracy: 38.46 %
+2023-10-18 10:28:59.589297  using SVM
+2023-10-18 10:28:59.598825  Pred test result
+2023-10-18 10:28:59.599983  [[3 1]
+ [3 6]]
+2023-10-18 10:28:59.599983  Accuracy: 69.23 %
+2023-10-18 10:28:59.601036  using Logistic Regression
+2023-10-18 10:28:59.933746  Pred test result
+2023-10-18 10:28:59.935265  [[1 3]
+ [2 7]]
+2023-10-18 10:28:59.936258  Accuracy: 61.54 %
+2023-10-18 10:28:59.937256  The best result for file name: FM_dataset - Processed 125 samples is: 76.92307692307693
+2023-10-18 10:28:59.938703  using KNN
+2023-10-18 10:28:59.938703  using SVM
+2023-10-18 10:30:21.618042  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:30:21.643967  HandleMissingData - strategy='mean'
+2023-10-18 10:30:21.659325  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:30:21.665891  using XGboost
+2023-10-18 10:30:21.746622  Pred test result
+2023-10-18 10:30:21.750297  [[2 2]
+ [4 5]]
+2023-10-18 10:30:21.751324  Accuracy: 53.85 %
+2023-10-18 10:30:21.752368  using CatBoost
+2023-10-18 10:30:22.448301  Pred test result
+2023-10-18 10:30:22.451428  [[1 3]
+ [2 7]]
+2023-10-18 10:30:22.451932  Accuracy: 61.54 %
+2023-10-18 10:30:22.452953  using KNN
+2023-10-18 10:30:22.452953  Pred test result
+2023-10-18 10:30:22.455797  [[2 2]
+ [1 8]]
+2023-10-18 10:30:22.456303  Accuracy: 76.92 %
+2023-10-18 10:30:22.457582  using sklearn.neural_network MLPClassifier
+2023-10-18 10:30:22.924404  Pred test result
+2023-10-18 10:30:22.925519  [[2 2]
+ [2 7]]
+2023-10-18 10:30:22.926025  Accuracy: 69.23 %
+2023-10-18 10:30:22.964329  using ExtraTreesClassifier
+2023-10-18 10:30:23.062719  Pred test result
+2023-10-18 10:30:23.072662  [[1 3]
+ [2 7]]
+2023-10-18 10:30:23.072662  Accuracy: 61.54 %
+2023-10-18 10:30:23.074026  using Perceptron
+2023-10-18 10:30:23.074534  Pred test result
+2023-10-18 10:30:23.075840  [[3 1]
+ [7 2]]
+2023-10-18 10:30:23.075840  Accuracy: 38.46 %
+2023-10-18 10:30:23.077629  using SVM
+2023-10-18 10:30:23.081368  Pred test result
+2023-10-18 10:30:23.082357  [[2 2]
+ [0 9]]
+2023-10-18 10:30:23.083324  Accuracy: 84.62 %
+2023-10-18 10:30:23.084351  using Logistic Regression
+2023-10-18 10:30:23.399975  Pred test result
+2023-10-18 10:30:23.400972  [[1 3]
+ [2 7]]
+2023-10-18 10:30:23.400972  Accuracy: 61.54 %
+2023-10-18 10:30:23.402039  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:30:23.403106  using KNN
+2023-10-18 10:30:23.403106  using SVM
+2023-10-18 10:33:44.263676  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:33:44.307107  HandleMissingData - strategy='mean'
+2023-10-18 10:33:44.326594  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:33:44.332153  using XGboost
+2023-10-18 10:33:44.425648  Pred test result
+2023-10-18 10:33:44.430909  [[2 2]
+ [4 5]]
+2023-10-18 10:33:44.430909  Accuracy: 53.85 %
+2023-10-18 10:33:44.432357  using CatBoost
+2023-10-18 10:33:45.318680  Pred test result
+2023-10-18 10:33:45.321406  [[1 3]
+ [2 7]]
+2023-10-18 10:33:45.323400  Accuracy: 61.54 %
+2023-10-18 10:33:45.324397  using KNN
+2023-10-18 10:33:45.325395  Pred test result
+2023-10-18 10:33:45.327892  [[2 2]
+ [1 8]]
+2023-10-18 10:33:45.328981  Accuracy: 76.92 %
+2023-10-18 10:33:45.330348  using sklearn.neural_network MLPClassifier
+2023-10-18 10:33:45.781125  Pred test result
+2023-10-18 10:33:45.783211  [[2 2]
+ [2 7]]
+2023-10-18 10:33:45.783716  Accuracy: 69.23 %
+2023-10-18 10:33:45.841951  using ExtraTreesClassifier
+2023-10-18 10:33:45.939525  Pred test result
+2023-10-18 10:33:45.948501  [[1 3]
+ [3 6]]
+2023-10-18 10:33:45.949498  Accuracy: 53.85 %
+2023-10-18 10:33:45.949498  using Perceptron
+2023-10-18 10:33:45.951570  Pred test result
+2023-10-18 10:33:45.951570  [[3 1]
+ [7 2]]
+2023-10-18 10:33:45.952603  Accuracy: 38.46 %
+2023-10-18 10:33:45.953651  using SVM
+2023-10-18 10:33:45.959150  Pred test result
+2023-10-18 10:33:45.961146  [[2 2]
+ [0 9]]
+2023-10-18 10:33:45.962473  Accuracy: 84.62 %
+2023-10-18 10:33:45.962588  using RBF SVC
+2023-10-18 10:34:33.841092  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:34:33.866946  HandleMissingData - strategy='mean'
+2023-10-18 10:34:33.879908  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:34:33.885189  using XGboost
+2023-10-18 10:34:33.957768  Pred test result
+2023-10-18 10:34:33.961847  [[2 2]
+ [4 5]]
+2023-10-18 10:34:33.961847  Accuracy: 53.85 %
+2023-10-18 10:34:33.962844  using CatBoost
+2023-10-18 10:34:34.595955  Pred test result
+2023-10-18 10:34:34.599300  [[1 3]
+ [2 7]]
+2023-10-18 10:34:34.599300  Accuracy: 61.54 %
+2023-10-18 10:34:34.599300  using KNN
+2023-10-18 10:34:34.600605  Pred test result
+2023-10-18 10:34:34.602910  [[2 2]
+ [1 8]]
+2023-10-18 10:34:34.603922  Accuracy: 76.92 %
+2023-10-18 10:34:34.603922  using sklearn.neural_network MLPClassifier
+2023-10-18 10:34:35.059234  Pred test result
+2023-10-18 10:34:35.059234  [[2 2]
+ [2 7]]
+2023-10-18 10:34:35.060546  Accuracy: 69.23 %
+2023-10-18 10:34:35.107043  using ExtraTreesClassifier
+2023-10-18 10:34:35.207892  Pred test result
+2023-10-18 10:34:35.218863  [[1 3]
+ [3 6]]
+2023-10-18 10:34:35.219860  Accuracy: 53.85 %
+2023-10-18 10:34:35.220857  using Perceptron
+2023-10-18 10:34:35.221854  Pred test result
+2023-10-18 10:34:35.222852  [[3 1]
+ [7 2]]
+2023-10-18 10:34:35.222852  Accuracy: 38.46 %
+2023-10-18 10:34:35.223849  using SVM
+2023-10-18 10:34:35.229833  Pred test result
+2023-10-18 10:34:35.230831  [[2 2]
+ [0 9]]
+2023-10-18 10:34:35.231829  Accuracy: 84.62 %
+2023-10-18 10:34:35.232826  using RBF SVC
+2023-10-18 10:34:35.238809  Pred test result
+2023-10-18 10:34:35.239807  [[3 1]
+ [3 6]]
+2023-10-18 10:34:35.240804  Accuracy: 69.23 %
+2023-10-18 10:34:35.241802  using Logistic Regression
+2023-10-18 10:34:35.552679  Pred test result
+2023-10-18 10:34:35.553677  [[1 3]
+ [2 7]]
+2023-10-18 10:34:35.554671  Accuracy: 61.54 %
+2023-10-18 10:34:35.564944  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:34:35.564944  using KNN
+2023-10-18 10:34:35.566396  using RBF SVC
+2023-10-18 10:40:29.197591  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:40:29.265798  HandleMissingData - strategy='mean'
+2023-10-18 10:40:29.293062  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:40:29.315585  using XGboost
+2023-10-18 10:40:29.487427  Pred test result
+2023-10-18 10:40:29.494115  [[ 4  2]
+ [ 3 16]]
+2023-10-18 10:40:29.494115  Accuracy: 80.00 %
+2023-10-18 10:40:29.496939  using CatBoost
+2023-10-18 10:40:30.733836  Pred test result
+2023-10-18 10:40:30.742102  [[ 2  4]
+ [ 7 12]]
+2023-10-18 10:40:30.743099  Accuracy: 56.00 %
+2023-10-18 10:40:30.744097  using KNN
+2023-10-18 10:40:30.745094  Pred test result
+2023-10-18 10:40:30.751236  [[ 4  2]
+ [ 4 15]]
+2023-10-18 10:40:30.752244  Accuracy: 76.00 %
+2023-10-18 10:40:30.753252  using sklearn.neural_network MLPClassifier
+2023-10-18 10:40:30.882149  Pred test result
+2023-10-18 10:40:30.883356  [[ 0  6]
+ [ 0 19]]
+2023-10-18 10:40:30.884693  Accuracy: 76.00 %
+2023-10-18 10:40:30.979170  using ExtraTreesClassifier
+2023-10-18 10:40:31.081810  Pred test result
+2023-10-18 10:40:31.094408  [[ 4  2]
+ [ 4 15]]
+2023-10-18 10:40:31.094408  Accuracy: 76.00 %
+2023-10-18 10:40:31.095388  using Perceptron
+2023-10-18 10:40:31.102436  Pred test result
+2023-10-18 10:40:31.104914  [[ 5  1]
+ [13  6]]
+2023-10-18 10:40:31.105023  Accuracy: 44.00 %
+2023-10-18 10:40:31.106040  using SVM
+2023-10-18 10:40:31.111540  Pred test result
+2023-10-18 10:40:31.112533  [[ 2  4]
+ [ 0 19]]
+2023-10-18 10:40:31.113536  Accuracy: 84.00 %
+2023-10-18 10:40:31.113536  using RBF SVC
+2023-10-18 10:40:31.119530  Pred test result
+2023-10-18 10:40:31.120512  [[ 4  2]
+ [ 7 12]]
+2023-10-18 10:40:31.121627  Accuracy: 64.00 %
+2023-10-18 10:40:31.122657  using Logistic Regression
+2023-10-18 10:40:31.231879  Pred test result
+2023-10-18 10:40:31.232384  [[ 3  3]
+ [ 8 11]]
+2023-10-18 10:40:31.233388  Accuracy: 56.00 %
+2023-10-18 10:40:31.235384  The best result for file name: FM_dataset - Processed 125 samples is: 84.0
+2023-10-18 10:40:31.235384  using KNN
+2023-10-18 10:40:31.236900  using RBF SVC
+2023-10-18 10:41:40.028172  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:41:40.054945  HandleMissingData - strategy='mean'
+2023-10-18 10:41:40.070577  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:41:40.074574  using XGboost
+2023-10-18 10:41:40.159478  Pred test result
+2023-10-18 10:41:40.163468  [[2 2]
+ [4 5]]
+2023-10-18 10:41:40.163468  Accuracy: 53.85 %
+2023-10-18 10:41:40.164465  using CatBoost
+2023-10-18 10:41:40.816609  Pred test result
+2023-10-18 10:41:40.819838  [[1 3]
+ [2 7]]
+2023-10-18 10:41:40.820848  Accuracy: 61.54 %
+2023-10-18 10:41:40.821835  using KNN
+2023-10-18 10:41:40.822900  Pred test result
+2023-10-18 10:41:40.825731  [[2 2]
+ [1 8]]
+2023-10-18 10:41:40.825731  Accuracy: 76.92 %
+2023-10-18 10:41:40.826774  using sklearn.neural_network MLPClassifier
+2023-10-18 10:41:41.274279  Pred test result
+2023-10-18 10:41:41.275379  [[2 2]
+ [2 7]]
+2023-10-18 10:41:41.275379  Accuracy: 69.23 %
+2023-10-18 10:41:41.308653  using ExtraTreesClassifier
+2023-10-18 10:41:41.404298  Pred test result
+2023-10-18 10:41:41.415573  [[1 3]
+ [2 7]]
+2023-10-18 10:41:41.416576  Accuracy: 61.54 %
+2023-10-18 10:41:41.416576  using Perceptron
+2023-10-18 10:41:41.418833  Pred test result
+2023-10-18 10:41:41.418833  [[3 1]
+ [7 2]]
+2023-10-18 10:41:41.420266  Accuracy: 38.46 %
+2023-10-18 10:41:41.420266  using SVM
+2023-10-18 10:41:41.426220  Pred test result
+2023-10-18 10:41:41.427225  [[2 2]
+ [0 9]]
+2023-10-18 10:41:41.427225  Accuracy: 84.62 %
+2023-10-18 10:41:41.428261  using RBF SVC
+2023-10-18 10:41:41.435507  Pred test result
+2023-10-18 10:41:41.436531  [[3 1]
+ [3 6]]
+2023-10-18 10:41:41.436531  Accuracy: 69.23 %
+2023-10-18 10:41:41.436531  using Logistic Regression
+2023-10-18 10:41:41.756495  Pred test result
+2023-10-18 10:41:41.757490  [[1 3]
+ [2 7]]
+2023-10-18 10:41:41.757490  Accuracy: 61.54 %
+2023-10-18 10:41:41.759508  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:41:41.759508  using KNN
+2023-10-18 10:41:41.760933  using RBF SVC
+2023-10-18 10:42:21.740636  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:42:21.767585  HandleMissingData - strategy='mean'
+2023-10-18 10:42:21.782005  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:42:21.786531  using XGboost
+2023-10-18 10:42:21.860779  Pred test result
+2023-10-18 10:42:21.865812  [[2 2]
+ [4 5]]
+2023-10-18 10:42:21.865812  Accuracy: 53.85 %
+2023-10-18 10:42:21.877386  using CatBoost
+2023-10-18 10:42:22.520162  Pred test result
+2023-10-18 10:42:22.522829  [[1 3]
+ [2 7]]
+2023-10-18 10:42:22.522829  Accuracy: 61.54 %
+2023-10-18 10:42:22.523900  using KNN
+2023-10-18 10:42:22.523900  Pred test result
+2023-10-18 10:42:22.525795  [[2 2]
+ [1 8]]
+2023-10-18 10:42:22.526819  Accuracy: 76.92 %
+2023-10-18 10:42:22.526819  using sklearn.neural_network MLPClassifier
+2023-10-18 10:42:22.984435  Pred test result
+2023-10-18 10:42:22.986488  [[2 2]
+ [2 7]]
+2023-10-18 10:42:22.986488  Accuracy: 69.23 %
+2023-10-18 10:42:23.019844  using ExtraTreesClassifier
+2023-10-18 10:42:23.115948  Pred test result
+2023-10-18 10:42:23.125922  [[1 3]
+ [3 6]]
+2023-10-18 10:42:23.126920  Accuracy: 53.85 %
+2023-10-18 10:42:23.126920  using Perceptron
+2023-10-18 10:42:23.127918  Pred test result
+2023-10-18 10:42:23.128914  [[3 1]
+ [7 2]]
+2023-10-18 10:42:23.129926  Accuracy: 38.46 %
+2023-10-18 10:42:23.129926  using SVM
+2023-10-18 10:42:23.134997  Pred test result
+2023-10-18 10:42:23.135995  [[2 2]
+ [0 9]]
+2023-10-18 10:42:23.135995  Accuracy: 84.62 %
+2023-10-18 10:42:23.136992  using RBF SVC
+2023-10-18 10:42:23.144272  Pred test result
+2023-10-18 10:42:23.146270  [[3 1]
+ [3 6]]
+2023-10-18 10:42:23.146270  Accuracy: 69.23 %
+2023-10-18 10:42:23.147265  using Logistic Regression
+2023-10-18 10:42:23.471531  Pred test result
+2023-10-18 10:42:23.472504  [[1 3]
+ [2 7]]
+2023-10-18 10:42:23.472504  Accuracy: 61.54 %
+2023-10-18 10:42:23.474362  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:42:23.474362  using KNN
+2023-10-18 10:42:23.476367  using RBF SVC
+2023-10-18 10:42:39.075653  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:42:39.103834  HandleMissingData - strategy='mean'
+2023-10-18 10:42:39.118161  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:42:39.122623  using XGboost
+2023-10-18 10:42:39.201153  Pred test result
+2023-10-18 10:42:39.206452  [[2 2]
+ [4 5]]
+2023-10-18 10:42:39.206452  Accuracy: 53.85 %
+2023-10-18 10:42:39.207450  using CatBoost
+2023-10-18 10:42:39.828924  Pred test result
+2023-10-18 10:42:39.831924  [[1 3]
+ [2 7]]
+2023-10-18 10:42:39.831924  Accuracy: 61.54 %
+2023-10-18 10:42:39.833001  using KNN
+2023-10-18 10:42:39.834016  Pred test result
+2023-10-18 10:42:39.836312  [[2 2]
+ [1 8]]
+2023-10-18 10:42:39.837327  Accuracy: 76.92 %
+2023-10-18 10:42:39.837327  using sklearn.neural_network MLPClassifier
+2023-10-18 10:42:40.310419  Pred test result
+2023-10-18 10:42:40.312417  [[2 2]
+ [2 7]]
+2023-10-18 10:42:40.312417  Accuracy: 69.23 %
+2023-10-18 10:42:40.344686  using ExtraTreesClassifier
+2023-10-18 10:42:40.444696  Pred test result
+2023-10-18 10:42:40.456049  [[1 3]
+ [2 7]]
+2023-10-18 10:42:40.457047  Accuracy: 61.54 %
+2023-10-18 10:42:40.458220  using Perceptron
+2023-10-18 10:42:40.459530  Pred test result
+2023-10-18 10:42:40.460036  [[3 1]
+ [7 2]]
+2023-10-18 10:42:40.461315  Accuracy: 38.46 %
+2023-10-18 10:42:40.461315  using SVM
+2023-10-18 10:42:40.466947  Pred test result
+2023-10-18 10:42:40.469471  [[2 2]
+ [0 9]]
+2023-10-18 10:42:40.469471  Accuracy: 84.62 %
+2023-10-18 10:42:40.470854  using RBF SVC
+2023-10-18 10:42:40.476996  Pred test result
+2023-10-18 10:42:40.477975  [[3 1]
+ [3 6]]
+2023-10-18 10:42:40.477975  Accuracy: 69.23 %
+2023-10-18 10:42:40.478993  using Logistic Regression
+2023-10-18 10:42:40.806723  Pred test result
+2023-10-18 10:42:40.807724  [[1 3]
+ [2 7]]
+2023-10-18 10:42:40.807724  Accuracy: 61.54 %
+2023-10-18 10:42:40.809195  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:42:40.809195  using KNN
+2023-10-18 10:42:40.810274  using RBF SVC
+2023-10-18 10:43:14.416500  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:43:14.453974  HandleMissingData - strategy='mean'
+2023-10-18 10:43:14.470614  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:43:14.474844  using XGboost
+2023-10-18 10:43:14.562545  Pred test result
+2023-10-18 10:43:14.567674  [[2 2]
+ [4 5]]
+2023-10-18 10:43:14.568672  Accuracy: 53.85 %
+2023-10-18 10:43:14.569669  using CatBoost
+2023-10-18 10:43:15.295758  Pred test result
+2023-10-18 10:43:15.299674  [[1 3]
+ [2 7]]
+2023-10-18 10:43:15.300756  Accuracy: 61.54 %
+2023-10-18 10:43:15.302230  using KNN
+2023-10-18 10:43:15.303241  Pred test result
+2023-10-18 10:43:15.306499  [[2 2]
+ [1 8]]
+2023-10-18 10:43:15.306499  Accuracy: 76.92 %
+2023-10-18 10:43:15.308682  using sklearn.neural_network MLPClassifier
+2023-10-18 10:43:15.784546  Pred test result
+2023-10-18 10:43:15.785747  [[2 2]
+ [2 7]]
+2023-10-18 10:43:15.786805  Accuracy: 69.23 %
+2023-10-18 10:43:15.820662  using ExtraTreesClassifier
+2023-10-18 10:43:15.920938  Pred test result
+2023-10-18 10:43:15.930437  [[1 3]
+ [3 6]]
+2023-10-18 10:43:15.930437  Accuracy: 53.85 %
+2023-10-18 10:43:15.931410  using Perceptron
+2023-10-18 10:43:15.932969  Pred test result
+2023-10-18 10:43:15.934418  [[3 1]
+ [7 2]]
+2023-10-18 10:43:15.934418  Accuracy: 38.46 %
+2023-10-18 10:43:15.934418  using SVM
+2023-10-18 10:43:15.938809  Pred test result
+2023-10-18 10:43:15.940832  [[2 2]
+ [0 9]]
+2023-10-18 10:43:15.941339  Accuracy: 84.62 %
+2023-10-18 10:43:15.943029  using RBF SVC
+2023-10-18 10:43:15.949925  Pred test result
+2023-10-18 10:43:15.951563  [[3 1]
+ [3 6]]
+2023-10-18 10:43:15.951563  Accuracy: 69.23 %
+2023-10-18 10:43:15.951563  using Logistic Regression
+2023-10-18 10:43:16.292777  Pred test result
+2023-10-18 10:43:16.293784  [[1 3]
+ [2 7]]
+2023-10-18 10:43:16.294289  Accuracy: 61.54 %
+2023-10-18 10:43:16.294289  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:43:16.295727  using KNN
+2023-10-18 10:43:16.295727  using RBF SVC
+2023-10-18 10:43:36.576330  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:43:36.602885  HandleMissingData - strategy='mean'
+2023-10-18 10:43:36.616120  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:43:36.620206  using XGboost
+2023-10-18 10:43:36.694680  Pred test result
+2023-10-18 10:43:36.698672  [[2 2]
+ [4 5]]
+2023-10-18 10:43:36.699670  Accuracy: 53.85 %
+2023-10-18 10:43:36.700667  using CatBoost
+2023-10-18 10:43:37.333774  Pred test result
+2023-10-18 10:43:37.336286  [[1 3]
+ [2 7]]
+2023-10-18 10:43:37.337328  Accuracy: 61.54 %
+2023-10-18 10:43:37.338429  using KNN
+2023-10-18 10:43:37.339954  Pred test result
+2023-10-18 10:43:37.341989  [[2 2]
+ [1 8]]
+2023-10-18 10:43:37.343425  Accuracy: 76.92 %
+2023-10-18 10:43:37.344436  using sklearn.neural_network MLPClassifier
+2023-10-18 10:43:37.794389  Pred test result
+2023-10-18 10:43:37.795950  [[2 2]
+ [2 7]]
+2023-10-18 10:43:37.795950  Accuracy: 69.23 %
+2023-10-18 10:43:37.830245  using ExtraTreesClassifier
+2023-10-18 10:43:37.919122  Pred test result
+2023-10-18 10:43:37.928098  [[1 3]
+ [1 8]]
+2023-10-18 10:43:37.929095  Accuracy: 69.23 %
+2023-10-18 10:43:37.929095  using Perceptron
+2023-10-18 10:43:37.931090  Pred test result
+2023-10-18 10:43:37.932087  [[3 1]
+ [7 2]]
+2023-10-18 10:43:37.932087  Accuracy: 38.46 %
+2023-10-18 10:43:37.933084  using SVM
+2023-10-18 10:43:37.937073  Pred test result
+2023-10-18 10:43:37.938071  [[2 2]
+ [0 9]]
+2023-10-18 10:43:37.939068  Accuracy: 84.62 %
+2023-10-18 10:43:37.939068  using RBF SVC
+2023-10-18 10:43:37.946049  Pred test result
+2023-10-18 10:43:37.947047  [[3 1]
+ [3 6]]
+2023-10-18 10:43:37.948044  Accuracy: 69.23 %
+2023-10-18 10:43:37.948044  using Logistic Regression
+2023-10-18 10:43:38.279707  Pred test result
+2023-10-18 10:43:38.280721  [[1 3]
+ [2 7]]
+2023-10-18 10:43:38.280721  Accuracy: 61.54 %
+2023-10-18 10:43:38.281803  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:43:38.282815  using KNN
+2023-10-18 10:43:38.282815  using RBF SVC
+2023-10-18 10:43:52.224715  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:43:52.254050  HandleMissingData - strategy='mean'
+2023-10-18 10:43:52.266850  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:43:52.270898  using XGboost
+2023-10-18 10:43:52.347738  Pred test result
+2023-10-18 10:43:52.351930  [[2 2]
+ [4 5]]
+2023-10-18 10:43:52.352930  Accuracy: 53.85 %
+2023-10-18 10:43:52.353928  using CatBoost
+2023-10-18 10:43:52.992393  Pred test result
+2023-10-18 10:43:52.993395  [[1 3]
+ [2 7]]
+2023-10-18 10:43:52.994479  Accuracy: 61.54 %
+2023-10-18 10:43:52.994479  using KNN
+2023-10-18 10:43:52.995521  Pred test result
+2023-10-18 10:43:52.997716  [[2 2]
+ [1 8]]
+2023-10-18 10:43:52.997716  Accuracy: 76.92 %
+2023-10-18 10:43:52.998723  using sklearn.neural_network MLPClassifier
+2023-10-18 10:43:53.449491  Pred test result
+2023-10-18 10:43:53.451195  [[2 2]
+ [2 7]]
+2023-10-18 10:43:53.451195  Accuracy: 69.23 %
+2023-10-18 10:43:53.484405  using ExtraTreesClassifier
+2023-10-18 10:43:53.577316  Pred test result
+2023-10-18 10:43:53.587379  [[1 3]
+ [1 8]]
+2023-10-18 10:43:53.588377  Accuracy: 69.23 %
+2023-10-18 10:43:53.588377  using Perceptron
+2023-10-18 10:43:53.590386  Pred test result
+2023-10-18 10:43:53.591369  [[3 1]
+ [7 2]]
+2023-10-18 10:43:53.591369  Accuracy: 38.46 %
+2023-10-18 10:43:53.592366  using SVM
+2023-10-18 10:43:53.597352  Pred test result
+2023-10-18 10:43:53.598350  [[2 2]
+ [0 9]]
+2023-10-18 10:43:53.598350  Accuracy: 84.62 %
+2023-10-18 10:43:53.599347  using RBF SVC
+2023-10-18 10:43:53.607024  Pred test result
+2023-10-18 10:43:53.608654  [[3 1]
+ [3 6]]
+2023-10-18 10:43:53.608654  Accuracy: 69.23 %
+2023-10-18 10:43:53.609662  using Logistic Regression
+2023-10-18 10:43:53.973303  Pred test result
+2023-10-18 10:43:53.974374  [[1 3]
+ [2 7]]
+2023-10-18 10:43:53.975374  Accuracy: 61.54 %
+2023-10-18 10:43:53.976370  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:43:53.977367  using KNN
+2023-10-18 10:43:53.978363  using RBF SVC
+2023-10-18 10:44:25.028210  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:44:25.057028  HandleMissingData - strategy='mean'
+2023-10-18 10:44:25.071059  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:44:25.075097  using XGboost
+2023-10-18 10:44:25.146960  Pred test result
+2023-10-18 10:44:25.152020  [[2 2]
+ [4 5]]
+2023-10-18 10:44:25.153020  Accuracy: 53.85 %
+2023-10-18 10:44:25.154017  using CatBoost
+2023-10-18 10:44:25.833190  Pred test result
+2023-10-18 10:44:25.835767  [[1 3]
+ [2 7]]
+2023-10-18 10:44:25.835767  Accuracy: 61.54 %
+2023-10-18 10:44:25.836778  using KNN
+2023-10-18 10:44:25.837782  Pred test result
+2023-10-18 10:44:25.839780  [[4 0]
+ [2 7]]
+2023-10-18 10:44:25.841008  Accuracy: 84.62 %
+2023-10-18 10:44:25.841008  using sklearn.neural_network MLPClassifier
+2023-10-18 10:44:26.294966  Pred test result
+2023-10-18 10:44:26.296707  [[2 2]
+ [2 7]]
+2023-10-18 10:44:26.296707  Accuracy: 69.23 %
+2023-10-18 10:44:26.329771  using ExtraTreesClassifier
+2023-10-18 10:44:26.436552  Pred test result
+2023-10-18 10:44:26.446614  [[1 3]
+ [2 7]]
+2023-10-18 10:44:26.446614  Accuracy: 61.54 %
+2023-10-18 10:44:26.447612  using Perceptron
+2023-10-18 10:44:26.449605  Pred test result
+2023-10-18 10:44:26.449605  [[3 1]
+ [7 2]]
+2023-10-18 10:44:26.450702  Accuracy: 38.46 %
+2023-10-18 10:44:26.451751  using SVM
+2023-10-18 10:44:26.455250  Pred test result
+2023-10-18 10:44:26.456249  [[2 2]
+ [0 9]]
+2023-10-18 10:44:26.457246  Accuracy: 84.62 %
+2023-10-18 10:44:26.457246  using RBF SVC
+2023-10-18 10:44:26.464227  Pred test result
+2023-10-18 10:44:26.465226  [[3 1]
+ [3 6]]
+2023-10-18 10:44:26.466223  Accuracy: 69.23 %
+2023-10-18 10:44:26.466223  using Logistic Regression
+2023-10-18 10:44:26.776685  Pred test result
+2023-10-18 10:44:26.778680  [[1 3]
+ [2 7]]
+2023-10-18 10:44:26.778680  Accuracy: 61.54 %
+2023-10-18 10:44:26.779677  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:44:26.780676  using KNN
+2023-10-18 10:44:26.780676  using RBF SVC
+2023-10-18 10:45:11.575611  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:45:11.601529  HandleMissingData - strategy='mean'
+2023-10-18 10:45:11.615323  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:45:11.619206  using XGboost
+2023-10-18 10:45:11.690994  Pred test result
+2023-10-18 10:45:11.694984  [[2 2]
+ [4 5]]
+2023-10-18 10:45:11.695981  Accuracy: 53.85 %
+2023-10-18 10:45:11.696979  using CatBoost
+2023-10-18 10:45:12.332530  Pred test result
+2023-10-18 10:45:12.334908  [[1 3]
+ [2 7]]
+2023-10-18 10:45:12.334908  Accuracy: 61.54 %
+2023-10-18 10:45:12.336120  using KNN
+2023-10-18 10:45:12.336648  Pred test result
+2023-10-18 10:45:12.338266  [[4 0]
+ [2 7]]
+2023-10-18 10:45:12.339270  Accuracy: 84.62 %
+2023-10-18 10:45:12.339270  using sklearn.neural_network MLPClassifier
+2023-10-18 10:45:12.788581  Pred test result
+2023-10-18 10:45:12.789579  [[2 2]
+ [2 7]]
+2023-10-18 10:45:12.790905  Accuracy: 69.23 %
+2023-10-18 10:45:12.822490  using ExtraTreesClassifier
+2023-10-18 10:45:12.914178  Pred test result
+2023-10-18 10:45:12.923166  [[1 3]
+ [2 7]]
+2023-10-18 10:45:12.924154  Accuracy: 61.54 %
+2023-10-18 10:45:12.925151  using Perceptron
+2023-10-18 10:45:12.925151  Pred test result
+2023-10-18 10:45:12.926545  [[3 1]
+ [7 2]]
+2023-10-18 10:45:12.927668  Accuracy: 38.46 %
+2023-10-18 10:45:12.927668  using SVM
+2023-10-18 10:45:12.933135  Pred test result
+2023-10-18 10:45:12.934132  [[2 2]
+ [0 9]]
+2023-10-18 10:45:12.935127  Accuracy: 84.62 %
+2023-10-18 10:45:12.936126  using RBF SVC
+2023-10-18 10:45:12.942210  Pred test result
+2023-10-18 10:45:12.943198  [[3 1]
+ [3 6]]
+2023-10-18 10:45:12.944204  Accuracy: 69.23 %
+2023-10-18 10:45:12.944204  using Logistic Regression
+2023-10-18 10:45:13.260193  Pred test result
+2023-10-18 10:45:13.261179  [[1 3]
+ [2 7]]
+2023-10-18 10:45:13.261179  Accuracy: 61.54 %
+2023-10-18 10:45:13.262219  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:45:13.263239  using KNN
+2023-10-18 10:45:13.263239  using RBF SVC
+2023-10-18 10:50:40.644446  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:50:40.686025  HandleMissingData - strategy='mean'
+2023-10-18 10:50:40.706561  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:50:40.711550  using XGboost
+2023-10-18 10:50:40.803012  Pred test result
+2023-10-18 10:50:40.807061  [[2 2]
+ [4 5]]
+2023-10-18 10:50:40.808058  Accuracy: 53.85 %
+2023-10-18 10:50:40.809056  using CatBoost
+2023-10-18 10:50:41.672225  Pred test result
+2023-10-18 10:50:41.674368  [[1 3]
+ [2 7]]
+2023-10-18 10:50:41.675859  Accuracy: 61.54 %
+2023-10-18 10:50:41.675859  using KNN
+2023-10-18 10:50:41.676864  Pred test result
+2023-10-18 10:50:41.679595  [[4 0]
+ [5 4]]
+2023-10-18 10:50:41.679595  Accuracy: 61.54 %
+2023-10-18 10:50:41.680606  using sklearn.neural_network MLPClassifier
+2023-10-18 10:50:42.166645  Pred test result
+2023-10-18 10:50:42.168819  [[2 2]
+ [2 7]]
+2023-10-18 10:50:42.169845  Accuracy: 69.23 %
+2023-10-18 10:50:42.222789  using ExtraTreesClassifier
+2023-10-18 10:50:42.350885  Pred test result
+2023-10-18 10:50:42.362045  [[1 3]
+ [2 7]]
+2023-10-18 10:50:42.362045  Accuracy: 61.54 %
+2023-10-18 10:50:42.363145  using Perceptron
+2023-10-18 10:50:42.364199  Pred test result
+2023-10-18 10:50:42.365247  [[3 1]
+ [7 2]]
+2023-10-18 10:50:42.366290  Accuracy: 38.46 %
+2023-10-18 10:50:42.366290  using SVM
+2023-10-18 10:50:42.371514  Pred test result
+2023-10-18 10:50:42.373280  [[2 2]
+ [0 9]]
+2023-10-18 10:50:42.373280  Accuracy: 84.62 %
+2023-10-18 10:50:42.374434  using RBF SVC
+2023-10-18 10:50:42.382776  Pred test result
+2023-10-18 10:50:42.383929  [[3 1]
+ [3 6]]
+2023-10-18 10:50:42.385206  Accuracy: 69.23 %
+2023-10-18 10:50:42.385715  using Logistic Regression
+2023-10-18 10:50:42.739391  Pred test result
+2023-10-18 10:50:42.740601  [[1 3]
+ [2 7]]
+2023-10-18 10:50:42.741695  Accuracy: 61.54 %
+2023-10-18 10:50:42.743143  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:50:42.743143  using KNN
+2023-10-18 10:50:42.743649  using RBF SVC
+2023-10-18 10:52:52.475653  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:52:52.532803  HandleMissingData - strategy='mean'
+2023-10-18 10:52:52.556116  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:52:52.561130  using XGboost
+2023-10-18 10:52:52.664678  Pred test result
+2023-10-18 10:52:52.670044  [[2 2]
+ [4 5]]
+2023-10-18 10:52:52.670044  Accuracy: 53.85 %
+2023-10-18 10:52:52.672042  using CatBoost
+2023-10-18 10:52:53.524348  Pred test result
+2023-10-18 10:52:53.526342  [[1 3]
+ [2 7]]
+2023-10-18 10:52:53.527340  Accuracy: 61.54 %
+2023-10-18 10:52:53.528338  using KNN
+2023-10-18 10:52:53.528338  Pred test result
+2023-10-18 10:52:53.530332  [[4 0]
+ [5 4]]
+2023-10-18 10:52:53.531329  Accuracy: 61.54 %
+2023-10-18 10:52:53.532327  using sklearn.neural_network MLPClassifier
+2023-10-18 10:52:53.976569  Pred test result
+2023-10-18 10:52:53.976569  [[2 2]
+ [2 7]]
+2023-10-18 10:52:53.978004  Accuracy: 69.23 %
+2023-10-18 10:52:54.038686  using ExtraTreesClassifier
+2023-10-18 10:52:54.127413  Pred test result
+2023-10-18 10:52:54.137354  [[1 3]
+ [3 6]]
+2023-10-18 10:52:54.137354  Accuracy: 53.85 %
+2023-10-18 10:52:54.138372  using Perceptron
+2023-10-18 10:52:54.140168  Pred test result
+2023-10-18 10:52:54.140168  [[3 1]
+ [7 2]]
+2023-10-18 10:52:54.141474  Accuracy: 38.46 %
+2023-10-18 10:52:54.141474  using SVM
+2023-10-18 10:52:54.146396  Pred test result
+2023-10-18 10:52:54.147392  [[2 2]
+ [0 9]]
+2023-10-18 10:52:54.147392  Accuracy: 84.62 %
+2023-10-18 10:52:54.148518  using RBF SVC
+2023-10-18 10:52:54.155505  Pred test result
+2023-10-18 10:52:54.156501  [[3 1]
+ [3 6]]
+2023-10-18 10:52:54.157497  Accuracy: 69.23 %
+2023-10-18 10:52:54.157497  using Logistic Regression
+2023-10-18 10:52:54.501788  Pred test result
+2023-10-18 10:52:54.502794  [[1 3]
+ [2 7]]
+2023-10-18 10:52:54.504114  Accuracy: 61.54 %
+2023-10-18 10:52:54.505657  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:52:54.505657  using KNN
+2023-10-18 10:52:54.506699  using RBF SVC
+2023-10-18 10:59:33.568850  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:59:33.617514  HandleMissingData - strategy='mean'
+2023-10-18 10:59:33.636613  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:59:33.640466  using XGboost
+2023-10-18 10:59:33.734821  Pred test result
+2023-10-18 10:59:33.738811  [[2 2]
+ [4 5]]
+2023-10-18 10:59:33.739879  Accuracy: 53.85 %
+2023-10-18 10:59:33.740877  using CatBoost
+2023-10-18 10:59:34.587984  Pred test result
+2023-10-18 10:59:34.589374  [[1 3]
+ [2 7]]
+2023-10-18 10:59:34.590384  Accuracy: 61.54 %
+2023-10-18 10:59:34.590384  using KNN
+2023-10-18 10:59:34.591586  Pred test result
+2023-10-18 10:59:34.593906  [[4 0]
+ [3 6]]
+2023-10-18 10:59:34.593906  Accuracy: 76.92 %
+2023-10-18 10:59:34.593906  using sklearn.neural_network MLPClassifier
+2023-10-18 10:59:35.051605  Pred test result
+2023-10-18 10:59:35.052637  [[2 2]
+ [2 7]]
+2023-10-18 10:59:35.053640  Accuracy: 69.23 %
+2023-10-18 10:59:35.118642  using ExtraTreesClassifier
+2023-10-18 10:59:35.217246  Pred test result
+2023-10-18 10:59:35.230348  [[1 3]
+ [2 7]]
+2023-10-18 10:59:35.230348  Accuracy: 61.54 %
+2023-10-18 10:59:35.231371  using Perceptron
+2023-10-18 10:59:35.232361  Pred test result
+2023-10-18 10:59:35.233356  [[3 1]
+ [7 2]]
+2023-10-18 10:59:35.233356  Accuracy: 38.46 %
+2023-10-18 10:59:35.234337  using SVM
+2023-10-18 10:59:35.239614  Pred test result
+2023-10-18 10:59:35.240638  [[2 2]
+ [0 9]]
+2023-10-18 10:59:35.240638  Accuracy: 84.62 %
+2023-10-18 10:59:35.241632  using RBF SVC
+2023-10-18 10:59:35.247781  Pred test result
+2023-10-18 10:59:35.248754  [[3 1]
+ [3 6]]
+2023-10-18 10:59:35.248754  Accuracy: 69.23 %
+2023-10-18 10:59:35.249751  using Logistic Regression
+2023-10-18 10:59:35.571839  Pred test result
+2023-10-18 10:59:35.572831  [[1 3]
+ [2 7]]
+2023-10-18 10:59:35.573841  Accuracy: 61.54 %
+2023-10-18 10:59:35.582230  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:59:35.583364  using KNN
+2023-10-18 10:59:35.584384  using RBF SVC
+2023-10-18 10:59:51.090211  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 10:59:51.117336  HandleMissingData - strategy='mean'
+2023-10-18 10:59:51.130705  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 10:59:51.134510  using XGboost
+2023-10-18 10:59:51.208974  Pred test result
+2023-10-18 10:59:51.213217  [[2 2]
+ [4 5]]
+2023-10-18 10:59:51.214504  Accuracy: 53.85 %
+2023-10-18 10:59:51.215543  using CatBoost
+2023-10-18 10:59:51.855272  Pred test result
+2023-10-18 10:59:51.857266  [[1 3]
+ [2 7]]
+2023-10-18 10:59:51.857266  Accuracy: 61.54 %
+2023-10-18 10:59:51.858264  using KNN
+2023-10-18 10:59:51.858264  Pred test result
+2023-10-18 10:59:51.860261  [[4 0]
+ [5 4]]
+2023-10-18 10:59:51.861269  Accuracy: 61.54 %
+2023-10-18 10:59:51.862255  using sklearn.neural_network MLPClassifier
+2023-10-18 10:59:52.302712  Pred test result
+2023-10-18 10:59:52.303762  [[2 2]
+ [2 7]]
+2023-10-18 10:59:52.304764  Accuracy: 69.23 %
+2023-10-18 10:59:52.338182  using ExtraTreesClassifier
+2023-10-18 10:59:52.443229  Pred test result
+2023-10-18 10:59:52.453442  [[1 3]
+ [2 7]]
+2023-10-18 10:59:52.454446  Accuracy: 61.54 %
+2023-10-18 10:59:52.454446  using Perceptron
+2023-10-18 10:59:52.455796  Pred test result
+2023-10-18 10:59:52.456813  [[3 1]
+ [7 2]]
+2023-10-18 10:59:52.457807  Accuracy: 38.46 %
+2023-10-18 10:59:52.457807  using SVM
+2023-10-18 10:59:52.462172  Pred test result
+2023-10-18 10:59:52.463412  [[2 2]
+ [0 9]]
+2023-10-18 10:59:52.463412  Accuracy: 84.62 %
+2023-10-18 10:59:52.464861  using RBF SVC
+2023-10-18 10:59:52.472375  Pred test result
+2023-10-18 10:59:52.473817  [[3 1]
+ [3 6]]
+2023-10-18 10:59:52.474836  Accuracy: 69.23 %
+2023-10-18 10:59:52.474836  using Logistic Regression
+2023-10-18 10:59:52.795036  Pred test result
+2023-10-18 10:59:52.796021  [[1 3]
+ [2 7]]
+2023-10-18 10:59:52.796021  Accuracy: 61.54 %
+2023-10-18 10:59:52.797947  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 10:59:52.797947  using KNN
+2023-10-18 10:59:52.799430  using RBF SVC
+2023-10-18 11:00:05.147783  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 11:00:05.173834  HandleMissingData - strategy='mean'
+2023-10-18 11:00:05.187264  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:00:05.191256  using XGboost
+2023-10-18 11:00:05.264392  Pred test result
+2023-10-18 11:00:05.269418  [[2 2]
+ [4 5]]
+2023-10-18 11:00:05.269418  Accuracy: 53.85 %
+2023-10-18 11:00:05.270902  using CatBoost
+2023-10-18 11:00:05.931358  Pred test result
+2023-10-18 11:00:05.934830  [[1 3]
+ [2 7]]
+2023-10-18 11:00:05.935812  Accuracy: 61.54 %
+2023-10-18 11:00:05.936864  using KNN
+2023-10-18 11:00:05.938105  Pred test result
+2023-10-18 11:00:05.940375  [[4 0]
+ [2 7]]
+2023-10-18 11:00:05.940375  Accuracy: 84.62 %
+2023-10-18 11:00:05.941783  using sklearn.neural_network MLPClassifier
+2023-10-18 11:00:06.391657  Pred test result
+2023-10-18 11:00:06.392361  [[2 2]
+ [2 7]]
+2023-10-18 11:00:06.393555  Accuracy: 69.23 %
+2023-10-18 11:00:06.424970  using ExtraTreesClassifier
+2023-10-18 11:00:06.514701  Pred test result
+2023-10-18 11:00:06.524017  [[1 3]
+ [3 6]]
+2023-10-18 11:00:06.524017  Accuracy: 53.85 %
+2023-10-18 11:00:06.525250  using Perceptron
+2023-10-18 11:00:06.526394  Pred test result
+2023-10-18 11:00:06.527463  [[3 1]
+ [7 2]]
+2023-10-18 11:00:06.528490  Accuracy: 38.46 %
+2023-10-18 11:00:06.528490  using SVM
+2023-10-18 11:00:06.532541  Pred test result
+2023-10-18 11:00:06.533567  [[2 2]
+ [0 9]]
+2023-10-18 11:00:06.534566  Accuracy: 84.62 %
+2023-10-18 11:00:06.534566  using RBF SVC
+2023-10-18 11:00:06.541636  Pred test result
+2023-10-18 11:00:06.542635  [[3 1]
+ [3 6]]
+2023-10-18 11:00:06.542635  Accuracy: 69.23 %
+2023-10-18 11:00:06.543632  using Logistic Regression
+2023-10-18 11:00:06.893549  Pred test result
+2023-10-18 11:00:06.894510  [[1 3]
+ [2 7]]
+2023-10-18 11:00:06.894510  Accuracy: 61.54 %
+2023-10-18 11:00:06.896238  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 11:00:06.896238  using KNN
+2023-10-18 11:00:06.897562  using RBF SVC
+2023-10-18 11:05:42.048598  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:05:42.111754  HandleMissingData - strategy='mean'
+2023-10-18 11:05:42.137771  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:05:42.157650  using XGboost
+2023-10-18 11:06:22.927980  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:06:22.959012  HandleMissingData - strategy='mean'
+2023-10-18 11:06:22.972431  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:06:22.975498  using KNN
+2023-10-18 11:06:22.976527  Pred test result
+2023-10-18 11:06:22.982244  [[0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 1 0 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 2 0 0 0 0 0 0 0 0]
+ [1 1 0 0 0 0 0 0 0 1 0 0 0]
+ [0 0 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 0 0 0 0 1 0 0 0 0 0 0]]
+2023-10-18 11:06:22.983559  Accuracy: 7.69 %
+2023-10-18 11:06:22.984567  using KNN
+2023-10-18 11:06:22.984567  using RBF SVC
+2023-10-18 11:06:38.873108  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:06:38.900059  HandleMissingData - strategy='mean'
+2023-10-18 11:06:38.913351  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:06:38.916345  using XGboost
+2023-10-18 11:06:51.543417  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:06:51.567420  HandleMissingData - strategy='mean'
+2023-10-18 11:06:51.580437  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:06:51.584522  using Logistic Regression
+2023-10-18 11:06:52.809280  Pred test result
+2023-10-18 11:06:52.819812  [[0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 1 0 0 1]
+ [0 0 0 0 0 0 0 1 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [3 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0]]
+2023-10-18 11:06:52.821811  Accuracy: 15.38 %
+2023-10-18 11:06:52.821811  using KNN
+2023-10-18 11:06:52.822802  using RBF SVC
+2023-10-18 11:07:06.854075  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:07:06.883088  HandleMissingData - strategy='mean'
+2023-10-18 11:07:06.895972  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:07:06.899512  using SVM
+2023-10-18 11:07:06.917462  Pred test result
+2023-10-18 11:07:06.919456  [[0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 1 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0]
+ [1 0 0 0 0 0 0 0 0 0 1]
+ [3 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0]]
+2023-10-18 11:07:06.920454  Accuracy: 0.00 %
+2023-10-18 11:07:06.920454  using KNN
+2023-10-18 11:07:06.921451  using RBF SVC
+2023-10-18 11:15:18.002271  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:15:18.068105  HandleMissingData - strategy='mean'
+2023-10-18 11:15:18.104269  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:15:18.123080  using SVM
+2023-10-18 11:15:18.173637  Pred test result
+2023-10-18 11:15:18.178056  [[0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 1 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [2 0 0 0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0]]
+2023-10-18 11:15:18.178570  Accuracy: 7.69 %
+2023-10-18 11:15:18.178570  using KNN
+2023-10-18 11:15:18.179593  using RBF SVC
+2023-10-18 11:15:53.076521  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:15:53.105421  HandleMissingData - strategy='mean'
+2023-10-18 11:15:53.119124  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:15:53.122157  using SVM
+2023-10-18 11:15:53.132131  Pred test result
+2023-10-18 11:15:53.133128  [[0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 1 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [2 0 0 0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0]]
+2023-10-18 11:15:53.134196  Accuracy: 7.69 %
+2023-10-18 11:15:53.134196  using KNN
+2023-10-18 11:15:53.135274  using RBF SVC
+2023-10-18 11:17:29.078360  File name is: 'FM_dataset - Processed only micro 125 samples - pain', Sheet name is: 'Sheet1'
+2023-10-18 11:17:29.135117  HandleMissingData - strategy='mean'
+2023-10-18 11:17:29.161499  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 11:17:29.179316  using SVM
+2023-10-18 11:17:29.190927  Pred test result
+2023-10-18 11:17:29.195916  [[0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 1 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [2 0 0 0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0]]
+2023-10-18 11:17:29.196912  Accuracy: 7.69 %
+2023-10-18 11:17:29.196912  using KNN
+2023-10-18 11:17:29.198159  using RBF SVC
+2023-10-18 14:36:03.716695  HandleMissingData - strategy='mean'
+2023-10-18 14:36:03.749192  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 14:36:37.530699  HandleMissingData - strategy='mean'
+2023-10-18 14:36:37.545637  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 14:37:56.906406  HandleMissingData - strategy='mean'
+2023-10-18 14:37:56.925655  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 14:38:49.153020  HandleMissingData - strategy='mean'
+2023-10-18 14:38:49.166354  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 14:39:10.574359  [[3 1]
+ [1 8]]
+2023-10-18 14:39:10.574359  Accuracy: 84.62 %
+2023-10-18 14:41:49.629918  HandleMissingData - strategy='mean'
+2023-10-18 14:41:49.656571  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 14:42:16.897562  [[3 1]
+ [1 8]]
+2023-10-18 14:42:16.898570  Accuracy: 84.62 %
+2023-10-18 14:43:35.023574  HandleMissingData - strategy='mean'
+2023-10-18 14:43:35.038477  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 14:46:36.291520  [[1 3]
+ [2 7]]
+2023-10-18 14:46:36.292676  Accuracy: 61.54 %
+2023-10-18 14:47:18.528534  HandleMissingData - strategy='mean'
+2023-10-18 14:47:18.543408  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 14:49:57.812871  [[1 3]
+ [2 7]]
+2023-10-18 14:49:57.813268  Accuracy: 61.54 %
+2023-10-18 14:57:51.968665  HandleMissingData - strategy='mean'
+2023-10-18 14:57:51.998468  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:00:17.931232  [[3 1]
+ [1 8]]
+2023-10-18 15:00:17.932669  Accuracy: 84.62 %
+2023-10-18 15:11:00.787626  HandleMissingData - strategy='mean'
+2023-10-18 15:11:00.817346  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:11:28.020139  [[3 1]
+ [1 8]]
+2023-10-18 15:11:28.021147  Accuracy: 84.62 %
+2023-10-18 15:14:09.536419  HandleMissingData - strategy='mean'
+2023-10-18 15:14:09.566344  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:14:11.302045  [[ 4  2]
+ [ 6 13]]
+2023-10-18 15:14:11.303097  Accuracy: 68.00 %
+2023-10-18 15:14:31.692951  HandleMissingData - strategy='mean'
+2023-10-18 15:14:31.707472  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:15:00.730287  [[3 1]
+ [1 8]]
+2023-10-18 15:15:00.730287  Accuracy: 84.62 %
+2023-10-18 15:17:04.383957  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:17:04.415933  HandleMissingData - strategy='mean'
+2023-10-18 15:17:04.431332  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:17:04.435324  using XGboost
+2023-10-18 15:17:04.735884  Pred test result
+2023-10-18 15:17:04.741760  [[2 2]
+ [2 7]]
+2023-10-18 15:17:04.742913  Accuracy: 69.23 %
+2023-10-18 15:17:04.744107  using CatBoost
+2023-10-18 15:17:06.624231  Pred test result
+2023-10-18 15:17:06.626824  [[3 1]
+ [3 6]]
+2023-10-18 15:17:06.627985  Accuracy: 69.23 %
+2023-10-18 15:17:06.629166  using KNN
+2023-10-18 15:17:06.630336  Pred test result
+2023-10-18 15:17:06.637765  [[4 0]
+ [6 3]]
+2023-10-18 15:17:06.638766  Accuracy: 53.85 %
+2023-10-18 15:17:06.639835  using sklearn.neural_network MLPClassifier
+2023-10-18 15:17:06.688768  Pred test result
+2023-10-18 15:17:06.690254  [[0 4]
+ [0 9]]
+2023-10-18 15:17:06.690254  Accuracy: 69.23 %
+2023-10-18 15:17:07.191430  using ExtraTreesClassifier
+2023-10-18 15:17:07.313075  Pred test result
+2023-10-18 15:17:07.325145  [[1 3]
+ [2 7]]
+2023-10-18 15:17:07.326144  Accuracy: 61.54 %
+2023-10-18 15:17:07.326144  using Perceptron
+2023-10-18 15:17:07.333175  Pred test result
+2023-10-18 15:17:07.334323  [[1 3]
+ [4 5]]
+2023-10-18 15:17:07.335323  Accuracy: 46.15 %
+2023-10-18 15:17:07.336321  using SVM
+2023-10-18 15:17:07.343306  Pred test result
+2023-10-18 15:17:07.345321  [[2 2]
+ [0 9]]
+2023-10-18 15:17:07.345321  Accuracy: 84.62 %
+2023-10-18 15:17:07.346802  using RBF SVC
+2023-10-18 15:17:07.353786  Pred test result
+2023-10-18 15:17:07.354784  [[3 1]
+ [1 8]]
+2023-10-18 15:17:07.354784  Accuracy: 84.62 %
+2023-10-18 15:17:07.355781  using Logistic Regression
+2023-10-18 15:17:08.726545  Pred test result
+2023-10-18 15:17:08.727759  [[1 3]
+ [3 6]]
+2023-10-18 15:17:08.728265  Accuracy: 53.85 %
+2023-10-18 15:17:08.731014  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:17:08.731014  using KNN
+2023-10-18 15:17:08.732118  using RBF SVC
+2023-10-18 15:19:20.424763  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:19:20.476131  HandleMissingData - strategy='mean'
+2023-10-18 15:19:20.495346  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:19:20.499338  using XGboost
+2023-10-18 15:19:20.587715  Pred test result
+2023-10-18 15:19:20.591920  [[2 2]
+ [2 7]]
+2023-10-18 15:19:20.591920  Accuracy: 69.23 %
+2023-10-18 15:19:20.592918  using CatBoost
+2023-10-18 15:19:21.422121  Pred test result
+2023-10-18 15:19:21.424116  [[3 1]
+ [3 6]]
+2023-10-18 15:19:21.424116  Accuracy: 69.23 %
+2023-10-18 15:19:21.425126  using KNN
+2023-10-18 15:19:21.426111  Pred test result
+2023-10-18 15:19:21.428197  [[4 0]
+ [6 3]]
+2023-10-18 15:19:21.428197  Accuracy: 53.85 %
+2023-10-18 15:19:21.428197  using sklearn.neural_network MLPClassifier
+2023-10-18 15:19:21.459030  Pred test result
+2023-10-18 15:19:21.460024  [[0 4]
+ [0 9]]
+2023-10-18 15:19:21.461055  Accuracy: 69.23 %
+2023-10-18 15:19:21.558301  using ExtraTreesClassifier
+2023-10-18 15:19:21.664777  Pred test result
+2023-10-18 15:19:21.677479  [[1 3]
+ [3 6]]
+2023-10-18 15:19:21.677479  Accuracy: 53.85 %
+2023-10-18 15:19:21.678481  using Perceptron
+2023-10-18 15:19:21.679528  Pred test result
+2023-10-18 15:19:21.680913  [[1 3]
+ [4 5]]
+2023-10-18 15:19:21.682461  Accuracy: 46.15 %
+2023-10-18 15:19:21.683475  using SVM
+2023-10-18 15:19:21.689511  Pred test result
+2023-10-18 15:19:21.690517  [[2 2]
+ [0 9]]
+2023-10-18 15:19:21.690517  Accuracy: 84.62 %
+2023-10-18 15:19:21.691814  using RBF SVC
+2023-10-18 15:19:21.699422  Pred test result
+2023-10-18 15:19:21.700668  [[3 1]
+ [1 8]]
+2023-10-18 15:19:21.701793  Accuracy: 84.62 %
+2023-10-18 15:19:21.702812  using Logistic Regression
+2023-10-18 15:19:22.820230  Pred test result
+2023-10-18 15:19:22.821192  [[1 3]
+ [3 6]]
+2023-10-18 15:19:22.821192  Accuracy: 53.85 %
+2023-10-18 15:19:22.822957  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:19:22.822957  using KNN
+2023-10-18 15:19:22.824818  using RBF SVC
+2023-10-18 15:20:57.680332  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:20:57.706439  HandleMissingData - strategy='mean'
+2023-10-18 15:20:57.719917  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:20:57.724159  using XGboost
+2023-10-18 15:20:57.797040  Pred test result
+2023-10-18 15:20:57.801030  [[2 2]
+ [2 7]]
+2023-10-18 15:20:57.801030  Accuracy: 69.23 %
+2023-10-18 15:20:57.802027  using CatBoost
+2023-10-18 15:20:58.432837  Pred test result
+2023-10-18 15:20:58.435936  [[3 1]
+ [3 6]]
+2023-10-18 15:20:58.435936  Accuracy: 69.23 %
+2023-10-18 15:20:58.437622  using KNN
+2023-10-18 15:20:58.437622  Pred test result
+2023-10-18 15:20:58.439664  [[4 0]
+ [6 3]]
+2023-10-18 15:20:58.440696  Accuracy: 53.85 %
+2023-10-18 15:20:58.440696  using sklearn.neural_network MLPClassifier
+2023-10-18 15:20:58.466378  Pred test result
+2023-10-18 15:20:58.468389  [[0 4]
+ [0 9]]
+2023-10-18 15:20:58.468389  Accuracy: 69.23 %
+2023-10-18 15:20:58.556516  using ExtraTreesClassifier
+2023-10-18 15:20:58.678949  Pred test result
+2023-10-18 15:20:58.692136  [[1 3]
+ [3 6]]
+2023-10-18 15:20:58.693138  Accuracy: 53.85 %
+2023-10-18 15:20:58.693138  using Perceptron
+2023-10-18 15:20:58.694656  Pred test result
+2023-10-18 15:20:58.696561  [[1 3]
+ [4 5]]
+2023-10-18 15:20:58.696561  Accuracy: 46.15 %
+2023-10-18 15:20:58.697564  using SVM
+2023-10-18 15:20:58.703657  Pred test result
+2023-10-18 15:20:58.705657  [[2 2]
+ [0 9]]
+2023-10-18 15:20:58.706654  Accuracy: 84.62 %
+2023-10-18 15:20:58.707706  using RBF SVC
+2023-10-18 15:20:58.714192  Pred test result
+2023-10-18 15:20:58.715434  [[3 1]
+ [1 8]]
+2023-10-18 15:20:58.716626  Accuracy: 84.62 %
+2023-10-18 15:20:58.718799  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:20:58.719304  using KNN
+2023-10-18 15:20:58.720306  using RBF SVC
+2023-10-18 15:21:45.987195  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:21:46.012874  HandleMissingData - strategy='mean'
+2023-10-18 15:21:46.026562  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:21:46.030390  using XGboost
+2023-10-18 15:21:46.100871  Pred test result
+2023-10-18 15:21:46.104921  [[2 2]
+ [2 7]]
+2023-10-18 15:21:46.104921  Accuracy: 69.23 %
+2023-10-18 15:21:46.105919  using CatBoost
+2023-10-18 15:21:46.748519  Pred test result
+2023-10-18 15:21:46.750715  [[3 1]
+ [3 6]]
+2023-10-18 15:21:46.751229  Accuracy: 69.23 %
+2023-10-18 15:21:46.752295  using KNN
+2023-10-18 15:21:46.752295  Pred test result
+2023-10-18 15:21:46.755163  [[4 0]
+ [6 3]]
+2023-10-18 15:21:46.755163  Accuracy: 53.85 %
+2023-10-18 15:21:46.756186  using sklearn.neural_network MLPClassifier
+2023-10-18 15:21:46.781370  Pred test result
+2023-10-18 15:21:46.783364  [[0 4]
+ [0 9]]
+2023-10-18 15:21:46.783364  Accuracy: 69.23 %
+2023-10-18 15:21:46.864354  using ExtraTreesClassifier
+2023-10-18 15:21:46.969978  Pred test result
+2023-10-18 15:21:46.982220  [[1 3]
+ [2 7]]
+2023-10-18 15:21:46.983267  Accuracy: 61.54 %
+2023-10-18 15:21:46.984541  using Perceptron
+2023-10-18 15:21:46.986369  Pred test result
+2023-10-18 15:21:46.987471  [[1 3]
+ [4 5]]
+2023-10-18 15:21:46.989144  Accuracy: 46.15 %
+2023-10-18 15:21:46.989144  using SVM
+2023-10-18 15:21:46.994866  Pred test result
+2023-10-18 15:21:46.996566  [[2 2]
+ [0 9]]
+2023-10-18 15:21:46.997641  Accuracy: 84.62 %
+2023-10-18 15:21:46.997641  using RBF SVC
+2023-10-18 15:21:47.005774  Pred test result
+2023-10-18 15:21:47.006770  [[3 1]
+ [4 5]]
+2023-10-18 15:21:47.007770  Accuracy: 61.54 %
+2023-10-18 15:21:47.009729  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:21:47.009729  using KNN
+2023-10-18 15:21:47.009729  using RBF SVC
+2023-10-18 15:23:19.705219  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:23:19.731212  HandleMissingData - strategy='mean'
+2023-10-18 15:23:19.743972  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:23:19.747971  using XGboost
+2023-10-18 15:23:19.819676  Pred test result
+2023-10-18 15:23:19.823664  [[2 2]
+ [2 7]]
+2023-10-18 15:23:19.824662  Accuracy: 69.23 %
+2023-10-18 15:23:19.825710  using CatBoost
+2023-10-18 15:23:20.451966  Pred test result
+2023-10-18 15:23:20.455519  [[3 1]
+ [3 6]]
+2023-10-18 15:23:20.456516  Accuracy: 69.23 %
+2023-10-18 15:23:20.457516  using KNN
+2023-10-18 15:23:20.457516  Pred test result
+2023-10-18 15:23:20.460531  [[4 0]
+ [6 3]]
+2023-10-18 15:23:20.460531  Accuracy: 53.85 %
+2023-10-18 15:23:20.461509  using sklearn.neural_network MLPClassifier
+2023-10-18 15:23:20.487929  Pred test result
+2023-10-18 15:23:20.488949  [[0 4]
+ [0 9]]
+2023-10-18 15:23:20.489925  Accuracy: 69.23 %
+2023-10-18 15:23:20.570143  using ExtraTreesClassifier
+2023-10-18 15:23:20.674076  Pred test result
+2023-10-18 15:23:20.685047  [[1 3]
+ [3 6]]
+2023-10-18 15:23:20.686044  Accuracy: 53.85 %
+2023-10-18 15:23:20.687043  using Perceptron
+2023-10-18 15:23:20.689037  Pred test result
+2023-10-18 15:23:20.690034  [[1 3]
+ [4 5]]
+2023-10-18 15:23:20.691031  Accuracy: 46.15 %
+2023-10-18 15:23:20.692028  using SVM
+2023-10-18 15:23:20.697015  Pred test result
+2023-10-18 15:23:20.698012  [[2 2]
+ [0 9]]
+2023-10-18 15:23:20.698012  Accuracy: 84.62 %
+2023-10-18 15:23:20.699637  using RBF SVC
+2023-10-18 15:23:20.712273  Pred test result
+2023-10-18 15:23:20.714480  [[0 4]
+ [0 9]]
+2023-10-18 15:23:20.714480  Accuracy: 69.23 %
+2023-10-18 15:23:20.715762  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:23:20.715762  using KNN
+2023-10-18 15:23:20.716848  using RBF SVC
+2023-10-18 15:23:37.301691  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:23:37.330904  HandleMissingData - strategy='mean'
+2023-10-18 15:23:37.346032  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:23:37.349033  using XGboost
+2023-10-18 15:23:37.421420  Pred test result
+2023-10-18 15:23:37.425408  [[2 2]
+ [2 7]]
+2023-10-18 15:23:37.426405  Accuracy: 69.23 %
+2023-10-18 15:23:37.426405  using CatBoost
+2023-10-18 15:23:38.034391  Pred test result
+2023-10-18 15:23:38.036737  [[3 1]
+ [3 6]]
+2023-10-18 15:23:38.036737  Accuracy: 69.23 %
+2023-10-18 15:23:38.038014  using KNN
+2023-10-18 15:23:38.039086  Pred test result
+2023-10-18 15:23:38.041624  [[4 0]
+ [6 3]]
+2023-10-18 15:23:38.042129  Accuracy: 53.85 %
+2023-10-18 15:23:38.042129  using sklearn.neural_network MLPClassifier
+2023-10-18 15:23:38.071213  Pred test result
+2023-10-18 15:23:38.072524  [[0 4]
+ [0 9]]
+2023-10-18 15:23:38.073544  Accuracy: 69.23 %
+2023-10-18 15:23:38.151227  using ExtraTreesClassifier
+2023-10-18 15:23:38.258205  Pred test result
+2023-10-18 15:23:38.269087  [[1 3]
+ [3 6]]
+2023-10-18 15:23:38.269087  Accuracy: 53.85 %
+2023-10-18 15:23:38.271057  using Perceptron
+2023-10-18 15:23:38.272373  Pred test result
+2023-10-18 15:23:38.275240  [[1 3]
+ [4 5]]
+2023-10-18 15:23:38.276247  Accuracy: 46.15 %
+2023-10-18 15:23:38.276247  using SVM
+2023-10-18 15:23:38.282606  Pred test result
+2023-10-18 15:23:38.284946  [[2 2]
+ [0 9]]
+2023-10-18 15:23:38.285451  Accuracy: 84.62 %
+2023-10-18 15:23:38.286855  using RBF SVC
+2023-10-18 15:23:38.302652  Pred test result
+2023-10-18 15:23:38.305160  [[0 4]
+ [0 9]]
+2023-10-18 15:23:38.306170  Accuracy: 69.23 %
+2023-10-18 15:23:38.307968  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:23:38.307968  using KNN
+2023-10-18 15:23:38.309628  using RBF SVC
+2023-10-18 15:24:02.260015  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:24:02.286136  HandleMissingData - strategy='mean'
+2023-10-18 15:24:02.300532  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:24:02.304543  using XGboost
+2023-10-18 15:24:02.373987  Pred test result
+2023-10-18 15:24:02.377976  [[2 2]
+ [2 7]]
+2023-10-18 15:24:02.378974  Accuracy: 69.23 %
+2023-10-18 15:24:02.379972  using CatBoost
+2023-10-18 15:24:03.015783  Pred test result
+2023-10-18 15:24:03.017897  [[3 1]
+ [3 6]]
+2023-10-18 15:24:03.018917  Accuracy: 69.23 %
+2023-10-18 15:24:03.019896  using KNN
+2023-10-18 15:24:03.019896  Pred test result
+2023-10-18 15:24:03.021892  [[4 0]
+ [6 3]]
+2023-10-18 15:24:03.022888  Accuracy: 53.85 %
+2023-10-18 15:24:03.022888  using sklearn.neural_network MLPClassifier
+2023-10-18 15:24:03.048469  Pred test result
+2023-10-18 15:24:03.050263  [[0 4]
+ [0 9]]
+2023-10-18 15:24:03.050263  Accuracy: 69.23 %
+2023-10-18 15:24:03.138364  using ExtraTreesClassifier
+2023-10-18 15:24:03.254596  Pred test result
+2023-10-18 15:24:03.268127  [[1 3]
+ [1 8]]
+2023-10-18 15:24:03.269086  Accuracy: 69.23 %
+2023-10-18 15:24:03.270125  using Perceptron
+2023-10-18 15:24:03.271634  Pred test result
+2023-10-18 15:24:03.273900  [[1 3]
+ [4 5]]
+2023-10-18 15:24:03.273900  Accuracy: 46.15 %
+2023-10-18 15:24:03.275922  using SVM
+2023-10-18 15:24:03.280694  Pred test result
+2023-10-18 15:24:03.281668  [[2 2]
+ [0 9]]
+2023-10-18 15:24:03.281668  Accuracy: 84.62 %
+2023-10-18 15:24:03.282967  using RBF SVC
+2023-10-18 15:24:03.292555  Pred test result
+2023-10-18 15:24:03.294254  [[3 1]
+ [4 5]]
+2023-10-18 15:24:03.294254  Accuracy: 61.54 %
+2023-10-18 15:24:03.296025  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:24:03.296025  using KNN
+2023-10-18 15:24:03.297412  using RBF SVC
+2023-10-18 15:26:25.309307  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:26:25.355908  HandleMissingData - strategy='mean'
+2023-10-18 15:26:25.370121  Feature Selection - SelectKBest(chi2, k=60)
+2023-10-18 15:26:25.381342  using XGboost
+2023-10-18 15:26:25.523490  Pred test result
+2023-10-18 15:26:25.528705  [[2 2]
+ [2 7]]
+2023-10-18 15:26:25.528705  Accuracy: 69.23 %
+2023-10-18 15:26:25.529703  using CatBoost
+2023-10-18 15:26:26.669459  Pred test result
+2023-10-18 15:26:26.675541  [[2 2]
+ [6 3]]
+2023-10-18 15:26:26.676609  Accuracy: 38.46 %
+2023-10-18 15:26:26.676609  using KNN
+2023-10-18 15:26:26.677823  Pred test result
+2023-10-18 15:26:26.681006  [[4 0]
+ [6 3]]
+2023-10-18 15:26:26.681006  Accuracy: 53.85 %
+2023-10-18 15:26:26.682577  using sklearn.neural_network MLPClassifier
+2023-10-18 15:26:26.720689  Pred test result
+2023-10-18 15:26:26.721977  [[0 4]
+ [0 9]]
+2023-10-18 15:26:26.721977  Accuracy: 69.23 %
+2023-10-18 15:26:26.813434  using ExtraTreesClassifier
+2023-10-18 15:26:26.940155  Pred test result
+2023-10-18 15:26:26.951791  [[1 3]
+ [3 6]]
+2023-10-18 15:26:26.952806  Accuracy: 53.85 %
+2023-10-18 15:26:26.953841  using Perceptron
+2023-10-18 15:26:26.956321  Pred test result
+2023-10-18 15:26:26.958574  [[2 2]
+ [3 6]]
+2023-10-18 15:26:26.958574  Accuracy: 61.54 %
+2023-10-18 15:26:26.959635  using SVM
+2023-10-18 15:26:26.964385  Pred test result
+2023-10-18 15:26:26.965386  [[2 2]
+ [1 8]]
+2023-10-18 15:26:26.966383  Accuracy: 76.92 %
+2023-10-18 15:26:26.967390  using RBF SVC
+2023-10-18 15:26:26.975203  Pred test result
+2023-10-18 15:26:26.976909  [[3 1]
+ [4 5]]
+2023-10-18 15:26:26.976909  Accuracy: 61.54 %
+2023-10-18 15:26:26.978870  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 76.92307692307693
+2023-10-18 15:26:26.978870  using KNN
+2023-10-18 15:26:26.979977  using RBF SVC
+2023-10-18 15:27:09.097562  File name is: 'FM_dataset - Sum Species and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:27:09.126060  HandleMissingData - strategy='mean'
+2023-10-18 15:27:09.136155  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 15:27:09.138928  using XGboost
+2023-10-18 15:27:09.226752  Pred test result
+2023-10-18 15:27:09.230741  [[3 1]
+ [1 8]]
+2023-10-18 15:27:09.231739  Accuracy: 84.62 %
+2023-10-18 15:27:09.232811  using CatBoost
+2023-10-18 15:27:09.912537  Pred test result
+2023-10-18 15:27:09.915560  [[3 1]
+ [4 5]]
+2023-10-18 15:27:09.915560  Accuracy: 61.54 %
+2023-10-18 15:27:09.916566  using KNN
+2023-10-18 15:27:09.916566  Pred test result
+2023-10-18 15:27:09.918710  [[4 0]
+ [6 3]]
+2023-10-18 15:27:09.919838  Accuracy: 53.85 %
+2023-10-18 15:27:09.920852  using sklearn.neural_network MLPClassifier
+2023-10-18 15:27:09.956007  Pred test result
+2023-10-18 15:27:09.958074  [[0 4]
+ [0 9]]
+2023-10-18 15:27:09.958074  Accuracy: 69.23 %
+2023-10-18 15:27:09.991689  using ExtraTreesClassifier
+2023-10-18 15:27:10.104362  Pred test result
+2023-10-18 15:27:10.117350  [[2 2]
+ [3 6]]
+2023-10-18 15:27:10.118433  Accuracy: 61.54 %
+2023-10-18 15:27:10.119473  using Perceptron
+2023-10-18 15:27:10.121561  Pred test result
+2023-10-18 15:27:10.123531  [[3 1]
+ [3 6]]
+2023-10-18 15:27:10.123531  Accuracy: 69.23 %
+2023-10-18 15:27:10.124531  using SVM
+2023-10-18 15:27:10.131631  Pred test result
+2023-10-18 15:27:10.133627  [[2 2]
+ [1 8]]
+2023-10-18 15:27:10.134624  Accuracy: 76.92 %
+2023-10-18 15:27:10.135624  using RBF SVC
+2023-10-18 15:27:10.147102  Pred test result
+2023-10-18 15:27:10.148099  [[3 1]
+ [4 5]]
+2023-10-18 15:27:10.149096  Accuracy: 61.54 %
+2023-10-18 15:27:10.150094  The best result for file name: FM_dataset - Sum Species and count - 125 samples is: 84.61538461538461
+2023-10-18 15:27:10.150094  using KNN
+2023-10-18 15:27:10.151091  using RBF SVC
+2023-10-18 15:29:57.158693  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 15:29:57.230545  HandleMissingData - strategy='mean'
+2023-10-18 15:29:57.259476  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 15:29:57.276898  using XGboost
+2023-10-18 15:29:57.579188  Pred test result
+2023-10-18 15:29:57.586684  [[2 2]
+ [4 5]]
+2023-10-18 15:29:57.588601  Accuracy: 53.85 %
+2023-10-18 15:29:57.590093  using CatBoost
+2023-10-18 15:29:59.109680  Pred test result
+2023-10-18 15:29:59.115518  [[1 3]
+ [2 7]]
+2023-10-18 15:29:59.116850  Accuracy: 61.54 %
+2023-10-18 15:29:59.117359  using KNN
+2023-10-18 15:29:59.117864  Pred test result
+2023-10-18 15:29:59.124470  [[4 0]
+ [5 4]]
+2023-10-18 15:29:59.124470  Accuracy: 61.54 %
+2023-10-18 15:29:59.125467  using sklearn.neural_network MLPClassifier
+2023-10-18 15:29:59.731354  Pred test result
+2023-10-18 15:29:59.733757  [[2 2]
+ [2 7]]
+2023-10-18 15:29:59.733757  Accuracy: 69.23 %
+2023-10-18 15:29:59.813615  using ExtraTreesClassifier
+2023-10-18 15:29:59.986117  Pred test result
+2023-10-18 15:30:00.016537  [[1 3]
+ [2 7]]
+2023-10-18 15:30:00.017533  Accuracy: 61.54 %
+2023-10-18 15:30:00.020525  using Perceptron
+2023-10-18 15:30:00.027037  Pred test result
+2023-10-18 15:30:00.029031  [[3 1]
+ [7 2]]
+2023-10-18 15:30:00.029031  Accuracy: 38.46 %
+2023-10-18 15:30:00.031026  using SVM
+2023-10-18 15:30:00.039945  Pred test result
+2023-10-18 15:30:00.040943  [[2 2]
+ [0 9]]
+2023-10-18 15:30:00.041940  Accuracy: 84.62 %
+2023-10-18 15:30:00.042937  using RBF SVC
+2023-10-18 15:30:00.054000  Pred test result
+2023-10-18 15:30:00.056284  [[3 1]
+ [3 6]]
+2023-10-18 15:30:00.056284  Accuracy: 69.23 %
+2023-10-18 15:30:00.058862  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 15:30:00.058862  using KNN
+2023-10-18 15:30:00.059936  using RBF SVC
+2023-10-18 16:06:40.992897  File name is: 'FM_dataset - Sum Family and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:06:41.069555  HandleMissingData - strategy='mean'
+2023-10-18 16:06:41.098195  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 16:06:41.110960  using XGboost
+2023-10-18 16:06:41.316454  Pred test result
+2023-10-18 16:06:41.324111  [[0 4]
+ [4 5]]
+2023-10-18 16:06:41.325119  Accuracy: 38.46 %
+2023-10-18 16:06:41.329115  using CatBoost
+2023-10-18 16:06:42.950620  Pred test result
+2023-10-18 16:06:42.959943  [[2 2]
+ [3 6]]
+2023-10-18 16:06:42.961449  Accuracy: 61.54 %
+2023-10-18 16:06:42.963894  using KNN
+2023-10-18 16:06:42.966104  Pred test result
+2023-10-18 16:06:42.971864  [[1 3]
+ [4 5]]
+2023-10-18 16:06:42.972866  Accuracy: 46.15 %
+2023-10-18 16:06:42.973866  using sklearn.neural_network MLPClassifier
+2023-10-18 16:06:43.029150  Pred test result
+2023-10-18 16:06:43.032704  [[0 4]
+ [0 9]]
+2023-10-18 16:06:43.033705  Accuracy: 69.23 %
+2023-10-18 16:06:43.149800  using ExtraTreesClassifier
+2023-10-18 16:06:43.350772  Pred test result
+2023-10-18 16:06:43.369454  [[0 4]
+ [2 7]]
+2023-10-18 16:06:43.369454  Accuracy: 53.85 %
+2023-10-18 16:06:43.370977  using Perceptron
+2023-10-18 16:06:43.376708  Pred test result
+2023-10-18 16:06:43.378756  [[4 0]
+ [7 2]]
+2023-10-18 16:06:43.378756  Accuracy: 46.15 %
+2023-10-18 16:06:43.380173  using SVM
+2023-10-18 16:06:43.387316  Pred test result
+2023-10-18 16:06:43.389364  [[1 3]
+ [0 9]]
+2023-10-18 16:06:43.389364  Accuracy: 76.92 %
+2023-10-18 16:06:43.390872  using RBF SVC
+2023-10-18 16:06:43.400672  Pred test result
+2023-10-18 16:06:43.402522  [[1 3]
+ [4 5]]
+2023-10-18 16:06:43.403055  Accuracy: 46.15 %
+2023-10-18 16:06:43.405986  The best result for file name: FM_dataset - Sum Family and count - 125 samples is: 76.92307692307693
+2023-10-18 16:06:43.406492  using KNN
+2023-10-18 16:06:43.406492  using RBF SVC
+2023-10-18 16:07:17.415589  File name is: 'FM_dataset - Sum Family and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:07:17.449715  HandleMissingData - strategy='mean'
+2023-10-18 16:07:17.452955  using XGboost
+2023-10-18 16:07:17.568929  Pred test result
+2023-10-18 16:07:17.573425  [[0 4]
+ [4 5]]
+2023-10-18 16:07:17.573425  Accuracy: 38.46 %
+2023-10-18 16:07:17.574423  using CatBoost
+2023-10-18 16:07:18.616423  Pred test result
+2023-10-18 16:07:18.619120  [[3 1]
+ [4 5]]
+2023-10-18 16:07:18.620688  Accuracy: 61.54 %
+2023-10-18 16:07:18.621711  using KNN
+2023-10-18 16:07:18.624000  Pred test result
+2023-10-18 16:07:18.627831  [[1 3]
+ [4 5]]
+2023-10-18 16:07:18.628867  Accuracy: 46.15 %
+2023-10-18 16:07:18.630859  using sklearn.neural_network MLPClassifier
+2023-10-18 16:07:18.685443  Pred test result
+2023-10-18 16:07:18.687457  [[0 4]
+ [0 9]]
+2023-10-18 16:07:18.687457  Accuracy: 69.23 %
+2023-10-18 16:07:18.738160  using ExtraTreesClassifier
+2023-10-18 16:07:18.938092  Pred test result
+2023-10-18 16:07:18.959926  [[0 4]
+ [3 6]]
+2023-10-18 16:07:18.960936  Accuracy: 46.15 %
+2023-10-18 16:07:18.961976  using Perceptron
+2023-10-18 16:07:18.964255  Pred test result
+2023-10-18 16:07:18.966769  [[3 1]
+ [5 4]]
+2023-10-18 16:07:18.967781  Accuracy: 53.85 %
+2023-10-18 16:07:18.969272  using SVM
+2023-10-18 16:07:18.978519  Pred test result
+2023-10-18 16:07:18.981029  [[1 3]
+ [0 9]]
+2023-10-18 16:07:18.982054  Accuracy: 76.92 %
+2023-10-18 16:07:18.983058  using RBF SVC
+2023-10-18 16:07:18.994538  Pred test result
+2023-10-18 16:07:18.999078  [[1 3]
+ [4 5]]
+2023-10-18 16:07:19.001083  Accuracy: 46.15 %
+2023-10-18 16:07:19.004505  The best result for file name: FM_dataset - Sum Family and count - 125 samples is: 76.92307692307693
+2023-10-18 16:07:19.005512  using KNN
+2023-10-18 16:07:19.007621  using RBF SVC
+2023-10-18 16:07:37.387188  File name is: 'FM_dataset - Sum Family and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:07:37.445515  HandleMissingData - strategy='mean'
+2023-10-18 16:07:37.450102  using XGboost
+2023-10-18 16:07:37.643252  Pred test result
+2023-10-18 16:07:37.653873  [[ 1  5]
+ [ 4 15]]
+2023-10-18 16:07:37.654869  Accuracy: 64.00 %
+2023-10-18 16:07:37.656862  using CatBoost
+2023-10-18 16:07:38.989961  Pred test result
+2023-10-18 16:07:38.995070  [[ 4  2]
+ [ 8 11]]
+2023-10-18 16:07:38.995070  Accuracy: 60.00 %
+2023-10-18 16:07:38.996085  using KNN
+2023-10-18 16:07:38.997226  Pred test result
+2023-10-18 16:07:39.004386  [[ 3  3]
+ [ 9 10]]
+2023-10-18 16:07:39.006040  Accuracy: 52.00 %
+2023-10-18 16:07:39.007426  using sklearn.neural_network MLPClassifier
+2023-10-18 16:07:39.065088  Pred test result
+2023-10-18 16:07:39.067191  [[ 0  6]
+ [ 0 19]]
+2023-10-18 16:07:39.068305  Accuracy: 76.00 %
+2023-10-18 16:07:39.119450  using ExtraTreesClassifier
+2023-10-18 16:07:39.347265  Pred test result
+2023-10-18 16:07:39.366358  [[ 2  4]
+ [ 5 14]]
+2023-10-18 16:07:39.368487  Accuracy: 64.00 %
+2023-10-18 16:07:39.369866  using Perceptron
+2023-10-18 16:07:39.371911  Pred test result
+2023-10-18 16:07:39.373351  [[ 4  2]
+ [11  8]]
+2023-10-18 16:07:39.374385  Accuracy: 48.00 %
+2023-10-18 16:07:39.374385  using SVM
+2023-10-18 16:07:39.381540  Pred test result
+2023-10-18 16:07:39.382996  [[ 1  5]
+ [ 0 19]]
+2023-10-18 16:07:39.384003  Accuracy: 80.00 %
+2023-10-18 16:07:39.384003  using RBF SVC
+2023-10-18 16:07:39.394104  Pred test result
+2023-10-18 16:07:39.397373  [[ 2  4]
+ [ 7 12]]
+2023-10-18 16:07:39.398401  Accuracy: 56.00 %
+2023-10-18 16:07:39.399489  The best result for file name: FM_dataset - Sum Family and count - 125 samples is: 80.0
+2023-10-18 16:07:39.400997  using KNN
+2023-10-18 16:07:39.402041  using RBF SVC
+2023-10-18 16:08:35.839383  HandleMissingData - strategy='mean'
+2023-10-18 16:08:48.741168  [[ 2  4]
+ [ 2 17]]
+2023-10-18 16:08:48.742187  Accuracy: 76.00 %
+2023-10-18 16:10:16.140915  File name is: 'FM_dataset - Sum Family and count - 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:10:16.187205  HandleMissingData - strategy='mean'
+2023-10-18 16:10:16.189208  using XGboost
+2023-10-18 16:10:16.339066  Pred test result
+2023-10-18 16:10:16.346200  [[ 1  5]
+ [ 4 15]]
+2023-10-18 16:10:16.347206  Accuracy: 64.00 %
+2023-10-18 16:10:16.349200  using CatBoost
+2023-10-18 16:10:17.560040  Pred test result
+2023-10-18 16:10:17.565718  [[ 4  2]
+ [ 8 11]]
+2023-10-18 16:10:17.566783  Accuracy: 60.00 %
+2023-10-18 16:10:17.568033  using KNN
+2023-10-18 16:10:17.569249  Pred test result
+2023-10-18 16:10:17.575206  [[ 3  3]
+ [ 9 10]]
+2023-10-18 16:10:17.576204  Accuracy: 52.00 %
+2023-10-18 16:10:17.578200  using sklearn.neural_network MLPClassifier
+2023-10-18 16:10:17.662157  Pred test result
+2023-10-18 16:10:17.663554  [[ 0  6]
+ [ 0 19]]
+2023-10-18 16:10:17.664600  Accuracy: 76.00 %
+2023-10-18 16:10:17.736986  using ExtraTreesClassifier
+2023-10-18 16:10:17.959714  Pred test result
+2023-10-18 16:10:17.989190  [[ 2  4]
+ [ 5 14]]
+2023-10-18 16:10:17.990698  Accuracy: 64.00 %
+2023-10-18 16:10:17.991728  using Perceptron
+2023-10-18 16:10:17.994628  Pred test result
+2023-10-18 16:10:17.997090  [[ 4  2]
+ [11  8]]
+2023-10-18 16:10:17.999178  Accuracy: 48.00 %
+2023-10-18 16:10:18.000689  using SVM
+2023-10-18 16:10:18.013600  Pred test result
+2023-10-18 16:10:18.015676  [[ 1  5]
+ [ 0 19]]
+2023-10-18 16:10:18.016186  Accuracy: 80.00 %
+2023-10-18 16:10:18.017405  using RBF SVC
+2023-10-18 16:10:18.028423  Pred test result
+2023-10-18 16:10:18.031969  [[ 2  4]
+ [ 7 12]]
+2023-10-18 16:10:18.032965  Accuracy: 56.00 %
+2023-10-18 16:10:18.034965  The best result for file name: FM_dataset - Sum Family and count - 125 samples is: 80.0
+2023-10-18 16:10:18.034965  using KNN
+2023-10-18 16:10:18.036960  using RBF SVC
+2023-10-18 16:12:03.764252  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:12:03.833010  HandleMissingData - strategy='mean'
+2023-10-18 16:12:03.847268  using XGboost
+2023-10-18 16:12:04.625010  Pred test result
+2023-10-18 16:12:04.638636  [[ 3  3]
+ [ 8 11]]
+2023-10-18 16:12:04.640788  Accuracy: 56.00 %
+2023-10-18 16:12:04.642817  using CatBoost
+2023-10-18 16:12:07.022241  Pred test result
+2023-10-18 16:12:07.061489  [[ 2  4]
+ [ 8 11]]
+2023-10-18 16:12:07.062787  Accuracy: 52.00 %
+2023-10-18 16:12:07.064995  using KNN
+2023-10-18 16:12:07.068043  Pred test result
+2023-10-18 16:12:07.076200  [[ 4  2]
+ [ 7 12]]
+2023-10-18 16:12:07.077278  Accuracy: 64.00 %
+2023-10-18 16:12:07.079778  using sklearn.neural_network MLPClassifier
+2023-10-18 16:12:07.831017  Pred test result
+2023-10-18 16:12:07.834523  [[ 0  6]
+ [ 0 19]]
+2023-10-18 16:12:07.835028  Accuracy: 76.00 %
+2023-10-18 16:12:07.893976  using ExtraTreesClassifier
+2023-10-18 16:12:08.154127  Pred test result
+2023-10-18 16:12:08.173515  [[ 3  3]
+ [ 5 14]]
+2023-10-18 16:12:08.174792  Accuracy: 68.00 %
+2023-10-18 16:12:08.175804  using Perceptron
+2023-10-18 16:12:08.182983  Pred test result
+2023-10-18 16:12:08.185021  [[ 4  2]
+ [ 9 10]]
+2023-10-18 16:12:08.186477  Accuracy: 56.00 %
+2023-10-18 16:12:08.187517  using SVM
+2023-10-18 16:12:08.233329  Pred test result
+2023-10-18 16:12:08.237417  [[ 2  4]
+ [ 1 18]]
+2023-10-18 16:12:08.238409  Accuracy: 80.00 %
+2023-10-18 16:12:08.240730  using RBF SVC
+2023-10-18 16:12:08.297393  Pred test result
+2023-10-18 16:12:08.305532  [[ 3  3]
+ [ 7 12]]
+2023-10-18 16:12:08.307778  Accuracy: 60.00 %
+2023-10-18 16:12:08.311408  The best result for file name: FM_dataset - Processed 125 samples is: 80.0
+2023-10-18 16:12:08.312416  using KNN
+2023-10-18 16:12:08.314432  using RBF SVC
+2023-10-18 16:21:20.962362  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:21:21.025198  HandleMissingData - strategy='mean'
+2023-10-18 16:21:21.036214  using XGboost
+2023-10-18 16:21:21.402666  Pred test result
+2023-10-18 16:21:21.414180  [[1 3]
+ [4 5]]
+2023-10-18 16:21:21.415177  Accuracy: 46.15 %
+2023-10-18 16:21:21.417688  using CatBoost
+2023-10-18 16:21:23.461766  Pred test result
+2023-10-18 16:21:23.478827  [[3 1]
+ [5 4]]
+2023-10-18 16:21:23.479833  Accuracy: 53.85 %
+2023-10-18 16:21:23.481337  using KNN
+2023-10-18 16:21:23.483478  Pred test result
+2023-10-18 16:21:23.498497  [[2 2]
+ [3 6]]
+2023-10-18 16:21:23.499536  Accuracy: 61.54 %
+2023-10-18 16:21:23.501077  using sklearn.neural_network MLPClassifier
+2023-10-18 16:21:24.201353  Pred test result
+2023-10-18 16:21:24.203354  [[0 4]
+ [0 9]]
+2023-10-18 16:21:24.204351  Accuracy: 69.23 %
+2023-10-18 16:21:24.301276  using ExtraTreesClassifier
+2023-10-18 16:21:24.545993  Pred test result
+2023-10-18 16:21:24.565952  [[2 2]
+ [3 6]]
+2023-10-18 16:21:24.566949  Accuracy: 61.54 %
+2023-10-18 16:21:24.567947  using Perceptron
+2023-10-18 16:21:24.579421  Pred test result
+2023-10-18 16:21:24.582143  [[3 1]
+ [7 2]]
+2023-10-18 16:21:24.583411  Accuracy: 38.46 %
+2023-10-18 16:21:24.584567  using SVM
+2023-10-18 16:21:24.621763  Pred test result
+2023-10-18 16:21:24.624763  [[2 2]
+ [0 9]]
+2023-10-18 16:21:24.624763  Accuracy: 84.62 %
+2023-10-18 16:21:24.627147  using RBF SVC
+2023-10-18 16:21:24.686294  Pred test result
+2023-10-18 16:21:24.689837  [[2 2]
+ [3 6]]
+2023-10-18 16:21:24.690878  Accuracy: 61.54 %
+2023-10-18 16:21:24.694626  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:21:24.695624  using KNN
+2023-10-18 16:21:24.695624  using RBF SVC
+2023-10-18 16:21:53.594498  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:21:53.636946  HandleMissingData - strategy='mean'
+2023-10-18 16:21:53.664459  Feature Selection - SelectKBest(chi2, k=72)
+2023-10-18 16:21:53.675058  using XGboost
+2023-10-18 16:21:53.785479  Pred test result
+2023-10-18 16:21:53.790976  [[2 2]
+ [4 5]]
+2023-10-18 16:21:53.792225  Accuracy: 53.85 %
+2023-10-18 16:21:53.793229  using CatBoost
+2023-10-18 16:21:54.604483  Pred test result
+2023-10-18 16:21:54.608070  [[1 3]
+ [2 7]]
+2023-10-18 16:21:54.608070  Accuracy: 61.54 %
+2023-10-18 16:21:54.609465  using KNN
+2023-10-18 16:21:54.610972  Pred test result
+2023-10-18 16:21:54.614236  [[4 0]
+ [5 4]]
+2023-10-18 16:21:54.614236  Accuracy: 61.54 %
+2023-10-18 16:21:54.616050  using sklearn.neural_network MLPClassifier
+2023-10-18 16:21:55.223316  Pred test result
+2023-10-18 16:21:55.225421  [[2 2]
+ [2 7]]
+2023-10-18 16:21:55.225421  Accuracy: 69.23 %
+2023-10-18 16:21:55.272176  using ExtraTreesClassifier
+2023-10-18 16:21:55.427839  Pred test result
+2023-10-18 16:21:55.452082  [[1 3]
+ [2 7]]
+2023-10-18 16:21:55.454081  Accuracy: 61.54 %
+2023-10-18 16:21:55.455078  using Perceptron
+2023-10-18 16:21:55.458071  Pred test result
+2023-10-18 16:21:55.460066  [[3 1]
+ [7 2]]
+2023-10-18 16:21:55.461063  Accuracy: 38.46 %
+2023-10-18 16:21:55.465576  using SVM
+2023-10-18 16:21:55.476310  Pred test result
+2023-10-18 16:21:55.478716  [[2 2]
+ [0 9]]
+2023-10-18 16:21:55.479930  Accuracy: 84.62 %
+2023-10-18 16:21:55.482978  using RBF SVC
+2023-10-18 16:21:55.495514  Pred test result
+2023-10-18 16:21:55.498625  [[3 1]
+ [3 6]]
+2023-10-18 16:21:55.498625  Accuracy: 69.23 %
+2023-10-18 16:21:55.502129  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:21:55.503139  using KNN
+2023-10-18 16:21:55.504510  using RBF SVC
+2023-10-18 16:33:57.204828  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:33:57.263277  HandleMissingData - strategy='mean'
+2023-10-18 16:33:57.285715  Feature Selection - SelectKBest(chi2, k=50)
+2023-10-18 16:33:57.306690  using XGboost
+2023-10-18 16:33:57.463647  Pred test result
+2023-10-18 16:33:57.470158  [[2 2]
+ [3 6]]
+2023-10-18 16:33:57.471510  Accuracy: 61.54 %
+2023-10-18 16:33:57.472576  using CatBoost
+2023-10-18 16:33:58.562523  Pred test result
+2023-10-18 16:33:58.569696  [[4 0]
+ [4 5]]
+2023-10-18 16:33:58.569696  Accuracy: 69.23 %
+2023-10-18 16:33:58.571090  using KNN
+2023-10-18 16:33:58.571090  Pred test result
+2023-10-18 16:33:58.578372  [[4 0]
+ [6 3]]
+2023-10-18 16:33:58.579370  Accuracy: 53.85 %
+2023-10-18 16:33:58.579370  using sklearn.neural_network MLPClassifier
+2023-10-18 16:33:58.685376  Pred test result
+2023-10-18 16:33:58.686373  [[1 3]
+ [1 8]]
+2023-10-18 16:33:58.686373  Accuracy: 69.23 %
+2023-10-18 16:33:58.832330  using ExtraTreesClassifier
+2023-10-18 16:33:58.935951  Pred test result
+2023-10-18 16:33:58.948181  [[1 3]
+ [3 6]]
+2023-10-18 16:33:58.948181  Accuracy: 53.85 %
+2023-10-18 16:33:58.949673  using Perceptron
+2023-10-18 16:33:58.955670  Pred test result
+2023-10-18 16:33:58.956673  [[3 1]
+ [7 2]]
+2023-10-18 16:33:58.956673  Accuracy: 38.46 %
+2023-10-18 16:33:58.957818  using SVM
+2023-10-18 16:33:58.963072  Pred test result
+2023-10-18 16:33:58.964208  [[2 2]
+ [0 9]]
+2023-10-18 16:33:58.964208  Accuracy: 84.62 %
+2023-10-18 16:33:58.966209  using RBF SVC
+2023-10-18 16:33:58.971705  Pred test result
+2023-10-18 16:33:58.973054  [[3 1]
+ [3 6]]
+2023-10-18 16:33:58.973054  Accuracy: 69.23 %
+2023-10-18 16:33:58.974642  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:33:58.974642  using KNN
+2023-10-18 16:33:58.975892  using RBF SVC
+2023-10-18 16:36:04.902780  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:36:04.930570  HandleMissingData - strategy='mean'
+2023-10-18 16:36:04.944835  Feature Selection - SelectKBest(chi2, k=40)
+2023-10-18 16:36:04.950099  using XGboost
+2023-10-18 16:36:05.019837  Pred test result
+2023-10-18 16:36:05.023262  [[2 2]
+ [4 5]]
+2023-10-18 16:36:05.024260  Accuracy: 53.85 %
+2023-10-18 16:36:05.025257  using CatBoost
+2023-10-18 16:36:05.658378  Pred test result
+2023-10-18 16:36:05.660339  [[1 3]
+ [4 5]]
+2023-10-18 16:36:05.660843  Accuracy: 46.15 %
+2023-10-18 16:36:05.660843  using KNN
+2023-10-18 16:36:05.660843  Pred test result
+2023-10-18 16:36:05.663328  [[4 0]
+ [7 2]]
+2023-10-18 16:36:05.664328  Accuracy: 46.15 %
+2023-10-18 16:36:05.664328  using sklearn.neural_network MLPClassifier
+2023-10-18 16:36:05.688870  Pred test result
+2023-10-18 16:36:05.689864  [[0 4]
+ [0 9]]
+2023-10-18 16:36:05.689864  Accuracy: 69.23 %
+2023-10-18 16:36:05.722072  using ExtraTreesClassifier
+2023-10-18 16:36:05.812597  Pred test result
+2023-10-18 16:36:05.821813  [[1 3]
+ [1 8]]
+2023-10-18 16:36:05.822783  Accuracy: 69.23 %
+2023-10-18 16:36:05.823880  using Perceptron
+2023-10-18 16:36:05.826105  Pred test result
+2023-10-18 16:36:05.827122  [[1 3]
+ [1 8]]
+2023-10-18 16:36:05.827122  Accuracy: 69.23 %
+2023-10-18 16:36:05.828104  using SVM
+2023-10-18 16:36:05.832094  Pred test result
+2023-10-18 16:36:05.833090  [[2 2]
+ [0 9]]
+2023-10-18 16:36:05.834089  Accuracy: 84.62 %
+2023-10-18 16:36:05.834089  using RBF SVC
+2023-10-18 16:36:05.841388  Pred test result
+2023-10-18 16:36:05.842465  [[3 1]
+ [4 5]]
+2023-10-18 16:36:05.843503  Accuracy: 61.54 %
+2023-10-18 16:36:05.844582  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:36:05.844582  using KNN
+2023-10-18 16:36:05.845968  using RBF SVC
+2023-10-18 16:37:16.921697  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:37:16.988065  HandleMissingData - strategy='mean'
+2023-10-18 16:37:17.013302  Feature Selection - SelectKBest(chi2, k=40)
+2023-10-18 16:37:17.044549  using XGboost
+2023-10-18 16:37:17.233169  Pred test result
+2023-10-18 16:37:17.239465  [[2 2]
+ [4 5]]
+2023-10-18 16:37:17.239465  Accuracy: 53.85 %
+2023-10-18 16:37:17.239465  using CatBoost
+2023-10-18 16:37:18.628417  Pred test result
+2023-10-18 16:37:18.644520  [[1 3]
+ [4 5]]
+2023-10-18 16:37:18.644520  Accuracy: 46.15 %
+2023-10-18 16:37:18.644520  using KNN
+2023-10-18 16:37:18.644520  Pred test result
+2023-10-18 16:37:18.658027  [[4 0]
+ [7 2]]
+2023-10-18 16:37:18.658027  Accuracy: 46.15 %
+2023-10-18 16:37:18.658027  using sklearn.neural_network MLPClassifier
+2023-10-18 16:37:18.714130  Pred test result
+2023-10-18 16:37:18.714130  [[0 4]
+ [0 9]]
+2023-10-18 16:37:18.714130  Accuracy: 69.23 %
+2023-10-18 16:37:18.800710  using ExtraTreesClassifier
+2023-10-18 16:37:18.989769  Pred test result
+2023-10-18 16:37:19.007576  [[1 3]
+ [4 5]]
+2023-10-18 16:37:19.007576  Accuracy: 46.15 %
+2023-10-18 16:37:19.007576  using Perceptron
+2023-10-18 16:37:19.022741  Pred test result
+2023-10-18 16:37:19.022741  [[1 3]
+ [1 8]]
+2023-10-18 16:37:19.022741  Accuracy: 69.23 %
+2023-10-18 16:37:19.022741  using SVM
+2023-10-18 16:37:19.022741  Pred test result
+2023-10-18 16:37:19.037261  [[2 2]
+ [0 9]]
+2023-10-18 16:37:19.039338  Accuracy: 84.62 %
+2023-10-18 16:37:19.039338  using RBF SVC
+2023-10-18 16:37:19.043788  Pred test result
+2023-10-18 16:37:19.043788  [[3 1]
+ [4 5]]
+2023-10-18 16:37:19.043788  Accuracy: 61.54 %
+2023-10-18 16:37:19.053302  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:37:19.053302  using KNN
+2023-10-18 16:37:19.053302  using RBF SVC
+2023-10-18 16:39:59.239050  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:39:59.292001  HandleMissingData - strategy='mean'
+2023-10-18 16:39:59.314279  Feature Selection - SelectKBest(chi2, k=30)
+2023-10-18 16:39:59.318341  using XGboost
+2023-10-18 16:39:59.399210  Pred test result
+2023-10-18 16:39:59.403496  [[2 2]
+ [4 5]]
+2023-10-18 16:39:59.404493  Accuracy: 53.85 %
+2023-10-18 16:39:59.405801  using CatBoost
+2023-10-18 16:40:00.237719  Pred test result
+2023-10-18 16:40:00.240357  [[3 1]
+ [6 3]]
+2023-10-18 16:40:00.240357  Accuracy: 46.15 %
+2023-10-18 16:40:00.241769  using KNN
+2023-10-18 16:40:00.242275  Pred test result
+2023-10-18 16:40:00.243967  [[4 0]
+ [7 2]]
+2023-10-18 16:40:00.243967  Accuracy: 46.15 %
+2023-10-18 16:40:00.245460  using sklearn.neural_network MLPClassifier
+2023-10-18 16:40:00.270820  Pred test result
+2023-10-18 16:40:00.271325  [[0 4]
+ [0 9]]
+2023-10-18 16:40:00.271325  Accuracy: 69.23 %
+2023-10-18 16:40:00.324129  using ExtraTreesClassifier
+2023-10-18 16:40:00.413067  Pred test result
+2023-10-18 16:40:00.423044  [[1 3]
+ [3 6]]
+2023-10-18 16:40:00.424034  Accuracy: 53.85 %
+2023-10-18 16:40:00.425032  using Perceptron
+2023-10-18 16:40:00.426029  Pred test result
+2023-10-18 16:40:00.428023  [[3 1]
+ [6 3]]
+2023-10-18 16:40:00.428023  Accuracy: 46.15 %
+2023-10-18 16:40:00.429021  using SVM
+2023-10-18 16:40:00.435333  Pred test result
+2023-10-18 16:40:00.437330  [[2 2]
+ [0 9]]
+2023-10-18 16:40:00.437330  Accuracy: 84.62 %
+2023-10-18 16:40:00.438327  using RBF SVC
+2023-10-18 16:40:00.445970  Pred test result
+2023-10-18 16:40:00.446992  [[3 1]
+ [4 5]]
+2023-10-18 16:40:00.448004  Accuracy: 61.54 %
+2023-10-18 16:40:00.449046  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:40:00.450048  using KNN
+2023-10-18 16:40:00.451045  using RBF SVC
+2023-10-18 16:40:21.300363  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:40:21.323301  HandleMissingData - strategy='mean'
+2023-10-18 16:40:21.336208  Feature Selection - SelectKBest(chi2, k=20)
+2023-10-18 16:40:21.340199  using XGboost
+2023-10-18 16:40:21.403364  Pred test result
+2023-10-18 16:40:21.407354  [[2 2]
+ [3 6]]
+2023-10-18 16:40:21.408389  Accuracy: 61.54 %
+2023-10-18 16:40:21.409409  using CatBoost
+2023-10-18 16:40:22.048533  Pred test result
+2023-10-18 16:40:22.050529  [[2 2]
+ [3 6]]
+2023-10-18 16:40:22.051526  Accuracy: 61.54 %
+2023-10-18 16:40:22.052523  using KNN
+2023-10-18 16:40:22.052523  Pred test result
+2023-10-18 16:40:22.054518  [[4 0]
+ [4 5]]
+2023-10-18 16:40:22.055515  Accuracy: 69.23 %
+2023-10-18 16:40:22.055515  using sklearn.neural_network MLPClassifier
+2023-10-18 16:40:22.079453  Pred test result
+2023-10-18 16:40:22.080451  [[0 4]
+ [0 9]]
+2023-10-18 16:40:22.081458  Accuracy: 69.23 %
+2023-10-18 16:40:22.112900  using ExtraTreesClassifier
+2023-10-18 16:40:22.203532  Pred test result
+2023-10-18 16:40:22.213552  [[1 3]
+ [4 5]]
+2023-10-18 16:40:22.213552  Accuracy: 46.15 %
+2023-10-18 16:40:22.214550  using Perceptron
+2023-10-18 16:40:22.215636  Pred test result
+2023-10-18 16:40:22.217381  [[3 1]
+ [7 2]]
+2023-10-18 16:40:22.217381  Accuracy: 38.46 %
+2023-10-18 16:40:22.218641  using SVM
+2023-10-18 16:40:22.222494  Pred test result
+2023-10-18 16:40:22.224464  [[2 2]
+ [0 9]]
+2023-10-18 16:40:22.224464  Accuracy: 84.62 %
+2023-10-18 16:40:22.224464  using RBF SVC
+2023-10-18 16:40:22.229341  Pred test result
+2023-10-18 16:40:22.230365  [[3 1]
+ [2 7]]
+2023-10-18 16:40:22.230365  Accuracy: 76.92 %
+2023-10-18 16:40:22.231996  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:40:22.231996  using KNN
+2023-10-18 16:40:22.233290  using RBF SVC
+2023-10-18 16:40:36.662042  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-18 16:40:36.690947  HandleMissingData - strategy='mean'
+2023-10-18 16:40:36.702790  Feature Selection - SelectKBest(chi2, k=25)
+2023-10-18 16:40:36.707117  using XGboost
+2023-10-18 16:40:36.771305  Pred test result
+2023-10-18 16:40:36.775294  [[2 2]
+ [4 5]]
+2023-10-18 16:40:36.776291  Accuracy: 53.85 %
+2023-10-18 16:40:36.777366  using CatBoost
+2023-10-18 16:40:37.414367  Pred test result
+2023-10-18 16:40:37.417360  [[3 1]
+ [4 5]]
+2023-10-18 16:40:37.417360  Accuracy: 61.54 %
+2023-10-18 16:40:37.418357  using KNN
+2023-10-18 16:40:37.418357  Pred test result
+2023-10-18 16:40:37.420352  [[4 0]
+ [5 4]]
+2023-10-18 16:40:37.421349  Accuracy: 61.54 %
+2023-10-18 16:40:37.421349  using sklearn.neural_network MLPClassifier
+2023-10-18 16:40:37.455697  Pred test result
+2023-10-18 16:40:37.456697  [[0 4]
+ [0 9]]
+2023-10-18 16:40:37.457695  Accuracy: 69.23 %
+2023-10-18 16:40:37.489121  using ExtraTreesClassifier
+2023-10-18 16:40:37.575648  Pred test result
+2023-10-18 16:40:37.587156  [[2 2]
+ [4 5]]
+2023-10-18 16:40:37.588177  Accuracy: 53.85 %
+2023-10-18 16:40:37.588177  using Perceptron
+2023-10-18 16:40:37.590010  Pred test result
+2023-10-18 16:40:37.590010  [[3 1]
+ [7 2]]
+2023-10-18 16:40:37.591389  Accuracy: 38.46 %
+2023-10-18 16:40:37.591389  using SVM
+2023-10-18 16:40:37.597419  Pred test result
+2023-10-18 16:40:37.597419  [[2 2]
+ [0 9]]
+2023-10-18 16:40:37.598668  Accuracy: 84.62 %
+2023-10-18 16:40:37.599176  using RBF SVC
+2023-10-18 16:40:37.604677  Pred test result
+2023-10-18 16:40:37.606684  [[3 1]
+ [3 6]]
+2023-10-18 16:40:37.606684  Accuracy: 69.23 %
+2023-10-18 16:40:37.609036  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-18 16:40:37.609109  using KNN
+2023-10-18 16:40:37.610138  using RBF SVC
+2023-10-20 12:48:13.365053  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 12:48:14.623893  HandleMissingData - strategy='mean'
+2023-10-20 12:48:14.791584  Feature Selection - SelectKBest(chi2, k=25)
+2023-10-20 12:48:15.058394  using XGboost
+2023-10-20 12:48:22.909675  Pred test result
+2023-10-20 12:48:22.925297  [[4 1]
+ [5 9]]
+2023-10-20 12:48:22.925297  Accuracy: 68.42 %
+2023-10-20 12:48:22.925297  using CatBoost
+2023-10-20 12:48:26.409835  Pred test result
+2023-10-20 12:48:26.417832  [[3 2]
+ [5 9]]
+2023-10-20 12:48:26.417832  Accuracy: 63.16 %
+2023-10-20 12:48:26.421226  using KNN
+2023-10-20 12:48:26.423646  Pred test result
+2023-10-20 12:48:26.432657  [[5 0]
+ [6 8]]
+2023-10-20 12:48:26.432657  Accuracy: 68.42 %
+2023-10-20 12:48:26.432657  using sklearn.neural_network MLPClassifier
+2023-10-20 12:48:26.593545  Pred test result
+2023-10-20 12:48:26.593545  [[ 0  5]
+ [ 0 14]]
+2023-10-20 12:48:26.593545  Accuracy: 73.68 %
+2023-10-20 12:48:26.759339  using ExtraTreesClassifier
+2023-10-20 12:48:27.235836  Pred test result
+2023-10-20 12:48:27.294469  [[2 3]
+ [6 8]]
+2023-10-20 12:48:27.294469  Accuracy: 52.63 %
+2023-10-20 12:48:27.294469  using Perceptron
+2023-10-20 12:48:27.309852  Pred test result
+2023-10-20 12:48:27.309852  [[4 1]
+ [9 5]]
+2023-10-20 12:48:27.318555  Accuracy: 47.37 %
+2023-10-20 12:48:27.321040  using SVM
+2023-10-20 12:48:27.340592  Pred test result
+2023-10-20 12:48:27.340592  [[ 2  3]
+ [ 0 14]]
+2023-10-20 12:48:27.340592  Accuracy: 84.21 %
+2023-10-20 12:48:27.340592  using RBF SVC
+2023-10-20 12:48:27.356222  Pred test result
+2023-10-20 12:48:27.376412  [[ 4  1]
+ [ 3 11]]
+2023-10-20 12:48:27.378108  Accuracy: 78.95 %
+2023-10-20 12:48:27.382032  The best result for file name: FM_dataset - Processed 125 samples is: 84.21052631578947
+2023-10-20 12:48:27.383321  using KNN
+2023-10-20 12:48:27.383843  using RBF SVC
+2023-10-20 12:49:38.403821  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 12:49:38.627143  HandleMissingData - strategy='mean'
+2023-10-20 12:49:38.659755  Feature Selection - SelectKBest(chi2, k=24)
+2023-10-20 12:49:38.684750  using XGboost
+2023-10-20 12:49:39.083475  Pred test result
+2023-10-20 12:49:39.093586  [[3 1]
+ [4 5]]
+2023-10-20 12:49:39.094583  Accuracy: 61.54 %
+2023-10-20 12:49:39.097575  using CatBoost
+2023-10-20 12:49:41.824160  Pred test result
+2023-10-20 12:49:41.834131  [[2 2]
+ [3 6]]
+2023-10-20 12:49:41.835130  Accuracy: 61.54 %
+2023-10-20 12:49:41.836127  using KNN
+2023-10-20 12:49:41.838121  Pred test result
+2023-10-20 12:49:41.846430  [[4 0]
+ [5 4]]
+2023-10-20 12:49:41.847427  Accuracy: 61.54 %
+2023-10-20 12:49:41.849422  using sklearn.neural_network MLPClassifier
+2023-10-20 12:49:41.910925  Pred test result
+2023-10-20 12:49:41.912925  [[0 4]
+ [1 8]]
+2023-10-20 12:49:41.913436  Accuracy: 61.54 %
+2023-10-20 12:49:42.675292  using ExtraTreesClassifier
+2023-10-20 12:49:42.947554  Pred test result
+2023-10-20 12:49:42.983048  [[1 3]
+ [3 6]]
+2023-10-20 12:49:42.985049  Accuracy: 53.85 %
+2023-10-20 12:49:42.986793  using Perceptron
+2023-10-20 12:49:42.995743  Pred test result
+2023-10-20 12:49:42.997739  [[3 1]
+ [5 4]]
+2023-10-20 12:49:42.999733  Accuracy: 53.85 %
+2023-10-20 12:49:43.000730  using SVM
+2023-10-20 12:49:43.015698  Pred test result
+2023-10-20 12:49:43.018432  [[2 2]
+ [0 9]]
+2023-10-20 12:49:43.019442  Accuracy: 84.62 %
+2023-10-20 12:49:43.021663  using RBF SVC
+2023-10-20 12:49:43.034640  Pred test result
+2023-10-20 12:49:43.037256  [[3 1]
+ [2 7]]
+2023-10-20 12:49:43.038253  Accuracy: 76.92 %
+2023-10-20 12:49:43.041246  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-20 12:49:43.042241  using KNN
+2023-10-20 12:49:43.043240  using RBF SVC
+2023-10-20 12:50:22.845707  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 12:50:22.888271  HandleMissingData - strategy='mean'
+2023-10-20 12:50:22.909949  Feature Selection - SelectKBest(chi2, k=40)
+2023-10-20 12:50:22.915850  using XGboost
+2023-10-20 12:50:23.018377  Pred test result
+2023-10-20 12:50:23.024424  [[2 2]
+ [4 5]]
+2023-10-20 12:50:23.025421  Accuracy: 53.85 %
+2023-10-20 12:50:23.026418  using CatBoost
+2023-10-20 12:50:24.046689  Pred test result
+2023-10-20 12:50:24.053893  [[1 3]
+ [4 5]]
+2023-10-20 12:50:24.055536  Accuracy: 46.15 %
+2023-10-20 12:50:24.058296  using KNN
+2023-10-20 12:50:24.060515  Pred test result
+2023-10-20 12:50:24.067057  [[4 0]
+ [7 2]]
+2023-10-20 12:50:24.068831  Accuracy: 46.15 %
+2023-10-20 12:50:24.070986  using sklearn.neural_network MLPClassifier
+2023-10-20 12:50:24.144807  Pred test result
+2023-10-20 12:50:24.150038  [[0 4]
+ [0 9]]
+2023-10-20 12:50:24.151766  Accuracy: 69.23 %
+2023-10-20 12:50:24.271656  using ExtraTreesClassifier
+2023-10-20 12:50:24.576635  Pred test result
+2023-10-20 12:50:24.593753  [[1 3]
+ [4 5]]
+2023-10-20 12:50:24.594748  Accuracy: 46.15 %
+2023-10-20 12:50:24.595736  using Perceptron
+2023-10-20 12:50:24.597730  Pred test result
+2023-10-20 12:50:24.598743  [[1 3]
+ [1 8]]
+2023-10-20 12:50:24.598743  Accuracy: 69.23 %
+2023-10-20 12:50:24.599722  using SVM
+2023-10-20 12:50:24.605721  Pred test result
+2023-10-20 12:50:24.606706  [[2 2]
+ [0 9]]
+2023-10-20 12:50:24.607702  Accuracy: 84.62 %
+2023-10-20 12:50:24.608767  using RBF SVC
+2023-10-20 12:50:24.616975  Pred test result
+2023-10-20 12:50:24.617957  [[3 1]
+ [4 5]]
+2023-10-20 12:50:24.618941  Accuracy: 61.54 %
+2023-10-20 12:50:24.620078  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-20 12:50:24.621081  using KNN
+2023-10-20 12:50:24.621692  using RBF SVC
+2023-10-20 12:52:24.394461  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 12:52:24.495769  HandleMissingData - strategy='mean'
+2023-10-20 12:52:24.548839  Feature Selection - SelectKBest(chi2, k=40)
+2023-10-20 12:53:06.086680  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 12:53:23.722193  HandleMissingData - strategy='mean'
+2023-10-20 12:53:25.294831  Feature Selection - SelectKBest(chi2, k=40)
+2023-10-20 13:03:13.622841  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 13:03:13.666659  HandleMissingData - strategy='mean'
+2023-10-20 13:11:59.916169  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 13:12:20.113655  HandleMissingData - strategy='mean'
+2023-10-20 13:13:13.204409  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 13:13:13.245029  HandleMissingData - strategy='mean'
+2023-10-20 13:13:13.285769  Feature Selection - SelectKBest(chi2, k=40)
+2023-10-20 13:13:13.320875  using XGboost
+2023-10-20 13:13:13.654860  Pred test result
+2023-10-20 13:13:13.661886  [[2 2]
+ [4 5]]
+2023-10-20 13:13:13.662883  Accuracy: 53.85 %
+2023-10-20 13:13:13.663918  using CatBoost
+2023-10-20 13:13:15.729234  Pred test result
+2023-10-20 13:13:15.738483  [[1 3]
+ [4 5]]
+2023-10-20 13:13:15.740752  Accuracy: 46.15 %
+2023-10-20 13:13:15.742024  using KNN
+2023-10-20 13:13:15.744612  Pred test result
+2023-10-20 13:13:15.756520  [[4 0]
+ [7 2]]
+2023-10-20 13:13:15.758515  Accuracy: 46.15 %
+2023-10-20 13:13:15.760509  using sklearn.neural_network MLPClassifier
+2023-10-20 13:13:15.851196  Pred test result
+2023-10-20 13:13:15.853449  [[0 4]
+ [0 9]]
+2023-10-20 13:13:15.855615  Accuracy: 69.23 %
+2023-10-20 13:13:16.038393  using ExtraTreesClassifier
+2023-10-20 13:13:16.325508  Pred test result
+2023-10-20 13:13:16.353217  [[1 3]
+ [2 7]]
+2023-10-20 13:13:16.354329  Accuracy: 61.54 %
+2023-10-20 13:13:16.355786  using Perceptron
+2023-10-20 13:13:16.383833  Pred test result
+2023-10-20 13:13:16.386794  [[1 3]
+ [1 8]]
+2023-10-20 13:13:16.389787  Accuracy: 69.23 %
+2023-10-20 13:13:16.392808  using SVM
+2023-10-20 13:13:16.410173  Pred test result
+2023-10-20 13:13:16.413213  [[2 2]
+ [0 9]]
+2023-10-20 13:13:16.414227  Accuracy: 84.62 %
+2023-10-20 13:13:16.416260  using RBF SVC
+2023-10-20 13:13:16.435169  Pred test result
+2023-10-20 13:13:16.437196  [[3 1]
+ [4 5]]
+2023-10-20 13:13:16.439165  Accuracy: 61.54 %
+2023-10-20 13:13:16.443143  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-20 13:13:16.444137  using KNN
+2023-10-20 13:13:16.445134  using RBF SVC
+2023-10-20 13:14:15.111906  File name is: 'FM_dataset - Processed 125 samples', Sheet name is: 'Sheet1'
+2023-10-20 13:14:15.205936  HandleMissingData - strategy='mean'
+2023-10-20 13:14:15.230938  Feature Selection - SelectKBest(chi2, k=25)
+2023-10-20 13:14:15.239929  using XGboost
+2023-10-20 13:14:15.368249  Pred test result
+2023-10-20 13:14:15.373317  [[2 2]
+ [4 5]]
+2023-10-20 13:14:15.374315  Accuracy: 53.85 %
+2023-10-20 13:14:15.375373  using CatBoost
+2023-10-20 13:14:16.430577  Pred test result
+2023-10-20 13:14:16.437394  [[3 1]
+ [4 5]]
+2023-10-20 13:14:16.438392  Accuracy: 61.54 %
+2023-10-20 13:14:16.441616  using KNN
+2023-10-20 13:14:16.443611  Pred test result
+2023-10-20 13:14:16.450592  [[4 0]
+ [5 4]]
+2023-10-20 13:14:16.451590  Accuracy: 61.54 %
+2023-10-20 13:14:16.454582  using sklearn.neural_network MLPClassifier
+2023-10-20 13:14:16.553091  Pred test result
+2023-10-20 13:14:16.555958  [[0 4]
+ [0 9]]
+2023-10-20 13:14:16.557971  Accuracy: 69.23 %
+2023-10-20 13:14:16.669924  using ExtraTreesClassifier
+2023-10-20 13:14:16.991088  Pred test result
+2023-10-20 13:14:17.006061  [[1 3]
+ [2 7]]
+2023-10-20 13:14:17.007038  Accuracy: 61.54 %
+2023-10-20 13:14:17.008046  using Perceptron
+2023-10-20 13:14:17.009034  Pred test result
+2023-10-20 13:14:17.010030  [[3 1]
+ [7 2]]
+2023-10-20 13:14:17.011026  Accuracy: 38.46 %
+2023-10-20 13:14:17.011026  using SVM
+2023-10-20 13:14:17.017042  Pred test result
+2023-10-20 13:14:17.018009  [[2 2]
+ [0 9]]
+2023-10-20 13:14:17.019030  Accuracy: 84.62 %
+2023-10-20 13:14:17.020002  using RBF SVC
+2023-10-20 13:14:17.026995  Pred test result
+2023-10-20 13:14:17.032964  [[3 1]
+ [3 6]]
+2023-10-20 13:14:17.033960  Accuracy: 69.23 %
+2023-10-20 13:14:17.034959  The best result for file name: FM_dataset - Processed 125 samples is: 84.61538461538461
+2023-10-20 13:14:17.035953  using KNN
+2023-10-20 13:14:17.035953  using RBF SVC

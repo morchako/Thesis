@@ -22,6 +22,7 @@ def CallSVM(X_train, y_train):
     from sklearn.svm import SVC
     #classifier = SVC(kernel = 'linear',degree = 5, random_state = 42, max_iter=10000,probability=True)
     classifier = SVC(kernel = 'poly', degree = 3,probability=True)
+    #classifier = SVC(kernel='rbf',C=20, degree=3, probability=True)
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -33,10 +34,18 @@ def CallLinearSVC(X_train, y_train):
     classifier.fit(X_train, y_train)
     return classifier
 
+def CallRBFSVC(X_train, y_train):
+    PrintAndWriteToLog("using RBF SVC")
+    from sklearn.svm import SVC
+    classifier = SVC(kernel='rbf',C=20, gamma = 'scale', probability=True)
+    #classifier = LinearSVC()
+    classifier.fit(X_train, y_train)
+    return classifier
+
 def CallKNN(X_train, y_train):
     PrintAndWriteToLog("using KNN")
     from sklearn.neighbors import KNeighborsClassifier
-    classifier = KNeighborsClassifier(n_neighbors=5)
+    classifier = KNeighborsClassifier(n_neighbors=2)
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -91,7 +100,7 @@ def FeatureScaling(X_train,X_test,DECIMAL_COLUMNS):
     # X_train[:, 1:DECIMAL_COLUMNS] = mms.fit_transform(X_train[:, 1:DECIMAL_COLUMNS])
     # X_test[:, 1:DECIMAL_COLUMNS] = mms.transform(X_test[:, 1:DECIMAL_COLUMNS])
 
-def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data):
+def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data,feature_names):
     X = dataset.iloc[:, :-1].values
     y = dataset.iloc[:, -1].values
 
@@ -106,8 +115,10 @@ def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data):
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
 
+    k=25
+    X_train, X_test = FeatureSelectionKBest(X_train, y_train, X_test, k,feature_names)
     # X_train, X_test = FeatureSelectionKBest(X_train, y_train,X_test, k=72)
-    #X_train, X_test = FeatureSelectionPCA(X_train, X_test, 60)
+    #X_train, X_test = FeatureSelectionPCA(X_train, X_test, 100)
 
     #X_test_best = X_test[:, best_features]
     #FeatureScaling(X_train, X_test, DECIMAL_COLUMNS)
@@ -118,7 +129,7 @@ def PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, she
                                        algoritem_name = XG_BOOST, handle_missing_data = False):
     PrintAndWriteToLog("File name is: '" + file_name + "', Sheet name is: '" + sheet_name + "'")
     resDict['File Name'] = file_name
-    X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data)
+    X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data,list_feature_names)
     if(algoritem_name == XG_BOOST):
         classifier = CallXGBoost(X_train, y_train)
     elif(algoritem_name == CAT_BOOST):
@@ -141,10 +152,14 @@ def PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, she
     else:
         return 0
 
-    PrintAndWriteToLog("Pred train result")
-    y_pred_train = classifier.predict(X_train)
-    GetAndPrintResult(y_train, y_pred_train)
-    # Predicting the Test set results
+    #train_best_accuracy, test_accuracy = GetTheBestScoreUsingKFoldCrossValidation(classifier, X_train, y_train,
+    #                                                                             X_test, y_test)
+    #res = test_accuracy
+    # PrintAndWriteToLog("Pred train result")
+    # y_pred_train = classifier.predict(X_train)
+    #
+    # GetAndPrintResult(y_train, y_pred_train)
+    # # Predicting the Test set results
     PrintAndWriteToLog("Pred test result")
     y_pred = classifier.predict(X_test)
     res = GetAndPrintResult(y_test, y_pred)
@@ -156,7 +171,7 @@ def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name,
     PrintAndWriteToLog("File name is: '" + file_name + "', Sheet name is: '" + sheet_name + "'")
     resDict['File Name'] = file_name
     resDict['Date and time'] = str(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
-    X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS, True)
+    X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS, True,list_feature_names)
 
     resList = []
     classifier = CallXGBoost(X_train, y_train)
@@ -173,10 +188,10 @@ def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name,
     resDict['Perceptron'] = GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train)
     classifier = CallSVM(X_train, y_train)
     resDict['SVM'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
-    # classifier = CallLinearSVC(X_train, y_train)
-    # GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
-    classifier = CallLogisticRegression(X_train, y_train)
-    resDict['LogisticRegression'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
+    classifier = CallRBFSVC(X_train, y_train)
+    GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
+    # classifier = CallLogisticRegression(X_train, y_train)
+    # resDict['LogisticRegression'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     max_res = max(resList)
     resDict['Best result'] = max_res
     SaveResultToCSV(resDict)
@@ -188,8 +203,8 @@ def GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train, 
     # if (KFoldCrossVal):
     #     train_best_accuracy, test_accuracy = GetTheBestScoreUsingKFoldCrossValidation(classifier, X_train, y_train,
     #                                                                                  X_test, y_test)
-    #   res = test_accuracy
-    #else:
+    #     res = test_accuracy
+    # else:
         # PrintAndWriteToLog("Pred train result")
         # y_pred_train = classifier.predict(X_train)
         # GetAndPrintResult(y_train, y_pred_train)
@@ -197,6 +212,7 @@ def GetPredictionAndResult(X_test, classifier, resList, y_test,X_train,y_train, 
     PrintAndWriteToLog("Pred test result")
     y_pred = classifier.predict(X_test)
     res = GetAndPrintResult(y_test, y_pred)
+    sensitivity_and_specificity(y_test, y_pred)
     resList.append(res)
     return res
 
@@ -223,16 +239,16 @@ def FeatureSelectionRFE(classifier, k,X_train,y_train, X_test,y_test):
     selector.fit_transform(X_train, y_train)
     selector.transform(X_test)
     return classifier
-def FeatureSelectionKBest(X_train,y_train,X_test, k):
+def FeatureSelectionKBest(X_train,y_train,X_test, k,feature_names):
     from sklearn.feature_selection import SelectKBest
     from sklearn.feature_selection import chi2
     PrintAndWriteToLog(f"Feature Selection - SelectKBest(chi2, k={k})",True)
     kbest = SelectKBest(chi2, k=k)
-    # X_train_new = X_train_new.fit(X_train)
     X_train_new = kbest.fit_transform(X_train,y_train)
     X_test_new = kbest.transform(X_test)
     X_train_new.shape
     X_test_new.shape
+    print_k_best_features(kbest,k,feature_names)
     return X_train_new, X_test_new
 
 
@@ -318,7 +334,7 @@ def RocAndAuc(X_train, X_test, y_train, y_test):
 
     #classLogisticRegression = CallLogisticRegression(X_train, y_train)
     classKNN = CallKNN(X_train, y_train)
-    classSVM = CallSVM(X_train, y_train)
+    classSVM = CallRBFSVC(X_train, y_train)
 
     #y_scoreLogisticRegression = classLogisticRegression.predict_proba(X_test)[:,1]
     y_scoreKNN = classKNN.predict_proba(X_test)[:,1]
@@ -462,11 +478,60 @@ def feature_selection_with_cross_validation(X, y, classifier, num_folds=10, rand
     best_features, best_accuracy = max(feature_accuracies, key=lambda x: x[1])
     return best_features, best_accuracy
 
-#
-# # Usage example:
-# # Replace X and y with your own data
-# X = ...  # Your feature matrix
-# y = ...  # Your target labels
-# best_features, best_accuracy = feature_selection_with_cross_validation(X, y)
-# print("Best feature subset:", best_features)
-# print("Best accuracy:", best_accuracy)
+def sensitivity_and_specificity(y_true, y_pred):
+    from sklearn.metrics import confusion_matrix
+    # Calculate confusion matrix
+    conf_matrix = confusion_matrix(y_true, y_pred)
+
+    # Extract values from the confusion matrix
+    true_negatives = conf_matrix[0, 0]
+    false_negatives = conf_matrix[1, 0]
+    true_positives = conf_matrix[1, 1]
+    false_positives = conf_matrix[0, 1]
+
+    # Calculate sensitivity (True Positive Rate)
+    sensitivity = true_positives / (true_positives + false_negatives)
+    print("Sensitivity (True Positive Rate): {:.2f}".format(sensitivity))
+
+    # Calculate specificity (True Negative Rate)
+    specificity = true_negatives / (true_negatives + false_positives)
+    print("Specificity (True Negative Rate): {:.2f}".format(specificity))
+
+
+def use_hyperparameter_search_with_SVM(dataset, DECIMAL_COLUMNS,handle_missing_data,list_feature_names):
+    X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data,list_feature_names)
+    y_pred = hyperparameter_search_with_SVM(X_train, X_test, y_train, y_test)
+    res = GetAndPrintResult(y_test, y_pred)
+    sensitivity_and_specificity(y_test, y_pred)
+def hyperparameter_search_with_SVM(X_train, X_test, y_train, y_test):
+    from sklearn.model_selection import GridSearchCV
+    from sklearn.svm import SVC
+    from sklearn.metrics import accuracy_score
+
+    # Define the SVM model
+    svm_model = SVC()
+
+    # Define the hyperparameter grid to search
+    param_grid = {
+        'C': [0.1, 1, 10, 20, 100],  # Regularization parameter
+        'kernel': ['linear', 'rbf'],  # Kernel type
+        'gamma': ['scale', 'auto'],  # Kernel coefficient
+    }
+
+    # Create a GridSearchCV object
+    grid_search = GridSearchCV(estimator=svm_model, param_grid=param_grid, cv=5, scoring='accuracy')
+
+    # Fit the model to the data
+    grid_search.fit(X_train, y_train)
+
+    # Get the best hyperparameters
+    best_params = grid_search.best_params_
+    print("Best Hyperparameters:", best_params)
+
+    # Predict on the test set using the best model
+    y_pred = grid_search.best_estimator_.predict(X_test)
+
+    # Evaluate the model
+    accuracy = accuracy_score(y_test, y_pred)
+    print("Accuracy:", accuracy)
+    return y_pred

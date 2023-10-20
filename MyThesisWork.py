@@ -15,7 +15,7 @@ def main():
     #GetInnerJoinDatasets()
     # path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Fibro\\'
     DECIMAL_COLUMNS, dataset, file_name, sheet_name, list_feature_names, pred_col, cond_col = GetDataset()
-    #plotDataset(dataset)
+    # use_hyperparameter_search_with_SVM(dataset, DECIMAL_COLUMNS, True,list_feature_names)
     # create_new_dataframe_by_avg_diffrence(dataset)
     PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name, sheet_name, list_feature_names)
 
@@ -28,7 +28,7 @@ def main():
     # res = PredictUsingCalssificationAlgoritem(dataset, DECIMAL_COLUMNS, file_name, sheet_name, list_feature_names,
     #                                          algoritem_name = SVM, handle_missing_data = True)
     # print(res)
-    # #GenderPerICD(dataset)
+    #GenderPerICD(dataset)
     #SortAndCountGenderByICD9Diagnoses(dataset)
 
 
