@@ -13,7 +13,7 @@ def CallXGBoost(X_train, y_train):
 def CallNeuralNetwork(X_train, y_train):
     PrintAndWriteToLog("using sklearn.neural_network MLPClassifier")
     from sklearn.neural_network import MLPClassifier
-    classifier = MLPClassifier(alpha=1e-05, hidden_layer_sizes=(100,2), random_state=1, solver='lbfgs')
+    classifier = MLPClassifier(alpha=1e-05, hidden_layer_sizes=(100,2), random_state=1, solver='lbfgs', max_iter=10000)
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -21,7 +21,7 @@ def CallSVM(X_train, y_train):
     PrintAndWriteToLog("using SVM")
     from sklearn.svm import SVC
     #classifier = SVC(kernel = 'linear',degree = 5, random_state = 42, max_iter=10000,probability=True)
-    classifier = SVC(kernel = 'poly', degree = 3,probability=True)
+    classifier = SVC(kernel = 'poly', degree = 3, probability=True)
     #classifier = SVC(kernel='rbf',C=20, degree=3, probability=True)
     classifier.fit(X_train, y_train)
     return classifier
@@ -43,17 +43,18 @@ def CallRBFSVC(X_train, y_train):
     return classifier
 
 def CallKNN(X_train, y_train):
-    PrintAndWriteToLog("using KNN")
+    k_neighbors = 2
+    PrintAndWriteToLog(f"using KNN, k={k_neighbors}")
     from sklearn.neighbors import KNeighborsClassifier
-    classifier = KNeighborsClassifier(n_neighbors=2)
+    classifier = KNeighborsClassifier(n_neighbors=k_neighbors)
     classifier.fit(X_train, y_train)
     return classifier
 
 def CallLogisticRegression(X_train, y_train):
     PrintAndWriteToLog("using Logistic Regression")
     from sklearn.linear_model import LogisticRegression
-    classifier = LogisticRegression(max_iter= 10000, solver = 'lbfgs')
-    #classifier = LogisticRegression(max_iter= 10000,penalty='l1', solver='liblinear', C=1.0) #LASSO
+    # classifier = LogisticRegression(max_iter= 10000, solver = 'lbfgs', C=0.1)
+    classifier = LogisticRegression(max_iter= 10000,penalty='l1', solver='liblinear', C=0.1) #LASSO
     classifier.fit(X_train, y_train)
     return classifier
 
@@ -115,7 +116,7 @@ def PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS,handle_missing_data,feat
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
 
-    k=25
+    k=15
     X_train, X_test = FeatureSelectionKBest(X_train, y_train, X_test, k,feature_names)
     # X_train, X_test = FeatureSelectionKBest(X_train, y_train,X_test, k=72)
     #X_train, X_test = FeatureSelectionPCA(X_train, X_test, 100)
@@ -190,8 +191,8 @@ def PredictUsingAllCalssificationAlgoritems(dataset, DECIMAL_COLUMNS, file_name,
     resDict['SVM'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     classifier = CallRBFSVC(X_train, y_train)
     GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
-    # classifier = CallLogisticRegression(X_train, y_train)
-    # resDict['LogisticRegression'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
+    classifier = CallLogisticRegression(X_train, y_train)
+    resDict['LogisticRegression'] = GetPredictionAndResult(X_test, classifier, resList, y_test, X_train, y_train)
     max_res = max(resList)
     resDict['Best result'] = max_res
     SaveResultToCSV(resDict)
@@ -241,7 +242,7 @@ def FeatureSelectionRFE(classifier, k,X_train,y_train, X_test,y_test):
     return classifier
 def FeatureSelectionKBest(X_train,y_train,X_test, k,feature_names):
     from sklearn.feature_selection import SelectKBest
-    from sklearn.feature_selection import chi2
+    from sklearn.feature_selection import chi2,f_classif, mutual_info_classif
     PrintAndWriteToLog(f"Feature Selection - SelectKBest(chi2, k={k})",True)
     kbest = SelectKBest(chi2, k=k)
     X_train_new = kbest.fit_transform(X_train,y_train)
@@ -332,42 +333,56 @@ def RocAndAuc(X_train, X_test, y_train, y_test):
     from sklearn.metrics import roc_curve, roc_auc_score
     import matplotlib.pyplot as plt
 
-    #classLogisticRegression = CallLogisticRegression(X_train, y_train)
     classKNN = CallKNN(X_train, y_train)
     classSVM = CallRBFSVC(X_train, y_train)
+    classLogisticRegression = CallLogisticRegression(X_train, y_train)
+    # classExtraTrees = CallExtraTrees(X_train, y_train)
 
-    #y_scoreLogisticRegression = classLogisticRegression.predict_proba(X_test)[:,1]
     y_scoreKNN = classKNN.predict_proba(X_test)[:,1]
     y_scoreSVM = classSVM.predict_proba(X_test)[:, 1]
+    y_scoreLogisticRegression = classLogisticRegression.predict_proba(X_test)[:,1]
+    # y_scoreExtraTrees = classExtraTrees.predict_proba(X_test)[:, 1]
 
-    #false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(y_test, y_scoreLogisticRegression)
     false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(y_test, y_scoreKNN)
     false_positive_rate2, true_positive_rate2, threshold2 = roc_curve(y_test, y_scoreSVM)
+    false_positive_rate3, true_positive_rate3, threshold3 = roc_curve(y_test, y_scoreLogisticRegression)
+    # false_positive_rate4, true_positive_rate4, threshold4 = roc_curve(y_test, y_scoreExtraTrees)
 
-    #print('roc_auc_score for Logistic Regression: ', roc_auc_score(y_test, y_scoreLogisticRegression))
     print('roc_auc_score for y_scoreKNN: ', roc_auc_score(y_test, y_scoreKNN))
     print('roc_auc_score for y_scoreSVM: ', roc_auc_score(y_test, y_scoreSVM))
+    print('roc_auc_score for Logistic Regression: ', roc_auc_score(y_test, y_scoreLogisticRegression))
+    # print('roc_auc_score for ExtraTrees: ', roc_auc_score(y_test, y_scoreExtraTrees))
 
-    plt.subplots(1, figsize=(10,10))
-    #plt.title('Receiver Operating Characteristic - LogisticRegression')
-    plt.title('Receiver Operating Characteristic - KNN')
-    plt.plot(false_positive_rate1, true_positive_rate1)
-    plt.plot([0, 1], ls="--")
-    plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
-    plt.ylabel('True Positive Rate')
+    # plt.subplots(1, figsize=(10,10))
+    # #plt.title('Receiver Operating Characteristic - LogisticRegression')
+    # plt.title('Receiver Operating Characteristic - KNN')
+    # plt.plot(false_positive_rate1, true_positive_rate1)
+    # plt.plot([0, 1], ls="--")
+    # plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
+    # plt.ylabel('True Positive Rate')
+    # plt.xlabel('False Positive Rate')
+    # plt.show()
+    #
+    # plt.subplots(1, figsize=(10,10))
+    # plt.title('Receiver Operating Characteristic - SVM')
+    # plt.plot(false_positive_rate2, true_positive_rate2)
+    # plt.plot([0, 1], ls="--")
+    # plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
+    # plt.ylabel('True Positive Rate')
+    # plt.xlabel('False Positive Rate')
+    # plt.show()
+
+    plt.figure(figsize=(6, 4))
+    plt.plot(false_positive_rate1, true_positive_rate1, label='Model KNN (AUC = {:.2f})'.format(roc_auc_score(y_test, y_scoreKNN)))
+    plt.plot(false_positive_rate2, true_positive_rate2, label='Model SVM (AUC = {:.2f})'.format(roc_auc_score(y_test, y_scoreSVM)))
+    plt.plot(false_positive_rate3, true_positive_rate3, label='Model Logistic Regression (AUC = {:.2f})'.format(roc_auc_score(y_test, y_scoreLogisticRegression)))
+
+    plt.plot([0, 1], [0, 1], 'k--', label='Random')
     plt.xlabel('False Positive Rate')
-    plt.show()
-
-    plt.subplots(1, figsize=(10,10))
-    plt.title('Receiver Operating Characteristic - SVM')
-    plt.plot(false_positive_rate2, true_positive_rate2)
-    plt.plot([0, 1], ls="--")
-    plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
     plt.ylabel('True Positive Rate')
-    plt.xlabel('False Positive Rate')
+    plt.title('ROC Curve')
+    plt.legend()
     plt.show()
-
-
 
 import csv
 from typing import Dict, List
@@ -535,3 +550,21 @@ def hyperparameter_search_with_SVM(X_train, X_test, y_train, y_test):
     accuracy = accuracy_score(y_test, y_pred)
     print("Accuracy:", accuracy)
     return y_pred
+
+
+def predict_with_knn_with_treshold(dataset, DECIMAL_COLUMNS, file_name, sheet_name, list_feature_names, threshold = 0.5):
+    PrintAndWriteToLog("File name is: '" + file_name + "', Sheet name is: '" + sheet_name + "'")
+    resDict['File Name'] = file_name
+    X_train, X_test, y_train, y_test = PreperDataBeforePrediction(dataset, DECIMAL_COLUMNS, True,
+                                                                  list_feature_names)
+    knn = CallKNN(X_train, y_train)
+
+    # Make predictions using predict_proba
+    probs = knn.predict_proba(X_test)
+
+    # Set a custom threshold (e.g., 0.5) for binary classification
+    y_pred = (probs[:, 1] >= threshold).astype(int)
+    print(f"threshold={threshold}")
+    res = GetAndPrintResult(y_test, y_pred)
+
+    return res
