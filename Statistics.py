@@ -1,6 +1,109 @@
+import numpy as np
 from InputAndOutputService import *
 from ClassificationAlgorithms import *
 import statistics
+
+def create_bar_graph_of_a_statistical_test_for_feature_for_different_labels(dataset,features_name_list):
+    # Import necessary libraries
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    from scipy.stats import ttest_ind
+    from statsmodels.stats.multitest import multipletests
+
+
+    df = pd.DataFrame(dataset)
+
+    data_xlsx = [['OTU','t-statistic','p-value']]
+    # Perform a statistical test (e.g., t-test) for the feature across different labels
+    for name in features_name_list:
+        label_A = df[df['diagnosis'] == 0][name]
+        label_B = df[df['diagnosis'] == 1][name]
+
+        # Example t-test (you may choose a different test based on your data and requirements)
+        statistic, p_value = ttest_ind(label_A, label_B)
+
+        # Print the p-value
+        print(f'{name}: t-statistic: {statistic}, p-value: {"{:.5f}".format(p_value)}')
+
+
+        # Correct p-values for multiple testing using FDR correction
+        # reject, corrected_p_values, _, _ = multipletests(p_value, method='fdr_bh')
+        data_xlsx.append([name, statistic, "{:.5f}".format(p_value)])
+        # print(f'{name}: t-statistic: {statistic}, p-value: {p_value} corrected_p_values: {corrected_p_values}, reject: {reject}')
+
+        # Create a bar graph
+        # sns.barplot(x='diagnosis', y=name, data=df, errorbar=None, palette=['skyblue', 'salmon'],hue='diagnosis', legend=False)
+        sns.barplot(x='diagnosis', y=name, data=df, palette=['skyblue', 'salmon'],hue='diagnosis',estimator=np.median, legend=False)
+
+        # Add a title and labels
+        plt.title(f'Median: {name} - diagnosis')
+        plt.xlabel('diagnosis')
+        plt.ylabel(name)
+
+        # Display the plot
+        plt.show()
+
+    # print_to_excel("t-test for 12 best OTUs - diagnosis", data_xlsx)
+
+def manova_interacion_test_to_every_pair(dataset,features):
+    import pandas as pd
+    import statsmodels.api as sm
+    from statsmodels.multivariate.manova import MANOVA
+
+    features.append('diagnosis')
+    df = dataset[features]
+    features.remove('diagnosis')
+    label_col = 'diagnosis'
+
+    # Initialize a list to store MANOVA results for each pair of features
+    manova_results = []
+
+    with open('manova_results.txt', 'a') as file:
+        # Perform MANOVA for each pair of features
+        for i in range(len(features) - 1):
+            for j in range(i + 1, len(features)):
+                # Extract the current pair of features
+                feature_pair = [features[i], features[j]]
+
+                # Create a formula for MANOVA
+                # formula = f'{", ".join(feature_pair)} ~ C({label_col})'
+                formula = f'{features[i]} + {features[j]} ~ C({label_col})'
+
+                # Fit MANOVA model
+                manova = MANOVA.from_formula(formula, data=df)
+
+                # Print MANOVA summary
+                print(manova.mv_test())
+
+                # Append MANOVA results to the list
+                manova_results.append({'Features': feature_pair, 'MANOVA': manova})
+
+                file.write(f"\nMANOVA Results for Features {features[i]} & {features[j]}:\n")
+                file.write(str(manova.mv_test().summary()))
+
+    # Access the results from the list as needed
+    for result in manova_results:
+        print(f"MANOVA Results for Features {result['Features']}:")
+        print(result['MANOVA'].mv_test())
+        print("\n")
+
+def correlation_test(dataset, features_list):
+
+    features_to_check = ['BMI', 'cognitive', 'depression', 'RDA_IRON', 'age','diagnosis','PerCal_ADD_SUGARS','PainDirect']
+    # Select the 15 columns for correlation
+    columns_for_correlation = dataset[features_list]
+
+    for feature in features_to_check:
+        # Select the single column for correlation
+        single_column = dataset[feature]
+
+        # Compute the correlation coefficients using the corr method
+        correlations = columns_for_correlation.corrwith(single_column)
+
+        # Print or use the correlations as needed
+        print(f"Correlation coefficients with the {feature}:")
+        print(correlations)
 
 def get_inner_multiplication_matrix(dataset):
     dataset.drop(columns=dataset.columns[-1], axis=1, inplace=True)

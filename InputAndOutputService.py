@@ -17,9 +17,13 @@ def GetDataset():
 
     DECIMAL_COLUMNS = 1620
     file_name = "FM_dataset - Processed 125 samples"
+    file_name = "FM_dataset - Processed 125 samples - predict IBS"
 
     # DECIMAL_COLUMNS = 1624
     # file_name = "FM_dataset - Processed 125 samples - depression"
+
+    # DECIMAL_COLUMNS = 1
+    # file_name = "sum_Bacteroides_uniformis"
 
     # DECIMAL_COLUMNS = 1
     # file_name = "only pain"
@@ -56,14 +60,14 @@ def GetDataset():
     # file_name = 'FM_dataset - Sum Family and count - 125 samples'
 
     # DECIMAL_COLUMNS = 308
-    # file_name = 'FM_dataset - Sum Genus and count'
+    # file_name = 'FM_dataset - Sum Genus and count - 125 samples'
 
     # DECIMAL_COLUMNS = 317
     # file_name = 'FM_dataset - SumSpecies and diet'
 
     # DECIMAL_COLUMNS = 604
     # file_name = 'FM_dataset - Sum Species and count - 125 samples'
-    #
+
     # DECIMAL_COLUMNS = 288
     # file_name = 'FM_dataset - SumSpecies 125 samples'
 
@@ -79,6 +83,9 @@ def GetDataset():
     # DECIMAL_COLUMNS = 1620
     # file_name = 'FM_dataset_all_microbiom'
 
+    # DECIMAL_COLUMNS = 3769
+    # file_name = 'CRPS_dataset'
+
     sheet_name = "Sheet1"
     predict_column = 'diagnosis'
     cond_col = "None"
@@ -87,10 +94,10 @@ def GetDataset():
     #path = 'C:\\Users\\Mor\\OneDrive\\Documents\\Thesis\\DS for training\\Breast Cancer\\';
 
     print("File name is: '"+ file_name+"', Sheet name is: '"+sheet_name+"'")
-    dataset = pd.read_excel(path+file_name+'.xlsx',sheet_name=sheet_name, engine='openpyxl')
-    #dataset = pd.read_csv(path+file_name+'.csv')
+    #dataset = pd.read_excel(path+file_name+'.xlsx',sheet_name=sheet_name, engine='openpyxl')
+    dataset = pd.read_csv(path+file_name+'.csv')
     list_feature_names = dataset.columns.values 
-
+    # dataset[Bacteroides_uniformis_1].plot.box
     return DECIMAL_COLUMNS, dataset, file_name, sheet_name, list_feature_names, predict_column, cond_col
 
 def GetAndPrintResult(y_test, y_pred):
@@ -99,7 +106,7 @@ def GetAndPrintResult(y_test, y_pred):
     PrintAndWriteToLog(str(cm))
     accuracy = accuracy_score(y_test, y_pred)*100
     PrintAndWriteToLog("Accuracy: {:.2f} %".format(accuracy))
-    #print(classification_report(y_test, y_pred))
+    # print(classification_report(y_test, y_pred))
     return accuracy
 
 def PrintAndWriteToLog(logMsg,AddToTable = False):
@@ -126,6 +133,31 @@ def SaveResultToCSV(resDict):
         f_object.close()
 
 
+def print_to_excel(file_name, data):
+    import openpyxl
+
+    # Create a new Excel workbook
+    workbook = openpyxl.Workbook()
+
+    # Select the active sheet (default is the first sheet)
+    sheet = workbook.active
+
+    # Data to be written to Excel
+    # data = [
+    #     ['Name', 'Age', 'City'],
+    #     ['John', 25, 'New York'],
+    #     ['Jane', 30, 'San Francisco'],
+    #     ['Bob', 22, 'Los Angeles'],
+    # ]
+
+    # Write data to the Excel sheet
+    for row in data:
+        sheet.append(row)
+
+    # Save the workbook to a file
+    path = "C:\\Users\\Mor\\OneDrive\\Desktop\\Thesis\\"
+    workbook.save(path+file_name+'.xlsx')
+
 
 def CreateSumAndCountFeatures():
     # df = pd.DataFrame([[0, 0, 3], [4, 0, 6], [7, 0, 0], [0, 1, 2], [1, 1, 1], [0, 1, 0]], columns=['C1', 'C2', 'C3'],
@@ -136,6 +168,7 @@ def CreateSumAndCountFeatures():
     df = pd.read_csv(path + file_name + '.csv')
     df = df.set_index('Family')
     df_sum = df.copy()
+    df_sum.index = pd.Series([x + '-count' for x in df.index])
     df_sum.index = pd.Series([x + '-count' for x in df.index])
     df_sum
     for k in df_sum.columns:
@@ -327,3 +360,41 @@ def print_k_best_features(k_best,k,feature_names):
     print("Top {} features:".format(k))
     for feature_name in top_k_feature_names:
         print(feature_name)
+
+def plot_dataset_by_classifier(dataset):
+    X = dataset[['Prevotella_copri_1', 'Prevotella_12', 'Bacteroides_uniformis_1',
+                 'Bacteroides_dorei_1', 'Bacteroides_MS_3', 'Bacteroides_vulgatus_2', 'Parabacteroides_merdae_3',
+                 'Alloprevotella_1', 'Alistipes_finegoldii_2', 'Bacteroides_3', 'Prevotella_4',
+                 'Parabacteroides_merdae_1',
+                 'Prevotella_5', 'Firmicutes_MG_4', 'Ruminococcaceae_MG_1']].values
+    y = dataset.iloc[:, -1].values
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
+
+    classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+    classifier.fit(X_train, y_train)
+
+    # Create a meshgrid to plot the decision boundary
+    h = 0.02  # step size in the mesh
+    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+
+    # Make predictions on the meshgrid
+    Z = classifier.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+
+    # Plot the dataset and the decision boundary
+    plt.figure(figsize=(10, 6))
+
+    # Plot decision boundary
+    plt.contourf(xx, yy, Z, cmap='coolwarm', alpha=0.3)
+
+    # Plot points for the true labels
+    plt.scatter(X_test[:, 0], X_test[:, 1], c=y_test, cmap='coolwarm', edgecolors='k', s=80, label='True Labels')
+
+    plt.title('Classification Results with Decision Boundary')
+    plt.xlabel('Feature 1')
+    plt.ylabel('Feature 2')
+    plt.legend()
+    plt.show()
+
